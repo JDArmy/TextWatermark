@@ -1,0 +1,2133 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Text Watermark library in Python.">
+      
+      
+        <meta name="author" content="Monyer">
+      
+      
+      
+        <link rel="prev" href="../template/">
+      
+      
+        <link rel="next" href="../cmdline/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.13">
+    
+    
+      
+        <title>Defines - TextWatermark Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ffa9267a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#defines" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../" title="TextWatermark Docs" class="md-header__button md-logo" aria-label="TextWatermark Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TextWatermark Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Defines
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="选择当前语言">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="../../../api/defines/" hreflang="zh" class="md-select__link">
+                    Chinese
+                  </a>
+                </li>
+              
+                <li class="md-select__item">
+                  <a href="../../../en/api/defines/" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/JDArmy/TextWatermark" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../" class="md-tabs__link">
+      首页
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../usage/" class="md-tabs__link">
+        用法
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../main/" class="md-tabs__link md-tabs__link--active">
+        API 文档
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../templates/" class="md-tabs__link">
+      水印模板
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../development/" class="md-tabs__link">
+      开发文档
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../about/" class="md-tabs__link">
+      关于
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="TextWatermark Docs" class="md-nav__button md-logo" aria-label="TextWatermark Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    TextWatermark Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/JDArmy/TextWatermark" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        首页
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          用法
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          用法
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../usage/" class="md-nav__link">
+        Coding
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmdline/" class="md-nav__link">
+        CMD Line
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          API 文档
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          API 文档
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../main/" class="md-nav__link">
+        TextWatermark
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conversion/" class="md-nav__link">
+        WMConversion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../template/" class="md-nav__link">
+        WMTemplate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Defines
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Defines
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#defines" class="md-nav__link">
+    Defines
+  </a>
+  
+    <nav class="md-nav" aria-label="Defines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.template_type" class="md-nav__link">
+    textwatermark.template_type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.template_type.WMTemplateType" class="md-nav__link">
+    WMTemplateType
+  </a>
+  
+    <nav class="md-nav" aria-label="WMTemplateType">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.template_type.WMTemplateType.BINARY_REPRESENTATION" class="md-nav__link">
+    BINARY_REPRESENTATION
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.template_type.WMTemplateType.COMBINING_CHARS" class="md-nav__link">
+    COMBINING_CHARS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.template_type.WMTemplateType.FONT_COLOR" class="md-nav__link">
+    FONT_COLOR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.template_type.WMTemplateType.FONT_FLOAT" class="md-nav__link">
+    FONT_FLOAT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.template_type.WMTemplateType.FONT_SIZE" class="md-nav__link">
+    FONT_SIZE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.template_type.WMTemplateType.FONT_STYLE" class="md-nav__link">
+    FONT_STYLE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.template_type.WMTemplateType.FONT_WEIGHT" class="md-nav__link">
+    FONT_WEIGHT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.template_type.WMTemplateType.HOMOGRAPH_CHINESE" class="md-nav__link">
+    HOMOGRAPH_CHINESE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.template_type.WMTemplateType.HOMOGRAPH_LETTERS" class="md-nav__link">
+    HOMOGRAPH_LETTERS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.template_type.WMTemplateType.HOMOGRAPH_NUMBERS" class="md-nav__link">
+    HOMOGRAPH_NUMBERS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.template_type.WMTemplateType.HOMOGRAPH_PUNCTUATIONS" class="md-nav__link">
+    HOMOGRAPH_PUNCTUATIONS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.template_type.WMTemplateType.HTML_EMPTY_TAGS" class="md-nav__link">
+    HTML_EMPTY_TAGS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.template_type.WMTemplateType.INVISIBLE_CHARS" class="md-nav__link">
+    INVISIBLE_CHARS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.template_type.WMTemplateType.SPACE_CHARS" class="md-nav__link">
+    SPACE_CHARS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.template_type.WMTemplateType.WHITESPACE_CHARS" class="md-nav__link">
+    WHITESPACE_CHARS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.defines.WMMode" class="md-nav__link">
+    WMMode
+  </a>
+  
+    <nav class="md-nav" aria-label="WMMode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.defines.WMMode.REAL_NUMBER" class="md-nav__link">
+    REAL_NUMBER
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.defines.WMMode.LETTERS_LOWER_CASE" class="md-nav__link">
+    LETTERS_LOWER_CASE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.defines.WMMode.LETTERS_UPPER_CASE" class="md-nav__link">
+    LETTERS_UPPER_CASE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.defines.WMMode.LETTERS_MIXED_CASE" class="md-nav__link">
+    LETTERS_MIXED_CASE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.defines.WMMode.ALPHA_NUMERICAL" class="md-nav__link">
+    ALPHA_NUMERICAL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.defines.WMMode.ALPHA_NUMERICAL_SPECIAL" class="md-nav__link">
+    ALPHA_NUMERICAL_SPECIAL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.defines.WMMode.UNICODE" class="md-nav__link">
+    UNICODE
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.defines.WMMethod" class="md-nav__link">
+    WMMethod
+  </a>
+  
+    <nav class="md-nav" aria-label="WMMethod">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.defines.WMMethod.FIND_AND_REPLACE" class="md-nav__link">
+    FIND_AND_REPLACE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.defines.WMMethod.INSERT_INTO_POSITION" class="md-nav__link">
+    INSERT_INTO_POSITION
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.defines.WMMethod.DECORATE_EACH_CHAR" class="md-nav__link">
+    DECORATE_EACH_CHAR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.defines.WMMethod.APPEND_TO_CHAR" class="md-nav__link">
+    APPEND_TO_CHAR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.defines.WMMethod.APPEND_AS_BINARY" class="md-nav__link">
+    APPEND_AS_BINARY
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.defines.WhiteSpaceChars" class="md-nav__link">
+    WhiteSpaceChars
+  </a>
+  
+    <nav class="md-nav" aria-label="WhiteSpaceChars">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.defines.WhiteSpaceChars.SPACE_1_4" class="md-nav__link">
+    SPACE_1_4
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.defines.WhiteSpaceChars.NO_BREAK_SPACE_1_4" class="md-nav__link">
+    NO_BREAK_SPACE_1_4
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.defines.WhiteSpaceChars.EN_QUAD_1_2" class="md-nav__link">
+    EN_QUAD_1_2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.defines.WhiteSpaceChars.EM_QUAD_1" class="md-nav__link">
+    EM_QUAD_1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.defines.WhiteSpaceChars.EN_SPACE_1_2" class="md-nav__link">
+    EN_SPACE_1_2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.defines.WhiteSpaceChars.EM_SPACE_1" class="md-nav__link">
+    EM_SPACE_1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.defines.WhiteSpaceChars.THREE_PER_EM_SPACE_1_3" class="md-nav__link">
+    THREE_PER_EM_SPACE_1_3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.defines.WhiteSpaceChars.FOUR_PER_EM_SPACE_1_4" class="md-nav__link">
+    FOUR_PER_EM_SPACE_1_4
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.defines.WhiteSpaceChars.SIX_PER_EM_SPACE_1_6" class="md-nav__link">
+    SIX_PER_EM_SPACE_1_6
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.defines.WhiteSpaceChars.FIGURE_SPACE_LIKE_DIGITS" class="md-nav__link">
+    FIGURE_SPACE_LIKE_DIGITS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.defines.WhiteSpaceChars.PUNCTUATION_SPACE_LIKE_DOT" class="md-nav__link">
+    PUNCTUATION_SPACE_LIKE_DOT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.defines.WhiteSpaceChars.THIN_SPACE_1_6" class="md-nav__link">
+    THIN_SPACE_1_6
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.defines.WhiteSpaceChars.HAIR_SPACE_1_8" class="md-nav__link">
+    HAIR_SPACE_1_8
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.defines.WhiteSpaceChars.NARROW_NO_BREAK_SPACE_1_6" class="md-nav__link">
+    NARROW_NO_BREAK_SPACE_1_6
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.defines.WhiteSpaceChars.MEDIUM_MATHEMATICAL_SPACE_2_9" class="md-nav__link">
+    MEDIUM_MATHEMATICAL_SPACE_2_9
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cmdline/" class="md-nav__link">
+        CMD Line
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/" class="md-nav__link">
+        水印模板
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/" class="md-nav__link">
+        开发文档
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        关于
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>Defines</h1>
+
+<h2 id="defines">Defines</h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+<a id="textwatermark.template_type"></a>
+  <div class="doc doc-contents first">
+  
+      <p>Template type define</p>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="textwatermark.template_type.WMTemplateType" class="doc doc-heading">
+        <code>WMTemplateType</code>
+
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code><span title="enum.Enum">Enum</span></code></p>
+
+  
+      <p>watermark template types</p>
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.template_type.WMTemplateType.BINARY_REPRESENTATION" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">BINARY_REPRESENTATION</span> <span class="o">=</span> <span class="n">binary_representation</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.template_type.WMTemplateType.COMBINING_CHARS" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">COMBINING_CHARS</span> <span class="o">=</span> <span class="n">combining_chars</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Combining characters</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.template_type.WMTemplateType.FONT_COLOR" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">FONT_COLOR</span> <span class="o">=</span> <span class="n">font_color</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Font color</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.template_type.WMTemplateType.FONT_FLOAT" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">FONT_FLOAT</span> <span class="o">=</span> <span class="n">font_float</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Font float</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.template_type.WMTemplateType.FONT_SIZE" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">FONT_SIZE</span> <span class="o">=</span> <span class="n">font_size</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Font size</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.template_type.WMTemplateType.FONT_STYLE" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">FONT_STYLE</span> <span class="o">=</span> <span class="n">font_style</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Font style</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.template_type.WMTemplateType.FONT_WEIGHT" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">FONT_WEIGHT</span> <span class="o">=</span> <span class="n">font_weight</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Font weight</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.template_type.WMTemplateType.HOMOGRAPH_CHINESE" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">HOMOGRAPH_CHINESE</span> <span class="o">=</span> <span class="n">homograph_chinese</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Homograph Chinese</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.template_type.WMTemplateType.HOMOGRAPH_LETTERS" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">HOMOGRAPH_LETTERS</span> <span class="o">=</span> <span class="n">homograph_letters</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Homograph letters</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.template_type.WMTemplateType.HOMOGRAPH_NUMBERS" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">HOMOGRAPH_NUMBERS</span> <span class="o">=</span> <span class="n">homograph_numbers</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Homograph numbers</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.template_type.WMTemplateType.HOMOGRAPH_PUNCTUATIONS" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">HOMOGRAPH_PUNCTUATIONS</span> <span class="o">=</span> <span class="n">homograph_punctuations</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Homograph punctuations</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.template_type.WMTemplateType.HTML_EMPTY_TAGS" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">HTML_EMPTY_TAGS</span> <span class="o">=</span> <span class="n">html_empty_tags</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>HTML empty tags</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.template_type.WMTemplateType.INVISIBLE_CHARS" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">INVISIBLE_CHARS</span> <span class="o">=</span> <span class="n">invisible_chars</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Invisible characters</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.template_type.WMTemplateType.SPACE_CHARS" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">SPACE_CHARS</span> <span class="o">=</span> <span class="n">space_chars</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Space characters</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.template_type.WMTemplateType.WHITESPACE_CHARS" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">WHITESPACE_CHARS</span> <span class="o">=</span> <span class="n">whitespace_chars</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>White space characters</p>
+  </div>
+
+</div>
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+  <div class="doc doc-contents first">
+  
+      <p>Defines</p>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="textwatermark.defines.WMMode" class="doc doc-heading">
+        <code>WMMode</code>
+
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code><span title="enum.IntEnum">IntEnum</span></code></p>
+
+  
+      <p>An enumerarion of watermark mode</p>
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.defines.WMMode.REAL_NUMBER" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">REAL_NUMBER</span> <span class="o">=</span> <span class="mi">1</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Real numbers, which will be represented directly by binary values, 
+with the smallest length</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.defines.WMMode.LETTERS_LOWER_CASE" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">LETTERS_LOWER_CASE</span> <span class="o">=</span> <span class="mi">2</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Lowercase letters, each letter is represented by 5 binary bytes</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.defines.WMMode.LETTERS_UPPER_CASE" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">LETTERS_UPPER_CASE</span> <span class="o">=</span> <span class="mi">3</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Uppercase letters, each letter is represented by 5 binary bytes</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.defines.WMMode.LETTERS_MIXED_CASE" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">LETTERS_MIXED_CASE</span> <span class="o">=</span> <span class="mi">4</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Mixed case letters, each character is represented by 6 binary bytes</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.defines.WMMode.ALPHA_NUMERICAL" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">ALPHA_NUMERICAL</span> <span class="o">=</span> <span class="mi">5</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Uppercase and lowercase letters + numbers, each character is represented by 6 binary bytes</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.defines.WMMode.ALPHA_NUMERICAL_SPECIAL" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">ALPHA_NUMERICAL_SPECIAL</span> <span class="o">=</span> <span class="mi">6</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Uppercase and lowercase letters + numbers + special symbols, 
+each character is represented by 7 binary bytes</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.defines.WMMode.UNICODE" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">UNICODE</span> <span class="o">=</span> <span class="mi">7</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Arbitrary Unicode characters, expressed in UTF-8 encoding</p>
+  </div>
+
+</div>
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="textwatermark.defines.WMMethod" class="doc doc-heading">
+        <code>WMMethod</code>
+
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code><span title="enum.IntEnum">IntEnum</span></code></p>
+
+  
+      <p>Watermark insert methods</p>
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.defines.WMMethod.FIND_AND_REPLACE" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">FIND_AND_REPLACE</span> <span class="o">=</span> <span class="mi">1</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Find specific characters and replace with watermark characters</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.defines.WMMethod.INSERT_INTO_POSITION" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">INSERT_INTO_POSITION</span> <span class="o">=</span> <span class="mi">2</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Insert an invisible watermark at the specified position</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.defines.WMMethod.DECORATE_EACH_CHAR" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">DECORATE_EACH_CHAR</span> <span class="o">=</span> <span class="mi">3</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Decorate characters in text</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.defines.WMMethod.APPEND_TO_CHAR" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">APPEND_TO_CHAR</span> <span class="o">=</span> <span class="mi">4</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Add one watermark byte after one character</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.defines.WMMethod.APPEND_AS_BINARY" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">APPEND_AS_BINARY</span> <span class="o">=</span> <span class="mi">5</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Add one watermark byte after one character, in binary</p>
+  </div>
+
+</div>
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="textwatermark.defines.WhiteSpaceChars" class="doc doc-heading">
+        <code>WhiteSpaceChars</code>
+
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code><span title="enum.Enum">Enum</span></code></p>
+
+  
+      <p>Defines of white space chars</p>
+<p>From: <a href="https://jkorpela.fi/chars/spaces.html">https://jkorpela.fi/chars/spaces.html</a></p>
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.defines.WhiteSpaceChars.SPACE_1_4" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">SPACE_1_4</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Depends on font, typically 1/4 em, often adjusted</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.defines.WhiteSpaceChars.NO_BREAK_SPACE_1_4" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">NO_BREAK_SPACE_1_4</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\xa0</span><span class="s1">&#39;</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>As a space, but often not adjusted</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.defines.WhiteSpaceChars.EN_QUAD_1_2" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">EN_QUAD_1_2</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\u2000</span><span class="s1">&#39;</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>1 en (= 1/2 em)</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.defines.WhiteSpaceChars.EM_QUAD_1" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">EM_QUAD_1</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\u2001</span><span class="s1">&#39;</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>1 em (nominally, the height of the font)</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.defines.WhiteSpaceChars.EN_SPACE_1_2" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">EN_SPACE_1_2</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\u2002</span><span class="s1">&#39;</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>1 en (= 1/2 em)</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.defines.WhiteSpaceChars.EM_SPACE_1" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">EM_SPACE_1</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\u2003</span><span class="s1">&#39;</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>1 em</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.defines.WhiteSpaceChars.THREE_PER_EM_SPACE_1_3" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">THREE_PER_EM_SPACE_1_3</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\u2004</span><span class="s1">&#39;</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>1/3 em</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.defines.WhiteSpaceChars.FOUR_PER_EM_SPACE_1_4" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">FOUR_PER_EM_SPACE_1_4</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\u2005</span><span class="s1">&#39;</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>1/4 em</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.defines.WhiteSpaceChars.SIX_PER_EM_SPACE_1_6" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">SIX_PER_EM_SPACE_1_6</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\u2006</span><span class="s1">&#39;</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>1/6 em</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.defines.WhiteSpaceChars.FIGURE_SPACE_LIKE_DIGITS" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">FIGURE_SPACE_LIKE_DIGITS</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\u2007</span><span class="s1">&#39;</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>“Tabular width”, the width of digits</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.defines.WhiteSpaceChars.PUNCTUATION_SPACE_LIKE_DOT" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">PUNCTUATION_SPACE_LIKE_DOT</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\u2008</span><span class="s1">&#39;</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>The width of a period “.”</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.defines.WhiteSpaceChars.THIN_SPACE_1_6" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">THIN_SPACE_1_6</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\u2009</span><span class="s1">&#39;</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>1/5 em (or sometimes 1/6 em)</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.defines.WhiteSpaceChars.HAIR_SPACE_1_8" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">HAIR_SPACE_1_8</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\u200a</span><span class="s1">&#39;</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Narrower than <code>THIN SPACE</code></p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.defines.WhiteSpaceChars.NARROW_NO_BREAK_SPACE_1_6" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">NARROW_NO_BREAK_SPACE_1_6</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\u202f</span><span class="s1">&#39;</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Narrower than <code>NO-BREAK SPACE</code> (or <code>SPACE</code>), 
+“typically the width of a thin space or a mid space”</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.defines.WhiteSpaceChars.MEDIUM_MATHEMATICAL_SPACE_2_9" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">MEDIUM_MATHEMATICAL_SPACE_2_9</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\u205f</span><span class="s1">&#39;</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>4/18 em</p>
+  </div>
+
+</div>
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            回到页面顶部
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "toc.integrate", "toc.follow", "navigation.tabs", "navigation.top", "navigation.tracking", "navigation.prune"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
+      
+        <script src="../../../js/extra.js"></script>
+      
+    
+  </body>
+</html>

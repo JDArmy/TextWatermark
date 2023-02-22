@@ -1,0 +1,22 @@
+/* :root > * { */
+/* --md-code-hl-number-color
+  --md-code-hl-special-color
+  --md-code-hl-function-color
+  --md-code-hl-constant-color
+  --md-code-hl-keyword-color
+  --md-code-hl-string-color
+  --md-code-hl-name-color
+  --md-code-hl-operator-color
+  --md-code-hl-punctuation-color
+  --md-code-hl-comment-color
+  --md-code-hl-generic-color
+  
+  --md-code-fg-color
+  --md-code-bg-color
+  --md-code-hl-color */
+/* --md-code-hl-name-color: red;
+} */
+
+/* .highlight .n {
+  color: #0ff1ce;
+} */
