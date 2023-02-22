@@ -1,0 +1,99 @@
+site_name: TextWatermark Docs
+repo_url: https://github.com/JDArmy/TextWatermark
+site_description: Text Watermark library in Python.
+site_author: Monyer
+repo_name: GitHub
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  locale: en
+  features:
+    - content.code.copy
+    - toc.integrate
+    - toc.follow
+    - navigation.tabs
+    - navigation.top
+    # - navigation.path
+    - navigation.tracking
+    # - navigation.sections
+    # - navigation.expand
+    - navigation.prune
+  include_sidebar: true
+
+extra_css:
+    - css/extra.css
+extra_javascript:
+    - js/extra.js
+
+watch:
+  - src/textwatermark
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      use_pygments: true
+      auto_title: true
+      linenums: true
+      linenums_style: pymdownx-inline
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - toc:
+      baselevel: 2
+
+
+plugins:
+  - autorefs
+  - search
+  - include-markdown:
+      opening_tag: "{%"
+      closing_tag: "%}"
+      encoding: ascii
+      preserve_includer_indent: false
+      dedent: false
+      trailing_newlines: false
+      comments: false
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+          python:
+            paths: [src]
+            options:
+              show_source: false
+              show_category_heading: false
+              show_root_heading: false
+              heading_level: 2
+              show_root_members_full_path: false
+              show_submodules: false
+              merge_init_into_class: false
+              show_if_no_docstring: true
+  - i18n:
+      default_language: zh
+      languages:
+        zh: Chinese
+        en: English    
+      nav_translations:
+        zh:
+          Home: 首页
+          Usage: 用法
+          API Documents: API 文档
+          Templates: 水印模板
+          Development Guide: 开发文档
+          About: 关于
+       
+nav:
+    - Home: index.md
+    - Usage: 
+      - Coding: usage.md
+      - CMD Line: cmdline.md
+    - API Documents: 
+        - api/main.md
+        - WMConversion: api/conversion.md
+        - WMTemplate: api/template.md
+        - Defines: api/defines.md
+        - CMD Line: api/cmdline.md
+    - Templates: templates.md
+    - Development Guide: development.md
+    - About: about.md
