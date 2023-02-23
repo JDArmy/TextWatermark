@@ -2,6 +2,7 @@
 # pylint: disable=too-many-arguments,invalid-name,too-many-locals
 
 import os
+import re
 import sys
 
 import click
@@ -82,6 +83,9 @@ def insert(text_file: str, out_file: str, wm_mode: str, template_type: str, wm_m
     if template_type.value.method == WMMethod.DECORATE_EACH_CHAR and \
             template_chars_key == '':
         raise ValueError('template_chars_key is required')
+
+    if re.fullmatch('^\\\\u[0-9]{4}$', template_chars_key) is not None:
+        template_chars_key = chr(int(template_chars_key[2:], 16))
 
     # # init
     wm = TextWatermark(WMMode[wm_mode].value, wm_base, start_at, wm_loop)
