@@ -2,13 +2,33 @@
 name = "textwatermark"
 version = "0.1.0"
 description = "A watermark library for text."
+keywords = ["watermark", "text", 'blind']
 readme = "README.md"
 authors = ["Monyer <monyer@126.com>"]
-license = "MIT"
+maintainers = []
+license = "Apache"
 classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Environment :: Plugins",
+    "Framework :: Pytest",
+    "Framework :: tox",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: Apache Software License",
+    "Natural Language :: English",
+    "Natural Language :: Chinese (Simplified)",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3.10",
+    "Topic :: Security",
+    "Topic :: Text Processing",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Communications :: File Sharing",
 ]
+homepage = "https://textwatermark.jd.army/"
+repository = "https://github.com/JDArmy/TextWatermark"
+documentation = "https://textwatermark.jd.army/"
+
 
 [tool.poetry.dependencies]
 python = ">=3.10,<3.12"
@@ -34,6 +54,9 @@ mkdocs-static-i18n = "^0.53"
 [tool.poetry.scripts]
 textwatermark = "textwatermark.cmdline:main"
 
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/JDArmy/TextWatermark/issues"
+"Changelog" = "https://textwatermark.jd.army/changelog/"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

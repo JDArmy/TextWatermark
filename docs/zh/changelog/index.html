@@ -13,17 +13,17 @@
       
       
       
-        <link rel="prev" href="../templates/">
+        <link rel="prev" href="../cmdline/">
       
       
-        <link rel="next" href="../about/">
+        <link rel="next" href="../api/main/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.13">
     
     
       
-        <title>开发文档 - TextWatermark Docs</title>
+        <title>更新日志 - TextWatermark Docs</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#begin" class="md-skip">
+        <a href="#changelog" class="md-skip">
           跳转至
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              开发文档
+              更新日志
             
           </span>
         </div>
@@ -126,13 +126,13 @@
             <ul class="md-select__list">
               
                 <li class="md-select__item">
-                  <a href="../../development/" hreflang="zh" class="md-select__link">
+                  <a href="../../changelog/" hreflang="zh" class="md-select__link">
                     Chinese
                   </a>
                 </li>
               
                 <li class="md-select__item">
-                  <a href="../../en/development/" hreflang="en" class="md-select__link">
+                  <a href="../../en/changelog/" hreflang="en" class="md-select__link">
                     English
                   </a>
                 </li>
@@ -234,10 +234,12 @@
         
   
   
+    
+  
 
 
   <li class="md-tabs__item">
-    <a href="../changelog/" class="md-tabs__link">
+    <a href="./" class="md-tabs__link md-tabs__link--active">
       更新日志
     </a>
   </li>
@@ -274,12 +276,10 @@
         
   
   
-    
-  
 
 
   <li class="md-tabs__item">
-    <a href="./" class="md-tabs__link md-tabs__link--active">
+    <a href="../development/" class="md-tabs__link">
       开发文档
     </a>
   </li>
@@ -427,11 +427,61 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../changelog/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          更新日志
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         更新日志
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#changelog" class="md-nav__link">
+    Changelog
+  </a>
+  
+    <nav class="md-nav" aria-label="Changelog">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#010" class="md-nav__link">
+    0.1.0
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -562,109 +612,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          开发文档
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../development/" class="md-nav__link">
         开发文档
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#begin" class="md-nav__link">
-    Begin
-  </a>
-  
-    <nav class="md-nav" aria-label="Begin">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#init-project-environment" class="md-nav__link">
-    Init project environment
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#develop" class="md-nav__link">
-    Develop
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#delivery" class="md-nav__link">
-    Delivery
-  </a>
-  
-    <nav class="md-nav" aria-label="Delivery">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#run-tox" class="md-nav__link">
-    Run tox
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#git-tag" class="md-nav__link">
-    Git tag
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#build" class="md-nav__link">
-    Build
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#upload-index-server" class="md-nav__link">
-    Upload index server
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -702,50 +654,11 @@
   
 
 
-  <h1>开发文档</h1>
+  <h1>更新日志</h1>
 
-<h2 id="begin">Begin</h2>
-<h3 id="init-project-environment">Init project environment</h3>
-<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos=" 1 "></span></a>$<span class="w"> </span>git<span class="w"> </span>init
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos=" 2 "></span></a>$<span class="w"> </span>git<span class="w"> </span>config
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="c1"># install poetry</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos=" 4 "></span></a>$<span class="w"> </span>poetry<span class="w"> </span>install
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><a href="#__codelineno-0-5"><span class="linenos" data-linenos=" 5 "></span></a>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><a href="#__codelineno-0-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="c1"># creating isolated virtual python environments</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><a href="#__codelineno-0-7"><span class="linenos" data-linenos=" 7 "></span></a>$<span class="w"> </span>virtualenv<span class="w"> </span>venv
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a><a href="#__codelineno-0-8"><span class="linenos" data-linenos=" 8 "></span></a>$<span class="w"> </span>.<span class="w"> </span>venv/bin/activate
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a><a href="#__codelineno-0-9"><span class="linenos" data-linenos=" 9 "></span></a>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a><a href="#__codelineno-0-10"><span class="linenos" data-linenos="10 "></span></a><span class="c1"># install textwatermark in editable mode</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a><a href="#__codelineno-0-11"><span class="linenos" data-linenos="11 "></span></a>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--editable<span class="w"> </span>.
-</code></pre></div>
-<h3 id="develop">Develop</h3>
-<ul>
-<li>code</li>
-<li>git commit</li>
-<li>tox</li>
-</ul>
-<h3 id="delivery">Delivery</h3>
-<h4 id="run-tox">Run tox</h4>
-<p>Run tox to format code style and check test.</p>
-<ul>
-<li>tox</li>
-</ul>
-<h4 id="git-tag">Git tag</h4>
-<p>Modify package version value, then commit.</p>
-<p>Add tag</p>
-<ul>
-<li>git tag -a v0.1.0</li>
-</ul>
-<h4 id="build">Build</h4>
-<p>Build this tag distribution package.</p>
-<ul>
-<li>poetry build</li>
-</ul>
-<h4 id="upload-index-server">Upload index server</h4>
-<p>Upload to PyPI server, or pass <code>--repository https://pypi.org/simple</code> to specify index server.</p>
-<ul>
-<li>poetry publish</li>
-</ul>
+<h2 id="changelog">Changelog</h2>
+<h3 id="010">0.1.0</h3>
+<p>init of <code>textwatermark</code></p>
 
 
 

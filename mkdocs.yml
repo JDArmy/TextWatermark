@@ -3,7 +3,7 @@ repo_url: https://github.com/JDArmy/TextWatermark
 site_description: Text Watermark library in Python.
 site_author: Monyer
 repo_name: GitHub
-docs_dir: docs_in_md
+docs_dir: docs_md
 site_dir: docs
 
 theme:
@@ -78,6 +78,7 @@ plugins:
         zh:
           Home: 首页
           Usage: 用法
+          Changelog: 更新日志
           API Documents: API 文档
           Templates: 水印模板
           Development Guide: 开发文档
@@ -88,6 +89,7 @@ nav:
     - Usage: 
       - Coding: usage.md
       - CMD Line: cmdline.md
+    - Changelog: changelog.md
     - API Documents: 
         - api/main.md
         - WMConversion: api/conversion.md
