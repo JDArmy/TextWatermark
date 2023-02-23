@@ -13,7 +13,7 @@
       
       
       
-        <link rel="prev" href="../../changelog/">
+        <link rel="prev" href="../../example/">
       
       
         <link rel="next" href="../conversion/">
@@ -246,6 +246,18 @@
         
   
   
+
+
+  <li class="md-tabs__item">
+    <a href="../../example/" class="md-tabs__link">
+      样例
+    </a>
+  </li>
+
+      
+        
+  
+  
     
   
 
@@ -442,6 +454,21 @@
 
   
   
+  
+    <li class="md-nav__item">
+      <a href="../../example/" class="md-nav__link">
+        样例
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
     
   
   
@@ -451,17 +478,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
       
       
       
-        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
           API 文档
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
-        <label class="md-nav__title" for="__nav_4">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           API 文档
         </label>
@@ -654,6 +681,13 @@
           <li class="md-nav__item">
   <a href="#textwatermark.main.TextWatermark.export_params" class="md-nav__link">
     export_params()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwatermark.main.TextWatermark.retrieve_watermark_from_bin" class="md-nav__link">
+    retrieve_watermark_from_bin()
   </a>
   
 </li>
@@ -1670,8 +1704,82 @@ Defaults to False.</p></td>
 
 
 
+<h5 id="textwatermark.main.TextWatermark.retrieve_watermark_from_bin" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">retrieve_watermark_from_bin</span><span class="p">(</span><span class="n">wm_bin</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">force_check_version</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-staticmethod"><code>staticmethod</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Retrieve watermark from binary string.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>wm_bin</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>watermark binary string</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>params</code></td>
+          <td>
+                <code>json</code>
+          </td>
+          <td><p>params containing the watermark options</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>watermark string.</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
 <h5 id="textwatermark.main.TextWatermark.retrieve_watermark" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">retrieve_watermark</span><span class="p">(</span><span class="n">wm_text</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">retrieve_watermark</span><span class="p">(</span><span class="n">wm_text</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">force_check_version</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
   
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-staticmethod"><code>staticmethod</code></small>

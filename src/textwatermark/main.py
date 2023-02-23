@@ -276,7 +276,42 @@ class TextWatermark:
         return json.dumps(params, ensure_ascii=False)
 
     @ staticmethod
-    def retrieve_watermark(wm_text: str, params: json):
+    def retrieve_watermark_from_bin(wm_bin: str, params: json,
+                                    force_check_version: bool = False):
+        '''
+        Retrieve watermark from binary string.
+
+        Args:
+            wm_bin (str): watermark binary string
+            params (json): params containing the watermark options
+
+        Returns:
+            (str): watermark string.
+
+        '''
+        params = json.loads(params)
+        wm_len = params['wm_len']
+        wmc = WMConversion(params['wm_mode'], params['wm_base'])
+
+        ver = params['version']
+        if ver != __version__ and force_check_version is False:
+            raise ValueError(f'Not the same version, params version is {ver},'
+                             f' library version is {__version__}.'
+                             'If you confirm that you want to use a different version to'
+                             ' retrieve the watermark, please set force_check_version to True')
+
+        if len(wm_bin) < wm_len:
+            raise ValueError(f'Watermark length is short than {wm_len}')
+
+        wm_temp = wm_bin[1:wm_len]
+        wm_temp = wm_temp.lstrip('0')
+
+        wm_out_str = wmc.wm_restore_from_arbitrary_base(wm_temp)
+        return wm_out_str
+
+    @ staticmethod
+    def retrieve_watermark(wm_text: str, params: json,
+                           force_check_version: bool = False):
         '''Retrieve watermark from watermarked text
         Note: This is a static method
             You can call this method by `TextWatermark.retrieve_watermark`
@@ -296,9 +331,19 @@ class TextWatermark:
             (str): Watermark string.
 
         '''
+
         params = json.loads(params)
         # print(params)
         wm_len = params['wm_len']
+        ver = params['version']
+        if len(wm_text) < wm_len:
+            raise ValueError("Watermark length is too short")
+
+        if ver != __version__ and force_check_version is False:
+            raise ValueError(f'Not the same version, params version is {ver},'
+                             f' library version is {__version__}.'
+                             'If you confirm that you want to use a different version to'
+                             ' retrieve the watermark, please set force_check_version to True')
 
         wmc = WMConversion(params['wm_mode'], params['wm_base'])
 

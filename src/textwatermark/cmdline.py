@@ -123,11 +123,16 @@ def insert(text_file: str, out_file: str, wm_mode: str, template_type: str, wm_m
 
 
 @main.command()
-@click.option('-f', '--wm-text-file',  type=str, required=True,
+@click.option('-f', '--wm-text-file',  type=str, required=False,
               help='Text file already be watermarked')
+@click.option('-b', '--wm-binary',  type=str, required=False,
+              help='Watermark string in binary')
 @click.option('-p', '--params-json',  type=str, required=True,
               help='Param json when watermarking text')
-def retrieve(wm_text_file: str, params_json: str):
+@click.option('-F', '--force-check-version',  is_flag=True,
+              help='Force to check versions between params and library')
+def retrieve(wm_text_file: str, wm_binary: str, params_json: str,
+             force_check_version: bool):
     '''Retrieve watermark from watermarked text
 
     Examples:
@@ -137,17 +142,28 @@ def retrieve(wm_text_file: str, params_json: str):
     '''
     verbose = settings.get('VERBOSE')
 
-    wm_text_file = os.path.abspath(wm_text_file)
-    if not os.path.exists(wm_text_file):
-        raise ValueError(f'ERROR: file {wm_text_file} does not exist')
-    try:
-        with open(wm_text_file, 'r', encoding='utf-8') as f:
-            wm_text = f.read()
-    except OSError as err:
-        print(f'ERROR: cannot read file {wm_text_file}, err is {err.strerror}')
-        sys.exit()
+    if not wm_text_file and not wm_binary:
+        raise ValueError(
+            'No watermarked text file or watermark binary string set')
 
-    wm_out_str = TextWatermark.retrieve_watermark(wm_text, params_json)
+    if wm_binary:
+        wm_out_str = TextWatermark.retrieve_watermark_from_bin(
+            wm_binary, params_json, force_check_version)
+
+    else:
+        wm_text_file = os.path.abspath(wm_text_file)
+        if not os.path.exists(wm_text_file):
+            raise ValueError(f'ERROR: file {wm_text_file} does not exist')
+        try:
+            with open(wm_text_file, 'r', encoding='utf-8') as f:
+                wm_text = f.read()
+        except OSError as err:
+            print(
+                f'ERROR: cannot read file {wm_text_file}, err is {err.strerror}')
+            sys.exit()
+        wm_out_str = TextWatermark.retrieve_watermark(wm_text, params_json,
+                                                      force_check_version)
+
     if verbose:
         print(f'The retrieved watermark is: {wm_out_str}')
     else:

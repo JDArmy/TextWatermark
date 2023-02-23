@@ -1,4 +1,5 @@
-'''module docstring'''
+'''Homographs in letters'''
+
 
 from textwatermark.defines import WMMethod
 

@@ -33,6 +33,14 @@
          
     </url>
     <url>
+         <loc>Noneexample/</loc>
+         <lastmod>2023-02-23</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/example/"/>
+         <xhtml:link rel="alternate" hreflang="en" href="Noneen/example/"/>
+         
+    </url>
+    <url>
          <loc>None./</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>

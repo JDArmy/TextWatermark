@@ -1,4 +1,4 @@
-'''module docstring'''
+'''Homographs in Punctuations'''
 from textwatermark.defines import WMMethod
 
 # 同形异义-标点

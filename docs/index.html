@@ -248,6 +248,18 @@
   
 
 
+  <li class="md-tabs__item">
+    <a href="example/" class="md-tabs__link">
+      样例
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
   
   
   
@@ -579,23 +591,38 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="example/" class="md-nav__link">
+        样例
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
       
       
       
-        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
           API 文档
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_4">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           API 文档
         </label>
@@ -810,369 +837,446 @@
 <h4 id="_10">更多</h4>
 <p>参见：<a href="https://textwatermark.jd.army/usage/">用法</a></p>
 <h3 id="_11">水印模板支持情况</h3>
-<table border="1" style="font-size:50%">
+<table border="1" style="font-size: 50%">
   <tr>
-    <th rowspan="2" style="text-align:center">水印模板</th>
-    <th rowspan="2" style="text-align:center">模板参数</th>
-    <th colspan="3" style="text-align:center">适用场景</th>
-    <th colspan="4" style="text-align:center">文本无特征</th>
-    <th colspan="4" style="text-align:center">支持字符</th>
-    <th rowspan="2" style="text-align:center">纯文本</th>
-    <th rowspan="2" style="text-align:center">隐蔽性</th>
+    <th rowspan="2" style="text-align: center">
+      WMTemplateType<br />
+      模板参数
+    </th>
+    <th colspan="3" style="text-align: center">
+      Applicable scene<br />
+      适用场景
+    </th>
+    <th colspan="4" style="text-align: center">
+      Text featureless<br />
+      文本无特征
+    </th>
+    <th colspan="4" style="text-align: center">
+      Support characters<br />
+      支持字符
+    </th>
+    <th rowspan="2" style="text-align: center">
+      Plain Text<br />
+      纯文本
+    </th>
+    <th rowspan="2" style="text-align: center">Concealment<br /></th>
   </tr>
   <tr>
-    <td>粘贴</td>
-    <td>截图</td>
-    <td>屏摄</td>
-    <td>格式</td>
-    <td>样式</td>
-    <td>字形</td>
-    <td>字义</td>
-    <td>数字</td>
-    <td>字母</td>
-    <td>汉字</td>
-    <td>特殊</td>
+    <td style="text-align: center">
+      Paste<br />
+      粘贴
+    </td>
+    <td style="text-align: center">
+      Screenshot<br />
+      截图
+    </td>
+    <td style="text-align: center">
+      Photograph<br />
+      屏摄
+    </td>
+    <td style="text-align: center">
+      Format<br />
+      格式
+    </td>
+    <td style="text-align: center">
+      Style<br />
+      样式
+    </td>
+    <td style="text-align: center">
+      Shape<br />
+      字形
+    </td>
+    <td style="text-align: center">
+      Meaning<br />
+      字义
+    </td>
+    <td style="text-align: center">
+      Number<br />
+      数字
+    </td>
+    <td style="text-align: center">
+      Letter<br />
+      字母
+    </td style="text-align: center">
+    <td style="text-align: center">
+      Chinese<br />
+      汉字
+    </td>
+    <td style="text-align: center">
+      Special<br />
+      特殊
+    </td>
   </tr>
   <tr>
-    <td>不可见字符</td>
-    <td><a href="/templates/#invisible_chars">INVISIBLE_CHARS</a></td>
-    <td>✓</td>
-    <td>×</td>
-    <td>×</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>高</td>
+    <td style="text-align: center">
+      <a href="/templates/#invisible_chars">INVISIBLE_CHARS</a><br/>
+      不可见字符
+    </td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">High</td>
   </tr>
   <tr>
-    <td>空白字符</td>
-    <td><a href="/templates/#whitespace_chars">WHITESPACE_CHARS</a></td>
-    <td>✓</td>
-    <td>×</td>
-    <td>×</td>
-    <td>×</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>中</td>
+    <td style="text-align: center">
+      <a href="/templates/#whitespace_chars">WHITESPACE_CHARS</a><br>
+      空白字符
+    </td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">Medium</td>
   </tr>
   <tr>
-    <td>空格字符</td>
-    <td><a href="/templates/#space_chars">SPACE_CHARS</a></td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>×</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>中</td>
+    <td style="text-align: center">
+      <a href="/templates/#space_chars">SPACE_CHARS</a><br>
+      空格字符
+    </td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">Medium</td>
   </tr>
   <tr>
-    <td>组合字符</td>
-    <td><a href="/templates/#combining_chars">COMBINING_CHARS</a></td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>×</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>中</td>
+    <td style="text-align: center">
+      <a href="/templates/#combining_chars">COMBINING_CHARS</a><br>
+      组合字符
+    </td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">Medium</td>
   </tr>
   <tr>
-    <td>同形异义-数字</td>
-    <td><a href="/templates/#homograph_numbers">HOMOGRAPH_NUMBERS</a></td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>×</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>×</td>
-    <td>×</td>
-    <td>×</td>
-    <td>✓</td>
-    <td>低</td>
+    <td style="text-align: center">
+      <a href="/templates/#homograph_numbers">HOMOGRAPH_NUMBERS</a><br>
+      同形异义-数字
+    </td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">⍻</td>
+    <td style="text-align: center">⍻</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">⍻</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">Low</td>
   </tr>
   <tr>
-    <td>同形异义-字母</td>
-    <td><a href="/templates/#homograph_letters">HOMOGRAPH_LETTERS</a></td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>×</td>
-    <td>✓</td>
-    <td>×</td>
-    <td>✓</td>
-    <td>×</td>
-    <td>×</td>
-    <td>✓</td>
-    <td>低</td>
+    <td style="text-align: center">
+      <a href="/templates/#homograph_letters">HOMOGRAPH_LETTERS</a><br>
+      同形异义-字母
+    </td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">⍻</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">Low</td>
   </tr>
   <tr>
-    <td>同形异义-中文</td>
-    <td><a href="/templates/#homograph_chinese">HOMOGRAPH_CHINESE</a></td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>×</td>
-    <td>✓</td>
-    <td>×</td>
-    <td>×</td>
-    <td>✓</td>
-    <td>×</td>
-    <td>✓</td>
-    <td>低</td>
+    <td style="text-align: center">
+      <a href="/templates/#homograph_chinese">HOMOGRAPH_CHINESE</a><br>
+      同形异义-中文
+    </td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">Low</td>
   </tr>
   <tr>
-    <td>同形异义-标点</td>
-    <td><a href="/templates/#homograph_punctuations">HOMOGRAPH_PUNCTUATIONS</a></td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>×</td>
-    <td>✓</td>
-    <td>×</td>
-    <td>×</td>
-    <td>×</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>中</td>
+    <td style="text-align: center">
+      <a href="/templates/#homograph_punctuations">HOMOGRAPH_PUNCTUATIONS</a><br>
+      同形异义-标点
+    </td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">⍻</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">Medium</td>
   </tr>
   <tr>
-    <td>字体颜色</td>
-    <td><a href="/templates/#font_color">FONT_COLOR</a></td>
-    <td>⍻</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>×</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>×</td>
-    <td>中</td>
+    <td style="text-align: center">
+      <a href="/templates/#font_color">FONT_COLOR</a><br>
+      字体颜色
+    </td>
+    <td style="text-align: center">⍻</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">Medium</td>
   </tr>
   <tr>
-    <td>字体大小</td>
-    <td><a href="/templates/#font_size">FONT_SIZE</a></td>
-    <td>⍻</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>×</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>×</td>
-    <td>低</td>
+    <td style="text-align: center">
+      <a href="/templates/#font_size">FONT_SIZE</a><br>
+      字体大小
+    </td>
+    <td style="text-align: center">⍻</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">Low</td>
   </tr>
   <tr>
-    <td>字体粗细</td>
-    <td><a href="/templates/#font_weight">FONT_WEIGHT</a></td>
-    <td>⍻</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>×</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>×</td>
-    <td>低</td>
+    <td style="text-align: center">
+      <a href="/templates/#font_weight">FONT_WEIGHT</a><br>
+      字体粗细
+    </td>
+    <td style="text-align: center">⍻</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">Low</td>
   </tr>
   <tr>
-    <td>字体浮动</td>
-    <td><a href="/templates/#font_float">FONT_FLOAT</a></td>
-    <td>⍻</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>×</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>×</td>
-    <td>低</td>
+    <td style="text-align: center">
+      <a href="/templates/#font_float">FONT_FLOAT</a><br>
+      字体浮动
+    </td>
+    <td style="text-align: center">⍻</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">Low</td>
   </tr>
   <tr>
-    <td>自定义样式</td>
-    <td><a href="/templates/#font_style">FONT_STYLE</a></td>
-    <td>⍻</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>×</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>×</td>
-    <td>低</td>
+    <td style="text-align: center">
+      <a href="/templates/#font_style">FONT_STYLE</a><br>
+      自定义样式
+    </td>
+    <td style="text-align: center">⍻</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">Low</td>
   </tr>
   <tr>
-    <td>空HTML实体</td>
-    <td><a href="/templates/#html_empty_tags">HTML_EMPTY_TAGS</a></td>
-    <td>⍻</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>×</td>
-    <td>低</td>
+    <td style="text-align: center">
+      <a href="/templates/#html_empty_tags">HTML_EMPTY_TAGS</a><br>
+      空HTML实体
+    </td>
+    <td style="text-align: center">⍻</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">Low</td>
   </tr>
   <tr>
-    <td>二进制表示</td>
-    <td><a href="/templates/#binary_representation">BINARY_REPRESENTATION</a></td>
-    <td>✓</td>
-    <td>⍻</td>
-    <td>⍻</td>
-    <td>⍻</td>
-    <td>✓</td>
-    <td>⍻</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>高</td>
+    <td style="text-align: center">
+      <a href="/templates/#binary_representation">BINARY_REPRESENTATION</a><br>
+      二进制表示
+    </td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">⍻</td>
+    <td style="text-align: center">⍻</td>
+    <td style="text-align: center">⍻</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">⍻</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">High</td>
   </tr>
   <!--
   <tr>
-    <td>同义替换-汉字</td>
-    <td>synonym-chinese</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>×</td>
-    <td>×</td>
-    <td>×</td>
-    <td>✓</td>
-    <td>×</td>
-    <td>✓</td>
-    <td>高</td>
+    <td style="text-align: center">同义替换-汉字</td>
+    <td style="text-align: center">synonym-chinese</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">High</td>
   </tr>
   <tr>
-    <td>同义替换-数字</td>
-    <td>synonym-numbers</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>×</td>
-    <td>✓</td>
-    <td>×</td>
-    <td>×</td>
-    <td>×</td>
-    <td>✓</td>
-    <td>中</td>
+    <td style="text-align: center">同义替换-数字</td>
+    <td style="text-align: center">synonym-numbers</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">Medium</td>
   </tr>
   <tr>
-    <td>同义替换-单词</td>
-    <td>synonym-words</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>×</td>
-    <td>×</td>
-    <td>✓</td>
-    <td>×</td>
-    <td>×</td>
-    <td>✓</td>
-    <td>高</td>
+    <td style="text-align: center">同义替换-单词</td>
+    <td style="text-align: center">synonym-words</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">×</td>
+    <td style="text-align: center">✓</td>
+    <td style="text-align: center">High</td>
   </tr>
   <tr>
-    <td>错别字-汉字</td>
-    <td>wrong-chinese</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td style="text-align: center">错别字-汉字</td>
+    <td style="text-align: center">wrong-chinese</td>
+    <td style="text-align: center"></td>
+    <td style="text-align: center"></td>
+    <td style="text-align: center"></td>
+    <td style="text-align: center"></td>
+    <td style="text-align: center"></td>
+    <td style="text-align: center"></td>
+    <td style="text-align: center"></td>
+    <td style="text-align: center"></td>
+    <td style="text-align: center"></td>
+    <td style="text-align: center"></td>
+    <td style="text-align: center"></td>
+    <td style="text-align: center"></td>
+    <td style="text-align: center"></td>
   </tr>
   <tr>
-    <td>错别字-单词</td>
-    <td>wrong-words</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td style="text-align: center">错别字-单词</td>
+    <td style="text-align: center">wrong-words</td>
+    <td style="text-align: center"></td>
+    <td style="text-align: center"></td>
+    <td style="text-align: center"></td>
+    <td style="text-align: center"></td>
+    <td style="text-align: center"></td>
+    <td style="text-align: center"></td>
+    <td style="text-align: center"></td>
+    <td style="text-align: center"></td>
+    <td style="text-align: center"></td>
+    <td style="text-align: center"></td>
+    <td style="text-align: center"></td>
+    <td style="text-align: center"></td>
+    <td style="text-align: center"></td>
   </tr>-->
 </table>
 

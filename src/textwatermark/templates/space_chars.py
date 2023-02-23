@@ -1,4 +1,8 @@
-'''module docstring'''
+'''
+This template will replace the regular space char with the other width of space chars.
+
+Since spaces are rare in Chinese, this template is mainly suitable for English text.
+'''
 
 from textwatermark.defines import WhiteSpaceChars, WMMethod
 

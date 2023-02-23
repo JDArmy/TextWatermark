@@ -1,0 +1,1162 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Text Watermark library in Python.">
+      
+      
+        <meta name="author" content="Monyer">
+      
+      
+      
+        <link rel="prev" href="../changelog/">
+      
+      
+        <link rel="next" href="../api/main/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.13">
+    
+    
+      
+        <title>Example - TextWatermark Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ffa9267a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#example" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../" title="TextWatermark Docs" class="md-header__button md-logo" aria-label="TextWatermark Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TextWatermark Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Example
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="../../example/" hreflang="zh" class="md-select__link">
+                    Chinese
+                  </a>
+                </li>
+              
+                <li class="md-select__item">
+                  <a href="./" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/JDArmy/TextWatermark" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../" class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../usage/" class="md-tabs__link">
+        Usage
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../changelog/" class="md-tabs__link">
+      Changelog
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  <li class="md-tabs__item">
+    <a href="./" class="md-tabs__link md-tabs__link--active">
+      Example
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../api/main/" class="md-tabs__link">
+        API Documents
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../templates/" class="md-tabs__link">
+      Templates
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../development/" class="md-tabs__link">
+      Development Guide
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../about/" class="md-tabs__link">
+      About
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../" title="TextWatermark Docs" class="md-nav__button md-logo" aria-label="TextWatermark Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    TextWatermark Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/JDArmy/TextWatermark" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Usage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Usage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/" class="md-nav__link">
+        Coding
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cmdline/" class="md-nav__link">
+        CMD Line
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Example
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Example
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+    <nav class="md-nav" aria-label="Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#binary_representation" class="md-nav__link">
+    BINARY_REPRESENTATION
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combining_chars" class="md-nav__link">
+    COMBINING_CHARS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#font_color" class="md-nav__link">
+    FONT_COLOR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#font_float" class="md-nav__link">
+    FONT_FLOAT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#font_size" class="md-nav__link">
+    FONT_SIZE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#font_style" class="md-nav__link">
+    FONT_STYLE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#font_weight" class="md-nav__link">
+    FONT_WEIGHT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#homograph_chinese" class="md-nav__link">
+    HOMOGRAPH_CHINESE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#homograph_letters" class="md-nav__link">
+    HOMOGRAPH_LETTERS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#homograph_numbers" class="md-nav__link">
+    HOMOGRAPH_NUMBERS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#homograph_punctuations" class="md-nav__link">
+    HOMOGRAPH_PUNCTUATIONS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#html_empty_tags" class="md-nav__link">
+    HTML_EMPTY_TAGS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#invisible_chars" class="md-nav__link">
+    INVISIBLE_CHARS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#space_chars" class="md-nav__link">
+    SPACE_CHARS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whitespace_chars" class="md-nav__link">
+    WHITESPACE_CHARS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          API Documents
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          API Documents
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/main/" class="md-nav__link">
+        TextWatermark
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/conversion/" class="md-nav__link">
+        WMConversion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/template/" class="md-nav__link">
+        WMTemplate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/defines/" class="md-nav__link">
+        Defines
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/cmdline/" class="md-nav__link">
+        CMD Line
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../templates/" class="md-nav__link">
+        Templates
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/" class="md-nav__link">
+        Development Guide
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>Example</h1>
+
+<h2 id="example">Example</h2>
+<h3 id="binary_representation">BINARY_REPRESENTATION</h3>
+<p>--template-chars-key can be set to any key in <a href="/templates/#combining_chars">combining_chars</a>, <a href="/templates/#invisible_chars">invisible_chars</a> and <a href="/templates/#whitespace_chars">whitespace_chars</a></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Insert</label><label for="__tabbed_1_2">Retrieve</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Bash Session</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a><span class="gp">$ </span>textwatermark<span class="w"> </span>-v<span class="w"> </span>insert<span class="w"> </span>-f<span class="w"> </span><span class="s1">&#39;./tests/text/1.txt&#39;</span><span class="w"> </span>-m<span class="w"> </span>ALPHA_NUMERICAL<span class="w"> </span>-x<span class="w"> </span><span class="m">999999</span><span class="w"> </span>-w<span class="w"> </span><span class="m">123456</span><span class="w"> </span>-t<span class="w"> </span>BINARY_REPRESENTATION<span class="w"> </span>-k<span class="w"> </span><span class="s1">&#39;\u0300&#39;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos="3 "></span></a><span class="go">1̀月10̀日,美图公司̀创̀始人兼C̀EO吴欣鸿发̀送了̀一封内部̀全̀员邮件,涉̀及̀经̀营战略、科技创新、未来发展等多个层面,同时吴欣鸿还在这封邮件中透露了美图全员股票激励和搬迁新总部大厦两个消息。</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos="4 "></span></a><span class="go">……</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Bash Session</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a><span class="gp">$ </span>textwatermark<span class="w"> </span>-v<span class="w"> </span>retrieve<span class="w"> </span>-f<span class="w"> </span>/tmp/out.txt<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;{&quot;tpl_type&quot;: &quot;BINARY_REPRESENTATION&quot;, &quot;confusables_chars&quot;: [], &quot;confusables_chars_key&quot;: &quot;̀&quot;, &quot;wm_base&quot;: 2, &quot;method&quot;: 5, &quot;wm_mode&quot;: 5, &quot;wm_len&quot;: 35, &quot;wm_loop&quot;: false, &quot;start_at&quot;: 0, &quot;version&quot;: &quot;0.1.2&quot;}&#39;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos="3 "></span></a><span class="go">The retrieved watermark is: 123456</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="combining_chars">COMBINING_CHARS</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Insert</label><label for="__tabbed_2_2">Retrieve</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Bash Session</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a><span class="gp">$ </span>textwatermark<span class="w"> </span>-v<span class="w"> </span>insert<span class="w"> </span>-f<span class="w"> </span><span class="s1">&#39;./tests/text/1.txt&#39;</span><span class="w"> </span>-m<span class="w"> </span>ALPHA_NUMERICAL<span class="w"> </span>-x<span class="w"> </span><span class="m">999999</span><span class="w"> </span>-w<span class="w"> </span><span class="m">123456</span><span class="w"> </span>-t<span class="w"> </span>COMBINING_CHARS
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos="3 "></span></a><span class="go">1́月́1̀0̑日̆,̀美̌图́公司创始人兼CEO吴欣鸿发送了一封内部全员邮件,涉及经营战略、科技创新、未来发展等多个层面,同时吴欣鸿还在这封邮件中透露了美图全员股票激励和搬迁新总部大厦两个消息。</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><a href="#__codelineno-2-4"><span class="linenos" data-linenos="4 "></span></a><span class="go">……</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Bash Session</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a><span class="gp">$ </span>textwatermark<span class="w"> </span>-v<span class="w"> </span>retrieve<span class="w"> </span>-f<span class="w"> </span>/tmp/out.txt<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;{&quot;tpl_type&quot;: &quot;COMBINING_CHARS&quot;, &quot;confusables_chars&quot;: [], &quot;confusables_chars_key&quot;: &quot;&quot;, &quot;wm_base&quot;: 36, &quot;method&quot;: 4, &quot;wm_mode&quot;: 5, &quot;wm_len&quot;: 8, &quot;wm_loop&quot;: false, &quot;start_at&quot;: 0, &quot;version&quot;: &quot;0.1.2&quot;}&#39;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><a href="#__codelineno-3-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><a href="#__codelineno-3-3"><span class="linenos" data-linenos="3 "></span></a><span class="go">The retrieved watermark is: 123456</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="font_color">FONT_COLOR</h3>
+<p>--template-chars-key can be set to any key in <a href="/templates/#font_color">font_color</a></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Insert</label><label for="__tabbed_3_2">Web View</label><label for="__tabbed_3_3">Retrieve</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Bash Session</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos="1 "></span></a><span class="gp">$ </span>textwatermark<span class="w"> </span>-v<span class="w"> </span>insert<span class="w"> </span>-f<span class="w"> </span><span class="s1">&#39;./tests/text/1.txt&#39;</span><span class="w"> </span>-m<span class="w"> </span>ALPHA_NUMERICAL<span class="w"> </span>-x<span class="w"> </span><span class="m">999999</span><span class="w"> </span>-w<span class="w"> </span><span class="m">123456</span><span class="w"> </span>-t<span class="w"> </span>FONT_COLOR<span class="w"> </span>-k<span class="w"> </span><span class="s1">&#39;black4&#39;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><a href="#__codelineno-4-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><a href="#__codelineno-4-3"><span class="linenos" data-linenos="3 "></span></a><span class="go">&lt;span style=&quot;color: #444&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #000&quot;&gt;月&lt;/span&gt;&lt;span style=&quot;color: #000&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #444&quot;&gt;0&lt;/span&gt;&lt;span style=&quot;color: #000&quot;&gt;日&lt;/span&gt;&lt;span style=&quot;color: #000&quot;&gt;,&lt;/span&gt;&lt;span style=&quot;color: #000&quot;&gt;美&lt;/span&gt;&lt;span style=&quot;color: #000&quot;&gt;图&lt;/span&gt;&lt;span style=&quot;color: #000&quot;&gt;公&lt;/span&gt;&lt;span style=&quot;color: #444&quot;&gt;司&lt;/span&gt;&lt;span style=&quot;color: #444&quot;&gt;创&lt;/span&gt;&lt;span style=&quot;color: #000&quot;&gt;始&lt;/span&gt;&lt;span style=&quot;color: #000&quot;&gt;人&lt;/span&gt;&lt;span style=&quot;color: #000&quot;&gt;兼&lt;/span&gt;&lt;span style=&quot;color: #444&quot;&gt;C&lt;/span&gt;&lt;span style=&quot;color: #000&quot;&gt;E&lt;/span&gt;&lt;span style=&quot;color: #000&quot;&gt;O&lt;/span&gt;&lt;span style=&quot;color: #000&quot;&gt;吴&lt;/span&gt;&lt;span style=&quot;color: #000&quot;&gt;欣&lt;/span&gt;&lt;span style=&quot;color: #000&quot;&gt;鸿&lt;/span&gt;&lt;span style=&quot;color: #444&quot;&gt;发&lt;/span&gt;&lt;span style=&quot;color: #000&quot;&gt;送&lt;/span&gt;&lt;span style=&quot;color: #444&quot;&gt;了&lt;/span&gt;&lt;span style=&quot;color: #000&quot;&gt;一&lt;/span&gt;&lt;span style=&quot;color: #000&quot;&gt;封&lt;/span&gt;&lt;span style=&quot;color: #000&quot;&gt;内&lt;/span&gt;&lt;span style=&quot;color: #444&quot;&gt;部&lt;/span&gt;&lt;span style=&quot;color: #444&quot;&gt;全&lt;/span&gt;&lt;span style=&quot;color: #000&quot;&gt;员&lt;/span&gt;&lt;span style=&quot;color: #000&quot;&gt;邮&lt;/span&gt;&lt;span style=&quot;color: #000&quot;&gt;件&lt;/span&gt;&lt;span style=&quot;color: #000&quot;&gt;,&lt;/span&gt;&lt;span style=&quot;color: #444&quot;&gt;涉&lt;/span&gt;&lt;span style=&quot;color: #444&quot;&gt;及&lt;/span&gt;&lt;span style=&quot;color: #444&quot;&gt;经&lt;/span&gt;营战略、科技创新、未来发展等多个层面,同时吴欣鸿还在这封邮件中透露了美图全员股票激励和搬迁新总部大厦两个消息。</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><a href="#__codelineno-4-4"><span class="linenos" data-linenos="4 "></span></a><span class="go">……</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><span style="color: #444">1</span><span style="color: #000">月</span><span style="color: #000">1</span><span style="color: #444">0</span><span style="color: #000">日</span><span style="color: #000">,</span><span style="color: #000">美</span><span style="color: #000">图</span><span style="color: #000">公</span><span style="color: #444">司</span><span style="color: #444">创</span><span style="color: #000">始</span><span style="color: #000">人</span><span style="color: #000">兼</span><span style="color: #444">C</span><span style="color: #000">E</span><span style="color: #000">O</span><span style="color: #000">吴</span><span style="color: #000">欣</span><span style="color: #000">鸿</span><span style="color: #444">发</span><span style="color: #000">送</span><span style="color: #444">了</span><span style="color: #000">一</span><span style="color: #000">封</span><span style="color: #000">内</span><span style="color: #444">部</span><span style="color: #444">全</span><span style="color: #000">员</span><span style="color: #000">邮</span><span style="color: #000">件</span><span style="color: #000">,</span><span style="color: #444">涉</span><span style="color: #444">及</span><span style="color: #444">经</span>营战略、科技创新、未来发展等多个层面,同时吴欣鸿还在这封邮件中透露了美图全员股票激励和搬迁新总部大厦两个消息。
+……</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Bash Session</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><a href="#__codelineno-5-1"><span class="linenos" data-linenos="1 "></span></a><span class="gp">$ </span>textwatermark<span class="w"> </span>-v<span class="w"> </span>retrieve<span class="w"> </span>-f<span class="w"> </span>/tmp/out.txt<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;{&quot;tpl_type&quot;: &quot;FONT_COLOR&quot;, &quot;confusables_chars&quot;: [], &quot;confusables_chars_key&quot;: &quot;black4&quot;, &quot;wm_base&quot;: 2, &quot;method&quot;: 3, &quot;wm_mode&quot;: 5, &quot;wm_len&quot;: 35, &quot;wm_loop&quot;: false, &quot;start_at&quot;: 0, &quot;version&quot;: &quot;0.1.2&quot;}&#39;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><a href="#__codelineno-5-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><a href="#__codelineno-5-3"><span class="linenos" data-linenos="3 "></span></a><span class="go">The retrieved watermark is: 123456</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="font_float">FONT_FLOAT</h3>
+<p>--template-chars-key can be set to any key in <a href="/templates/#font_float">font_float</a></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Insert</label><label for="__tabbed_4_2">Web View</label><label for="__tabbed_4_3">Retrieve</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Bash Session</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><a href="#__codelineno-6-1"><span class="linenos" data-linenos="1 "></span></a><span class="gp">$ </span>textwatermark<span class="w"> </span>-v<span class="w"> </span>insert<span class="w"> </span>-f<span class="w"> </span><span class="s1">&#39;./tests/text/1.txt&#39;</span><span class="w"> </span>-m<span class="w"> </span>ALPHA_NUMERICAL<span class="w"> </span>-x<span class="w"> </span><span class="m">999999</span><span class="w"> </span>-w<span class="w"> </span><span class="m">123456</span><span class="w"> </span>-t<span class="w"> </span>FONT_FLOAT<span class="w"> </span>-k<span class="w"> </span><span class="s1">&#39;up3&#39;</span><span class="w">  </span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><a href="#__codelineno-6-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><a href="#__codelineno-6-3"><span class="linenos" data-linenos="3 "></span></a><span class="go">&lt;span style=&quot;display: inline-block;position: relative;top:-3px;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;display: inline-block;position: relative;top:0;&quot;&gt;月&lt;/span&gt;&lt;span style=&quot;display: inline-block;position: relative;top:0;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;display: inline-block;position: relative;top:-3px;&quot;&gt;0&lt;/span&gt;&lt;span style=&quot;display: inline-block;position: relative;top:0;&quot;&gt;日&lt;/span&gt;&lt;span style=&quot;display: inline-block;position: relative;top:0;&quot;&gt;,&lt;/span&gt;&lt;span style=&quot;display: inline-block;position: relative;top:0;&quot;&gt;美&lt;/span&gt;&lt;span style=&quot;display: inline-block;position: relative;top:0;&quot;&gt;图&lt;/span&gt;&lt;span style=&quot;display: inline-block;position: relative;top:0;&quot;&gt;公&lt;/span&gt;&lt;span style=&quot;display: inline-block;position: relative;top:-3px;&quot;&gt;司&lt;/span&gt;&lt;span style=&quot;display: inline-block;position: relative;top:-3px;&quot;&gt;创&lt;/span&gt;&lt;span style=&quot;display: inline-block;position: relative;top:0;&quot;&gt;始&lt;/span&gt;&lt;span style=&quot;display: inline-block;position: relative;top:0;&quot;&gt;人&lt;/span&gt;&lt;span style=&quot;display: inline-block;position: relative;top:0;&quot;&gt;兼&lt;/span&gt;&lt;span style=&quot;display: inline-block;position: relative;top:-3px;&quot;&gt;C&lt;/span&gt;&lt;span style=&quot;display: inline-block;position: relative;top:0;&quot;&gt;E&lt;/span&gt;&lt;span style=&quot;display: inline-block;position: relative;top:0;&quot;&gt;O&lt;/span&gt;&lt;span style=&quot;display: inline-block;position: relative;top:0;&quot;&gt;吴&lt;/span&gt;&lt;span style=&quot;display: inline-block;position: relative;top:0;&quot;&gt;欣&lt;/span&gt;&lt;span style=&quot;display: inline-block;position: relative;top:0;&quot;&gt;鸿&lt;/span&gt;&lt;span style=&quot;display: inline-block;position: relative;top:-3px;&quot;&gt;发&lt;/span&gt;&lt;span style=&quot;display: inline-block;position: relative;top:0;&quot;&gt;送&lt;/span&gt;&lt;span style=&quot;display: inline-block;position: relative;top:-3px;&quot;&gt;了&lt;/span&gt;&lt;span style=&quot;display: inline-block;position: relative;top:0;&quot;&gt;一&lt;/span&gt;&lt;span style=&quot;display: inline-block;position: relative;top:0;&quot;&gt;封&lt;/span&gt;&lt;span style=&quot;display: inline-block;position: relative;top:0;&quot;&gt;内&lt;/span&gt;&lt;span style=&quot;display: inline-block;position: relative;top:-3px;&quot;&gt;部&lt;/span&gt;&lt;span style=&quot;display: inline-block;position: relative;top:-3px;&quot;&gt;全&lt;/span&gt;&lt;span style=&quot;display: inline-block;position: relative;top:0;&quot;&gt;员&lt;/span&gt;&lt;span style=&quot;display: inline-block;position: relative;top:0;&quot;&gt;邮&lt;/span&gt;&lt;span style=&quot;display: inline-block;position: relative;top:0;&quot;&gt;件&lt;/span&gt;&lt;span style=&quot;display: inline-block;position: relative;top:0;&quot;&gt;,&lt;/span&gt;&lt;span style=&quot;display: inline-block;position: relative;top:-3px;&quot;&gt;涉&lt;/span&gt;&lt;span style=&quot;display: inline-block;position: relative;top:-3px;&quot;&gt;及&lt;/span&gt;&lt;span style=&quot;display: inline-block;position: relative;top:-3px;&quot;&gt;经&lt;/span&gt;营战略、科技创新、未来发展等多个层面,同时吴欣鸿还在这封邮件中透露了美图全员股票激励和搬迁新总部大厦两个消息。</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><a href="#__codelineno-6-4"><span class="linenos" data-linenos="4 "></span></a><span class="go">……</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><span style="display: inline-block;position: relative;top:-3px;">1</span><span style="display: inline-block;position: relative;top:0;">月</span><span style="display: inline-block;position: relative;top:0;">1</span><span style="display: inline-block;position: relative;top:-3px;">0</span><span style="display: inline-block;position: relative;top:0;">日</span><span style="display: inline-block;position: relative;top:0;">,</span><span style="display: inline-block;position: relative;top:0;">美</span><span style="display: inline-block;position: relative;top:0;">图</span><span style="display: inline-block;position: relative;top:0;">公</span><span style="display: inline-block;position: relative;top:-3px;">司</span><span style="display: inline-block;position: relative;top:-3px;">创</span><span style="display: inline-block;position: relative;top:0;">始</span><span style="display: inline-block;position: relative;top:0;">人</span><span style="display: inline-block;position: relative;top:0;">兼</span><span style="display: inline-block;position: relative;top:-3px;">C</span><span style="display: inline-block;position: relative;top:0;">E</span><span style="display: inline-block;position: relative;top:0;">O</span><span style="display: inline-block;position: relative;top:0;">吴</span><span style="display: inline-block;position: relative;top:0;">欣</span><span style="display: inline-block;position: relative;top:0;">鸿</span><span style="display: inline-block;position: relative;top:-3px;">发</span><span style="display: inline-block;position: relative;top:0;">送</span><span style="display: inline-block;position: relative;top:-3px;">了</span><span style="display: inline-block;position: relative;top:0;">一</span><span style="display: inline-block;position: relative;top:0;">封</span><span style="display: inline-block;position: relative;top:0;">内</span><span style="display: inline-block;position: relative;top:-3px;">部</span><span style="display: inline-block;position: relative;top:-3px;">全</span><span style="display: inline-block;position: relative;top:0;">员</span><span style="display: inline-block;position: relative;top:0;">邮</span><span style="display: inline-block;position: relative;top:0;">件</span><span style="display: inline-block;position: relative;top:0;">,</span><span style="display: inline-block;position: relative;top:-3px;">涉</span><span style="display: inline-block;position: relative;top:-3px;">及</span><span style="display: inline-block;position: relative;top:-3px;">经</span>营战略、科技创新、未来发展等多个层面,同时吴欣鸿还在这封邮件中透露了美图全员股票激励和搬迁新总部大厦两个消息。</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Bash Session</span><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><a href="#__codelineno-7-1"><span class="linenos" data-linenos="1 "></span></a><span class="gp">$ </span>textwatermark<span class="w"> </span>-v<span class="w"> </span>retrieve<span class="w"> </span>-f<span class="w"> </span>/tmp/out.txt<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;{&quot;tpl_type&quot;: &quot;FONT_FLOAT&quot;, &quot;confusables_chars&quot;: [], &quot;confusables_chars_key&quot;: &quot;up3&quot;, &quot;wm_base&quot;: 2, &quot;method&quot;: 3, &quot;wm_mode&quot;: 5, &quot;wm_len&quot;: 35, &quot;wm_loop&quot;: false, &quot;start_at&quot;: 0, &quot;version&quot;: &quot;0.1.2&quot;}&#39;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><a href="#__codelineno-7-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><a href="#__codelineno-7-3"><span class="linenos" data-linenos="3 "></span></a><span class="go">The retrieved watermark is: 123456</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="font_size">FONT_SIZE</h3>
+<p>--template-chars-key can be set to any key in <a href="/templates/#font_size">font_size</a></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:3"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Insert</label><label for="__tabbed_5_2">Web View</label><label for="__tabbed_5_3">Retrieve</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Bash Session</span><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><a href="#__codelineno-8-1"><span class="linenos" data-linenos="1 "></span></a><span class="gp">$ </span>textwatermark<span class="w"> </span>-v<span class="w"> </span>insert<span class="w"> </span>-f<span class="w"> </span><span class="s1">&#39;./tests/text/1.txt&#39;</span><span class="w"> </span>-m<span class="w"> </span>ALPHA_NUMERICAL<span class="w"> </span>-x<span class="w"> </span><span class="m">999999</span><span class="w"> </span>-w<span class="w"> </span><span class="m">123456</span><span class="w"> </span>-t<span class="w"> </span>FONT_SIZE<span class="w"> </span>-k<span class="w"> </span><span class="s1">&#39;110&#39;</span><span class="w"> </span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><a href="#__codelineno-8-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><a href="#__codelineno-8-3"><span class="linenos" data-linenos="3 "></span></a><span class="go">&lt;span style=&quot;font-size: 110%&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;font-size: 100%&quot;&gt;月&lt;/span&gt;&lt;span style=&quot;font-size: 100%&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;font-size: 110%&quot;&gt;0&lt;/span&gt;&lt;span style=&quot;font-size: 100%&quot;&gt;日&lt;/span&gt;&lt;span style=&quot;font-size: 100%&quot;&gt;,&lt;/span&gt;&lt;span style=&quot;font-size: 100%&quot;&gt;美&lt;/span&gt;&lt;span style=&quot;font-size: 100%&quot;&gt;图&lt;/span&gt;&lt;span style=&quot;font-size: 100%&quot;&gt;公&lt;/span&gt;&lt;span style=&quot;font-size: 110%&quot;&gt;司&lt;/span&gt;&lt;span style=&quot;font-size: 110%&quot;&gt;创&lt;/span&gt;&lt;span style=&quot;font-size: 100%&quot;&gt;始&lt;/span&gt;&lt;span style=&quot;font-size: 100%&quot;&gt;人&lt;/span&gt;&lt;span style=&quot;font-size: 100%&quot;&gt;兼&lt;/span&gt;&lt;span style=&quot;font-size: 110%&quot;&gt;C&lt;/span&gt;&lt;span style=&quot;font-size: 100%&quot;&gt;E&lt;/span&gt;&lt;span style=&quot;font-size: 100%&quot;&gt;O&lt;/span&gt;&lt;span style=&quot;font-size: 100%&quot;&gt;吴&lt;/span&gt;&lt;span style=&quot;font-size: 100%&quot;&gt;欣&lt;/span&gt;&lt;span style=&quot;font-size: 100%&quot;&gt;鸿&lt;/span&gt;&lt;span style=&quot;font-size: 110%&quot;&gt;发&lt;/span&gt;&lt;span style=&quot;font-size: 100%&quot;&gt;送&lt;/span&gt;&lt;span style=&quot;font-size: 110%&quot;&gt;了&lt;/span&gt;&lt;span style=&quot;font-size: 100%&quot;&gt;一&lt;/span&gt;&lt;span style=&quot;font-size: 100%&quot;&gt;封&lt;/span&gt;&lt;span style=&quot;font-size: 100%&quot;&gt;内&lt;/span&gt;&lt;span style=&quot;font-size: 110%&quot;&gt;部&lt;/span&gt;&lt;span style=&quot;font-size: 110%&quot;&gt;全&lt;/span&gt;&lt;span style=&quot;font-size: 100%&quot;&gt;员&lt;/span&gt;&lt;span style=&quot;font-size: 100%&quot;&gt;邮&lt;/span&gt;&lt;span style=&quot;font-size: 100%&quot;&gt;件&lt;/span&gt;&lt;span style=&quot;font-size: 100%&quot;&gt;,&lt;/span&gt;&lt;span style=&quot;font-size: 110%&quot;&gt;涉&lt;/span&gt;&lt;span style=&quot;font-size: 110%&quot;&gt;及&lt;/span&gt;&lt;span style=&quot;font-size: 110%&quot;&gt;经&lt;/span&gt;营战略、科技创新、未来发展等多个层面,同时吴欣鸿还在这封邮件中透露了美图全员股票激励和搬迁新总部大厦两个消息。</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><a href="#__codelineno-8-4"><span class="linenos" data-linenos="4 "></span></a><span class="go">……</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><span style="font-size: 110%">1</span><span style="font-size: 100%">月</span><span style="font-size: 100%">1</span><span style="font-size: 110%">0</span><span style="font-size: 100%">日</span><span style="font-size: 100%">,</span><span style="font-size: 100%">美</span><span style="font-size: 100%">图</span><span style="font-size: 100%">公</span><span style="font-size: 110%">司</span><span style="font-size: 110%">创</span><span style="font-size: 100%">始</span><span style="font-size: 100%">人</span><span style="font-size: 100%">兼</span><span style="font-size: 110%">C</span><span style="font-size: 100%">E</span><span style="font-size: 100%">O</span><span style="font-size: 100%">吴</span><span style="font-size: 100%">欣</span><span style="font-size: 100%">鸿</span><span style="font-size: 110%">发</span><span style="font-size: 100%">送</span><span style="font-size: 110%">了</span><span style="font-size: 100%">一</span><span style="font-size: 100%">封</span><span style="font-size: 100%">内</span><span style="font-size: 110%">部</span><span style="font-size: 110%">全</span><span style="font-size: 100%">员</span><span style="font-size: 100%">邮</span><span style="font-size: 100%">件</span><span style="font-size: 100%">,</span><span style="font-size: 110%">涉</span><span style="font-size: 110%">及</span><span style="font-size: 110%">经</span>营战略、科技创新、未来发展等多个层面,同时吴欣鸿还在这封邮件中透露了美图全员股票激励和搬迁新总部大厦两个消息。
+……</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Bash Session</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><a href="#__codelineno-9-1"><span class="linenos" data-linenos="1 "></span></a><span class="gp">$ </span>textwatermark<span class="w"> </span>-v<span class="w"> </span>retrieve<span class="w"> </span>-f<span class="w"> </span>/tmp/out.txt<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;{&quot;tpl_type&quot;: &quot;FONT_SIZE&quot;, &quot;confusables_chars&quot;: [], &quot;confusables_chars_key&quot;: &quot;110&quot;, &quot;wm_base&quot;: 2, &quot;method&quot;: 3, &quot;wm_mode&quot;: 5, &quot;wm_len&quot;: 35, &quot;wm_loop&quot;: false, &quot;start_at&quot;: 0, &quot;version&quot;: &quot;0.1.2&quot;}&#39;</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a><a href="#__codelineno-9-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a><a href="#__codelineno-9-3"><span class="linenos" data-linenos="3 "></span></a><span class="go">The retrieved watermark is: 123456</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="font_style">FONT_STYLE</h3>
+<p>--template-chars-key can be set to any key in <a href="/templates/#font_style">font_style</a></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:3"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><input id="__tabbed_6_3" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Insert</label><label for="__tabbed_6_2">Web View</label><label for="__tabbed_6_3">Retrieve</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Bash Session</span><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><a href="#__codelineno-10-1"><span class="linenos" data-linenos="1 "></span></a><span class="gp">$ </span>textwatermark<span class="w"> </span>-v<span class="w"> </span>insert<span class="w"> </span>-f<span class="w"> </span><span class="s1">&#39;./tests/text/1.txt&#39;</span><span class="w"> </span>-m<span class="w"> </span>ALPHA_NUMERICAL<span class="w"> </span>-x<span class="w"> </span><span class="m">999999</span><span class="w"> </span>-w<span class="w"> </span><span class="m">123456</span><span class="w"> </span>-t<span class="w"> </span>FONT_STYLE<span class="w"> </span>-k<span class="w"> </span><span class="s1">&#39;text-decoration-underline&#39;</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a><a href="#__codelineno-10-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a><a href="#__codelineno-10-3"><span class="linenos" data-linenos="3 "></span></a><span class="go">&lt;span style=&quot;text-decoration:underline;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;text-decoration:none;&quot;&gt;月&lt;/span&gt;&lt;span style=&quot;text-decoration:none;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;text-decoration:underline;&quot;&gt;0&lt;/span&gt;&lt;span style=&quot;text-decoration:none;&quot;&gt;日&lt;/span&gt;&lt;span style=&quot;text-decoration:none;&quot;&gt;,&lt;/span&gt;&lt;span style=&quot;text-decoration:none;&quot;&gt;美&lt;/span&gt;&lt;span style=&quot;text-decoration:none;&quot;&gt;图&lt;/span&gt;&lt;span style=&quot;text-decoration:none;&quot;&gt;公&lt;/span&gt;&lt;span style=&quot;text-decoration:underline;&quot;&gt;司&lt;/span&gt;&lt;span style=&quot;text-decoration:underline;&quot;&gt;创&lt;/span&gt;&lt;span style=&quot;text-decoration:none;&quot;&gt;始&lt;/span&gt;&lt;span style=&quot;text-decoration:none;&quot;&gt;人&lt;/span&gt;&lt;span style=&quot;text-decoration:none;&quot;&gt;兼&lt;/span&gt;&lt;span style=&quot;text-decoration:underline;&quot;&gt;C&lt;/span&gt;&lt;span style=&quot;text-decoration:none;&quot;&gt;E&lt;/span&gt;&lt;span style=&quot;text-decoration:none;&quot;&gt;O&lt;/span&gt;&lt;span style=&quot;text-decoration:none;&quot;&gt;吴&lt;/span&gt;&lt;span style=&quot;text-decoration:none;&quot;&gt;欣&lt;/span&gt;&lt;span style=&quot;text-decoration:none;&quot;&gt;鸿&lt;/span&gt;&lt;span style=&quot;text-decoration:underline;&quot;&gt;发&lt;/span&gt;&lt;span style=&quot;text-decoration:none;&quot;&gt;送&lt;/span&gt;&lt;span style=&quot;text-decoration:underline;&quot;&gt;了&lt;/span&gt;&lt;span style=&quot;text-decoration:none;&quot;&gt;一&lt;/span&gt;&lt;span style=&quot;text-decoration:none;&quot;&gt;封&lt;/span&gt;&lt;span style=&quot;text-decoration:none;&quot;&gt;内&lt;/span&gt;&lt;span style=&quot;text-decoration:underline;&quot;&gt;部&lt;/span&gt;&lt;span style=&quot;text-decoration:underline;&quot;&gt;全&lt;/span&gt;&lt;span style=&quot;text-decoration:none;&quot;&gt;员&lt;/span&gt;&lt;span style=&quot;text-decoration:none;&quot;&gt;邮&lt;/span&gt;&lt;span style=&quot;text-decoration:none;&quot;&gt;件&lt;/span&gt;&lt;span style=&quot;text-decoration:none;&quot;&gt;,&lt;/span&gt;&lt;span style=&quot;text-decoration:underline;&quot;&gt;涉&lt;/span&gt;&lt;span style=&quot;text-decoration:underline;&quot;&gt;及&lt;/span&gt;&lt;span style=&quot;text-decoration:underline;&quot;&gt;经&lt;/span&gt;营战略、科技创新、未来发展等多个层面,同时吴欣鸿还在这封邮件中透露了美图全员股票激励和搬迁新总部大厦两个消息。</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a><a href="#__codelineno-10-4"><span class="linenos" data-linenos="4 "></span></a><span class="go">……</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><span style="text-decoration:underline;">1</span><span style="text-decoration:none;">月</span><span style="text-decoration:none;">1</span><span style="text-decoration:underline;">0</span><span style="text-decoration:none;">日</span><span style="text-decoration:none;">,</span><span style="text-decoration:none;">美</span><span style="text-decoration:none;">图</span><span style="text-decoration:none;">公</span><span style="text-decoration:underline;">司</span><span style="text-decoration:underline;">创</span><span style="text-decoration:none;">始</span><span style="text-decoration:none;">人</span><span style="text-decoration:none;">兼</span><span style="text-decoration:underline;">C</span><span style="text-decoration:none;">E</span><span style="text-decoration:none;">O</span><span style="text-decoration:none;">吴</span><span style="text-decoration:none;">欣</span><span style="text-decoration:none;">鸿</span><span style="text-decoration:underline;">发</span><span style="text-decoration:none;">送</span><span style="text-decoration:underline;">了</span><span style="text-decoration:none;">一</span><span style="text-decoration:none;">封</span><span style="text-decoration:none;">内</span><span style="text-decoration:underline;">部</span><span style="text-decoration:underline;">全</span><span style="text-decoration:none;">员</span><span style="text-decoration:none;">邮</span><span style="text-decoration:none;">件</span><span style="text-decoration:none;">,</span><span style="text-decoration:underline;">涉</span><span style="text-decoration:underline;">及</span><span style="text-decoration:underline;">经</span>营战略、科技创新、未来发展等多个层面,同时吴欣鸿还在这封邮件中透露了美图全员股票激励和搬迁新总部大厦两个消息。
+……</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Bash Session</span><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><a href="#__codelineno-11-1"><span class="linenos" data-linenos="1 "></span></a><span class="gp">$ </span>textwatermark<span class="w"> </span>-v<span class="w"> </span>retrieve<span class="w"> </span>-f<span class="w"> </span>/tmp/out.txt<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;{&quot;tpl_type&quot;: &quot;FONT_STYLE&quot;, &quot;confusables_chars&quot;: [], &quot;confusables_chars_key&quot;: &quot;text-decoration-underline&quot;, &quot;wm_base&quot;: 2, &quot;method&quot;: 3, &quot;wm_mode&quot;: 5, &quot;wm_len&quot;: 35, &quot;wm_loop&quot;: false, &quot;start_at&quot;: 0, &quot;version&quot;: &quot;0.1.2&quot;}&#39;</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a><a href="#__codelineno-11-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a><a href="#__codelineno-11-3"><span class="linenos" data-linenos="3 "></span></a><span class="go">The retrieved watermark is: 123456</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="font_weight">FONT_WEIGHT</h3>
+<p>--template-chars-key can be set to any key in <a href="/templates/#font_weight">font_weight</a></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:3"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><input id="__tabbed_7_3" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Insert</label><label for="__tabbed_7_2">Web View</label><label for="__tabbed_7_3">Retrieve</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Bash Session</span><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><a href="#__codelineno-12-1"><span class="linenos" data-linenos="1 "></span></a><span class="gp">$ </span>textwatermark<span class="w"> </span>-v<span class="w"> </span>insert<span class="w"> </span>-f<span class="w"> </span><span class="s1">&#39;./tests/text/1.txt&#39;</span><span class="w"> </span>-m<span class="w"> </span>ALPHA_NUMERICAL<span class="w"> </span>-x<span class="w"> </span><span class="m">999999</span><span class="w"> </span>-w<span class="w"> </span><span class="m">123456</span><span class="w"> </span>-t<span class="w"> </span>FONT_WEIGHT<span class="w"> </span>-k<span class="w"> </span><span class="s1">&#39;bolder&#39;</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a><a href="#__codelineno-12-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a><a href="#__codelineno-12-3"><span class="linenos" data-linenos="3 "></span></a><span class="go">&lt;span style=&quot;font-weight: bolder;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;月&lt;/span&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;font-weight: bolder;&quot;&gt;0&lt;/span&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;日&lt;/span&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;,&lt;/span&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;美&lt;/span&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;图&lt;/span&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;公&lt;/span&gt;&lt;span style=&quot;font-weight: bolder;&quot;&gt;司&lt;/span&gt;&lt;span style=&quot;font-weight: bolder;&quot;&gt;创&lt;/span&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;始&lt;/span&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;人&lt;/span&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;兼&lt;/span&gt;&lt;span style=&quot;font-weight: bolder;&quot;&gt;C&lt;/span&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;E&lt;/span&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;O&lt;/span&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;吴&lt;/span&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;欣&lt;/span&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;鸿&lt;/span&gt;&lt;span style=&quot;font-weight: bolder;&quot;&gt;发&lt;/span&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;送&lt;/span&gt;&lt;span style=&quot;font-weight: bolder;&quot;&gt;了&lt;/span&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;一&lt;/span&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;封&lt;/span&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;内&lt;/span&gt;&lt;span style=&quot;font-weight: bolder;&quot;&gt;部&lt;/span&gt;&lt;span style=&quot;font-weight: bolder;&quot;&gt;全&lt;/span&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;员&lt;/span&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;邮&lt;/span&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;件&lt;/span&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;,&lt;/span&gt;&lt;span style=&quot;font-weight: bolder;&quot;&gt;涉&lt;/span&gt;&lt;span style=&quot;font-weight: bolder;&quot;&gt;及&lt;/span&gt;&lt;span style=&quot;font-weight: bolder;&quot;&gt;经&lt;/span&gt;营战略、科技创新、未来发展等多个层面,同时吴欣鸿还在这封邮件中透露了美图全员股票激励和搬迁新总部大厦两个消息。</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a><a href="#__codelineno-12-4"><span class="linenos" data-linenos="4 "></span></a><span class="go">……</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><span style="font-weight: bolder;">1</span><span style="font-weight: normal;">月</span><span style="font-weight: normal;">1</span><span style="font-weight: bolder;">0</span><span style="font-weight: normal;">日</span><span style="font-weight: normal;">,</span><span style="font-weight: normal;">美</span><span style="font-weight: normal;">图</span><span style="font-weight: normal;">公</span><span style="font-weight: bolder;">司</span><span style="font-weight: bolder;">创</span><span style="font-weight: normal;">始</span><span style="font-weight: normal;">人</span><span style="font-weight: normal;">兼</span><span style="font-weight: bolder;">C</span><span style="font-weight: normal;">E</span><span style="font-weight: normal;">O</span><span style="font-weight: normal;">吴</span><span style="font-weight: normal;">欣</span><span style="font-weight: normal;">鸿</span><span style="font-weight: bolder;">发</span><span style="font-weight: normal;">送</span><span style="font-weight: bolder;">了</span><span style="font-weight: normal;">一</span><span style="font-weight: normal;">封</span><span style="font-weight: normal;">内</span><span style="font-weight: bolder;">部</span><span style="font-weight: bolder;">全</span><span style="font-weight: normal;">员</span><span style="font-weight: normal;">邮</span><span style="font-weight: normal;">件</span><span style="font-weight: normal;">,</span><span style="font-weight: bolder;">涉</span><span style="font-weight: bolder;">及</span><span style="font-weight: bolder;">经</span>营战略、科技创新、未来发展等多个层面,同时吴欣鸿还在这封邮件中透露了美图全员股票激励和搬迁新总部大厦两个消息。
+……</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Bash Session</span><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><a href="#__codelineno-13-1"><span class="linenos" data-linenos="1 "></span></a><span class="gp">$ </span>textwatermark<span class="w"> </span>-v<span class="w"> </span>retrieve<span class="w"> </span>-f<span class="w"> </span>/tmp/out.txt<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;{&quot;tpl_type&quot;: &quot;FONT_WEIGHT&quot;, &quot;confusables_chars&quot;: [], &quot;confusables_chars_key&quot;: &quot;bolder&quot;, &quot;wm_base&quot;: 2, &quot;method&quot;: 3, &quot;wm_mode&quot;: 5, &quot;wm_len&quot;: 35, &quot;wm_loop&quot;: false, &quot;start_at&quot;: 0, &quot;version&quot;: &quot;0.1.2&quot;}&#39;</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a><a href="#__codelineno-13-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a><a href="#__codelineno-13-3"><span class="linenos" data-linenos="3 "></span></a><span class="go">The retrieved watermark is: 123456</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="homograph_chinese">HOMOGRAPH_CHINESE</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Insert</label><label for="__tabbed_8_2">Retrieve</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Bash Session</span><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><a href="#__codelineno-14-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="gp">$ </span>textwatermark<span class="w"> </span>-v<span class="w"> </span>insert<span class="w"> </span>-f<span class="w"> </span><span class="s1">&#39;./tests/text/1.txt&#39;</span><span class="w"> </span>-m<span class="w"> </span>ALPHA_NUMERICAL<span class="w"> </span>-x<span class="w"> </span><span class="m">999999</span><span class="w"> </span>-w<span class="w"> </span><span class="m">123456</span><span class="w"> </span>-t<span class="w"> </span>HOMOGRAPH_CHINESE<span class="w">                </span>
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a><a href="#__codelineno-14-2"><span class="linenos" data-linenos=" 2 "></span></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a><a href="#__codelineno-14-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="go">1⽉10日,美图公司创始人兼CEO吴欣鸿发送了一封内部全员邮件,涉及经营战略˴科技创新˴未来发展等多个层面,同时吴欣鸿还在这封邮件中透露了美图全员股票激励和搬迁新总部大厦两个消息。</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4"></a><a href="#__codelineno-14-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="go">邮件显⽰,美图公司将对全体员工进行股票奖励,这是美图公司与员工共享经营成果˴共赴长期发展的心愿。</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5"></a><a href="#__codelineno-14-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="go">此外,邮件还透露美图位于厦⻔的总部新⼤厦即将启用。据吴欣鸿介绍,新大厦除了全面提升的办公空间,还包括企业展厅、培训中心、直播中心、艺术中心、餐厅、咖啡厅、健身房、图书馆、空中花园等配套设施。</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6"></a><a href="#__codelineno-14-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="go">公开信息显示,美图公司于2020年购买了一栋位于厦门美峰创谷的办公楼,总建筑面积约3.42万平方米。</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7"></a><a href="#__codelineno-14-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="go">那么除了外界最关注的全员股权发放以及入住全新总部大楼外,邮件还透露了哪些重要信息呢？其实余下的信息更值得投资人关注。</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8"></a><a href="#__codelineno-14-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="go">邮件信息,2022年是美图忙中有序、稳中求进的一年。公司对美图秀秀、美颜相机、Wink、美图证件照等几款产品的突破和表现,对AI绘画功能撬动美图海外产品排名攀升表示满意。,此外,伴随着越来越好的市场反馈和财务状况,美图公司全员都收获了久违的信心和斗志。很显然,美图公司无论是高层还是员工,对美图的未来都充满了信心。</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9"></a><a href="#__codelineno-14-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="go">这种内部凝聚的气氛来源于哪呢？据悉,美图公司2022年上半年财报,上半年总收入人民币9.712亿元,同比增长20.5%。截止到2022年6月,美图公司月活跃用户数达2.409亿,环比2021年12月增长4.5%。优秀的业绩下,美图确实有理由对未来保持充分的乐观。</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10"></a><a href="#__codelineno-14-10"><span class="linenos" data-linenos="10 "></span></a><span class="go">而2023年是美图成立15周年,美图把这一年看作美图公司的新起点,希望能为用户和客户持续提供更好的影像产品和数字化解决方案,也帮助每一位同事追求和实现更美好的生活目标。</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11"></a><a href="#__codelineno-14-11"><span class="linenos" data-linenos="11 "></span></a><span class="go">从实际业务层面看,美图的业务战略已经非常清晰,横向看,C端的VIP订阅业务及B端的SaaS及相关业务都获得了大幅度的逆势成长,月活数据也环比净增；而纵向看,美图也在不断聚焦影像核心能力,通过人工智能,继续深化BC两端业务的竞争壁垒。通过成熟且已被市场检验的商业路径持续发力,投资人有理由看好美图在2023年的业绩表现。</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Bash Session</span><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><a href="#__codelineno-15-1"><span class="linenos" data-linenos="1 "></span></a><span class="gp">$ </span>textwatermark<span class="w"> </span>-v<span class="w"> </span>retrieve<span class="w"> </span>-f<span class="w"> </span>/tmp/out.txt<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;{&quot;tpl_type&quot;: &quot;HOMOGRAPH_CHINESE&quot;, &quot;confusables_chars&quot;: [], &quot;confusables_chars_key&quot;: &quot;&quot;, &quot;wm_base&quot;: 2, &quot;method&quot;: 1, &quot;wm_mode&quot;: 5, &quot;wm_len&quot;: 35, &quot;wm_loop&quot;: false, &quot;start_at&quot;: 0, &quot;version&quot;: &quot;0.1.2&quot;}&#39;</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a><a href="#__codelineno-15-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-15-3" name="__codelineno-15-3"></a><a href="#__codelineno-15-3"><span class="linenos" data-linenos="3 "></span></a><span class="go">The retrieved watermark is: 123456</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="homograph_letters">HOMOGRAPH_LETTERS</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Insert</label><label for="__tabbed_9_2">Retrieve</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Bash Session</span><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><a href="#__codelineno-16-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="gp">$ </span>textwatermark<span class="w"> </span>-v<span class="w"> </span>insert<span class="w"> </span>-f<span class="w"> </span><span class="s1">&#39;./tests/text/1.txt&#39;</span><span class="w"> </span>-m<span class="w"> </span>ALPHA_NUMERICAL<span class="w"> </span>-x<span class="w"> </span><span class="m">999999</span><span class="w"> </span>-w<span class="w"> </span><span class="m">123456</span><span class="w"> </span>-t<span class="w"> </span>HOMOGRAPH_LETTERS<span class="w">      </span>
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a><a href="#__codelineno-16-2"><span class="linenos" data-linenos=" 2 "></span></a>
+<a id="__codelineno-16-3" name="__codelineno-16-3"></a><a href="#__codelineno-16-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="go">1月10日,美图公司创始人兼ⅭEⵔ吴欣鸿发送了一封内部全员邮件,涉及经营战略、科技创新、未来发展等多个层面,同时吴欣鸿还在这封邮件中透露了美图全员股票激励和搬迁新总部大厦两个消息。</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4"></a><a href="#__codelineno-16-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="go">邮件显示,美图公司将对全体员工进行股票奖励,这是美图公司与员工共享经营成果、共赴长期发展的心愿。</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5"></a><a href="#__codelineno-16-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="go">此外,邮件还透露美图位于厦门的总部新大厦即将启用。据吴欣鸿介绍,新大厦除了全面提升的办公空间,还包括企业展厅、培训中心、直播中心、艺术中心、餐厅、咖啡厅、健身房、图书馆、空中花园等配套设施。</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6"></a><a href="#__codelineno-16-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="go">公开信息显示,美图公司于2020年购买了一栋位于厦门美峰创谷的办公楼,总建筑面积约3.42万平方米。</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7"></a><a href="#__codelineno-16-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="go">那么除了外界最关注的全员股权发放以及入住全新总部大楼外,邮件还透露了哪些重要信息呢?其实余下的信息更值得投资人关注。</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8"></a><a href="#__codelineno-16-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="go">邮件信息,2022年是美图忙中有序、稳中求进的一年。公司对美图秀秀、美颜相机、W𝐢n𝙠、美图证件照等几款产品的突破和表现,对A𝐈绘画功能撬动美图海外产品排名攀升表示满意。,此外,伴随着越来越好的市场反馈和财务状况,美图公司全员都收获了久违的信心和斗志。很显然,美图公司无论是高层还是员工,对美图的未来都充满了信心。</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9"></a><a href="#__codelineno-16-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="go">这种内部凝聚的气氛来源于哪呢?据悉,美图公司2022年上半年财报,上半年总收入人民币9.712亿元,同比增长20.5%。截止到2022年6月,美图公司月活跃用户数达2.409亿,环比2021年12月增长4.5%。优秀的业绩下,美图确实有理由对未来保持充分的乐观。</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10"></a><a href="#__codelineno-16-10"><span class="linenos" data-linenos="10 "></span></a><span class="go">而2023年是美图成立15周年,美图把这一年看作美图公司的新起点,希望能为用户和客户持续提供更好的影像产品和数字化解决方案,也帮助每一位同事追求和实现更美好的生活目标。</span>
+<a id="__codelineno-16-11" name="__codelineno-16-11"></a><a href="#__codelineno-16-11"><span class="linenos" data-linenos="11 "></span></a><span class="go">从实际业务层面看,美图的业务战略已经非常清晰,横向看,C端的𝐕I𝖯订阅业务及B端的SaaS及相关业务都获得了大幅度的逆势成长,月活数据也环比净增;而纵向看,美图也在不断聚焦影像核心能力,通过人工智能,继续深化BC两端业务的竞争壁垒。通过成熟且已被市场检验的商业路径持续发力,投资人有理由看好美图在2023年的业绩表现。</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Bash Session</span><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><a href="#__codelineno-17-1"><span class="linenos" data-linenos="1 "></span></a><span class="gp">$ </span>textwatermark<span class="w"> </span>-v<span class="w"> </span>retrieve<span class="w"> </span>-f<span class="w"> </span>/tmp/out.txt<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;{&quot;tpl_type&quot;: &quot;HOMOGRAPH_LETTERS&quot;, &quot;confusables_chars&quot;: [], &quot;confusables_chars_key&quot;: &quot;&quot;, &quot;wm_base&quot;: 8, &quot;method&quot;: 1, &quot;wm_mode&quot;: 5, &quot;wm_len&quot;: 13, &quot;wm_loop&quot;: false, &quot;start_at&quot;: 0, &quot;version&quot;: &quot;0.1.2&quot;}&#39;</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2"></a><a href="#__codelineno-17-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-17-3" name="__codelineno-17-3"></a><a href="#__codelineno-17-3"><span class="linenos" data-linenos="3 "></span></a><span class="go">The retrieved watermark is: 123456</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="homograph_numbers">HOMOGRAPH_NUMBERS</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Insert</label><label for="__tabbed_10_2">Retrieve</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Bash Session</span><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><a href="#__codelineno-18-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="gp">$ </span>textwatermark<span class="w"> </span>-v<span class="w"> </span>insert<span class="w"> </span>-f<span class="w"> </span><span class="s1">&#39;./tests/text/1.txt&#39;</span><span class="w"> </span>-m<span class="w"> </span>ALPHA_NUMERICAL<span class="w"> </span>-x<span class="w"> </span><span class="m">999999</span><span class="w"> </span>-w<span class="w"> </span><span class="m">123456</span><span class="w"> </span>-t<span class="w"> </span>HOMOGRAPH_NUMBERS<span class="w">   </span>
+<a id="__codelineno-18-2" name="__codelineno-18-2"></a><a href="#__codelineno-18-2"><span class="linenos" data-linenos=" 2 "></span></a>
+<a id="__codelineno-18-3" name="__codelineno-18-3"></a><a href="#__codelineno-18-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="go">Ӏ月Ӏ0日,美图公司创始人兼CEO吴欣鸿发送了一封内部全员邮件,涉及经营战略、科技创新、未来发展等多个层面,同时吴欣鸿还在这封邮件中透露了美图全员股票激励和搬迁新总部大厦两个消息。</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4"></a><a href="#__codelineno-18-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="go">邮件显示,美图公司将对全体员工进行股票奖励,这是美图公司与员工共享经营成果、共赴长期发展的心愿。</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5"></a><a href="#__codelineno-18-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="go">此外,邮件还透露美图位于厦门的总部新大厦即将启用。据吴欣鸿介绍,新大厦除了全面提升的办公空间,还包括企业展厅、培训中心、直播中心、艺术中心、餐厅、咖啡厅、健身房、图书馆、空中花园等配套设施。</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6"></a><a href="#__codelineno-18-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="go">公开信息显示,美图公司于𝟮𝟎𝟐0年购买了一栋位于厦门美峰创谷的办公楼,总建筑面积约Ⳍ.𝟒𝟚万平方米。</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7"></a><a href="#__codelineno-18-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="go">那么除了外界最关注的全员股权发放以及入住全新总部大楼外,邮件还透露了哪些重要信息呢?其实余下的信息更值得投资人关注。</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8"></a><a href="#__codelineno-18-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="go">邮件信息,𝟤𝟬𝟸2年是美图忙中有序、稳中求进的一年。公司对美图秀秀、美颜相机、Wink、美图证件照等几款产品的突破和表现,对AI绘画功能撬动美图海外产品排名攀升表示满意。,此外,伴随着越来越好的市场反馈和财务状况,美图公司全员都收获了久违的信心和斗志。很显然,美图公司无论是高层还是员工,对美图的未来都充满了信心。</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9"></a><a href="#__codelineno-18-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="go">这种内部凝聚的气氛来源于哪呢?据悉,美图公司2022年上半年财报,上半年总收入人民币9.712亿元,同比增长20.5%。截止到2022年6月,美图公司月活跃用户数达2.409亿,环比2021年12月增长4.5%。优秀的业绩下,美图确实有理由对未来保持充分的乐观。</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10"></a><a href="#__codelineno-18-10"><span class="linenos" data-linenos="10 "></span></a><span class="go">而2023年是美图成立15周年,美图把这一年看作美图公司的新起点,希望能为用户和客户持续提供更好的影像产品和数字化解决方案,也帮助每一位同事追求和实现更美好的生活目标。</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11"></a><a href="#__codelineno-18-11"><span class="linenos" data-linenos="11 "></span></a><span class="go">从实际业务层面看,美图的业务战略已经非常清晰,横向看,C端的VIP订阅业务及B端的SaaS及相关业务都获得了大幅度的逆势成长,月活数据也环比净增;而纵向看,美图也在不断聚焦影像核心能力,通过人工智能,继续深化BC两端业务的竞争壁垒。通过成熟且已被市场检验的商业路径持续发力,投资人有理由看好美图在2023年的业绩表现。</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Bash Session</span><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a><a href="#__codelineno-19-1"><span class="linenos" data-linenos="1 "></span></a><span class="gp">$ </span>textwatermark<span class="w"> </span>-v<span class="w"> </span>retrieve<span class="w"> </span>-f<span class="w"> </span>/tmp/out.txt<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;{&quot;tpl_type&quot;: &quot;HOMOGRAPH_NUMBERS&quot;, &quot;confusables_chars&quot;: [], &quot;confusables_chars_key&quot;: &quot;&quot;, &quot;wm_base&quot;: 7, &quot;method&quot;: 1, &quot;wm_mode&quot;: 5, &quot;wm_len&quot;: 13, &quot;wm_loop&quot;: false, &quot;start_at&quot;: 0, &quot;version&quot;: &quot;0.1.2&quot;}&#39;</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2"></a><a href="#__codelineno-19-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-19-3" name="__codelineno-19-3"></a><a href="#__codelineno-19-3"><span class="linenos" data-linenos="3 "></span></a><span class="go">The retrieved watermark is: 123456</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="homograph_punctuations">HOMOGRAPH_PUNCTUATIONS</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Insert</label><label for="__tabbed_11_2">Retrieve</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Bash Session</span><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><a href="#__codelineno-20-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="gp">$ </span>textwatermark<span class="w"> </span>-v<span class="w"> </span>insert<span class="w"> </span>-f<span class="w"> </span><span class="s1">&#39;./tests/text/1.txt&#39;</span><span class="w"> </span>-m<span class="w"> </span>ALPHA_NUMERICAL<span class="w"> </span>-x<span class="w"> </span><span class="m">999999</span><span class="w"> </span>-w<span class="w"> </span><span class="m">123456</span><span class="w"> </span>-t<span class="w"> </span>HOMOGRAPH_PUNCTUATIONS<span class="w">      </span>
+<a id="__codelineno-20-2" name="__codelineno-20-2"></a><a href="#__codelineno-20-2"><span class="linenos" data-linenos=" 2 "></span></a>
+<a id="__codelineno-20-3" name="__codelineno-20-3"></a><a href="#__codelineno-20-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="go">1月10日٫美图公司创始人兼CEO吴欣鸿发送了一封内部全员邮件,涉及经营战略、科技创新、未来发展等多个层面,同时吴欣鸿还在这封邮件中透露了美图全员股票激励和搬迁新总部大厦两个消息。</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4"></a><a href="#__codelineno-20-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="go">邮件显示٫美图公司将对全体员工进行股票奖励‚这是美图公司与员工共享经营成果、共赴长期发展的心愿。</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5"></a><a href="#__codelineno-20-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="go">此外‚邮件还透露美图位于厦门的总部新大厦即将启用。据吴欣鸿介绍,新大厦除了全面提升的办公空间,还包括企业展厅、培训中心、直播中心、艺术中心、餐厅、咖啡厅、健身房、图书馆、空中花园等配套设施。</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6"></a><a href="#__codelineno-20-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="go">公开信息显示,美图公司于2020年购买了一栋位于厦门美峰创谷的办公楼‚总建筑面积约3.42万平方米。</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7"></a><a href="#__codelineno-20-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="go">那么除了外界最关注的全员股权发放以及入住全新总部大楼外٫邮件还透露了哪些重要信息呢ॽ其实余下的信息更值得投资人关注。</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8"></a><a href="#__codelineno-20-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="go">邮件信息,2022年是美图忙中有序、稳中求进的一年。公司对美图秀秀、美颜相机、Wink、美图证件照等几款产品的突破和表现‚对AI绘画功能撬动美图海外产品排名攀升表示满意。‚此外,伴随着越来越好的市场反馈和财务状况‚美图公司全员都收获了久违的信心和斗志。很显然٫美图公司无论是高层还是员工,对美图的未来都充满了信心。</span>
+<a id="__codelineno-20-9" name="__codelineno-20-9"></a><a href="#__codelineno-20-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="go">这种内部凝聚的气氛来源于哪呢ॽ据悉,美图公司2022年上半年财报,上半年总收入人民币9.712亿元,同比增长20.5%。截止到2022年6月,美图公司月活跃用户数达2.409亿,环比2021年12月增长4.5%。优秀的业绩下,美图确实有理由对未来保持充分的乐观。</span>
+<a id="__codelineno-20-10" name="__codelineno-20-10"></a><a href="#__codelineno-20-10"><span class="linenos" data-linenos="10 "></span></a><span class="go">而2023年是美图成立15周年,美图把这一年看作美图公司的新起点,希望能为用户和客户持续提供更好的影像产品和数字化解决方案,也帮助每一位同事追求和实现更美好的生活目标。</span>
+<a id="__codelineno-20-11" name="__codelineno-20-11"></a><a href="#__codelineno-20-11"><span class="linenos" data-linenos="11 "></span></a><span class="go">从实际业务层面看,美图的业务战略已经非常清晰,横向看,C端的VIP订阅业务及B端的SaaS及相关业务都获得了大幅度的逆势成长,月活数据也环比净增;而纵向看,美图也在不断聚焦影像核心能力,通过人工智能,继续深化BC两端业务的竞争壁垒。通过成熟且已被市场检验的商业路径持续发力,投资人有理由看好美图在2023年的业绩表现。</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Bash Session</span><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><a href="#__codelineno-21-1"><span class="linenos" data-linenos="1 "></span></a><span class="gp">$ </span>textwatermark<span class="w"> </span>-v<span class="w"> </span>retrieve<span class="w"> </span>-f<span class="w"> </span>/tmp/out.txt<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;{&quot;tpl_type&quot;: &quot;HOMOGRAPH_PUNCTUATIONS&quot;, &quot;confusables_chars&quot;: [], &quot;confusables_chars_key&quot;: &quot;&quot;, &quot;wm_base&quot;: 3, &quot;method&quot;: 1, &quot;wm_mode&quot;: 5, &quot;wm_len&quot;: 23, &quot;wm_loop&quot;: false, &quot;start_at&quot;: 0, &quot;version&quot;: &quot;0.1.2&quot;}&#39;</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2"></a><a href="#__codelineno-21-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-21-3" name="__codelineno-21-3"></a><a href="#__codelineno-21-3"><span class="linenos" data-linenos="3 "></span></a><span class="go">The retrieved watermark is: 123456</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="html_empty_tags">HTML_EMPTY_TAGS</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:3"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><input id="__tabbed_12_3" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">Insert</label><label for="__tabbed_12_2">Web View</label><label for="__tabbed_12_3">Retrieve</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Bash Session</span><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a><a href="#__codelineno-22-1"><span class="linenos" data-linenos="1 "></span></a><span class="gp">$ </span>textwatermark<span class="w"> </span>-v<span class="w"> </span>insert<span class="w"> </span>-f<span class="w"> </span><span class="s1">&#39;./tests/text/1.txt&#39;</span><span class="w"> </span>-m<span class="w"> </span>ALPHA_NUMERICAL<span class="w"> </span>-x<span class="w"> </span><span class="m">999999</span><span class="w"> </span>-w<span class="w"> </span><span class="m">123456</span><span class="w"> </span>-i<span class="w"> </span><span class="m">1</span><span class="w"> </span>-t<span class="w"> </span>HTML_EMPTY_TAGS<span class="w">                     </span>
+<a id="__codelineno-22-2" name="__codelineno-22-2"></a><a href="#__codelineno-22-2"><span class="linenos" data-linenos="2 "></span></a><span class="go">1&lt;abbr&gt;&lt;/abbr&gt;&lt;abbr&gt;&lt;/abbr&gt;&lt;strong&gt;&lt;/strong&gt;&lt;dfn&gt;&lt;/dfn&gt;&lt;bdo&gt;&lt;/bdo&gt;&lt;a&gt;&lt;/a&gt;&lt;var&gt;&lt;/var&gt;&lt;sup&gt;&lt;/sup&gt;&lt;bdo&gt;&lt;/bdo&gt;月10日, 美图公司创始人兼CEO吴欣鸿发送了一封内部全员邮件, 涉及经营战略、 科技创新、 未来发展等多个层面, 同时吴欣鸿还在这封邮件中透露了美图全员股票激励和搬迁新总部大厦两个消息。</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3"></a><a href="#__codelineno-22-3"><span class="linenos" data-linenos="3 "></span></a><span class="go">……</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>1<abbr></abbr><abbr></abbr><strong></strong><dfn></dfn><bdo></bdo><a></a><var></var><sup></sup><bdo></bdo>月10日, 美图公司创始人兼CEO吴欣鸿发送了一封内部全员邮件, 涉及经营战略、 科技创新、 未来发展等多个层面, 同时吴欣鸿还在这封邮件中透露了美图全员股票激励和搬迁新总部大厦两个消息。
+……</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Bash Session</span><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a><a href="#__codelineno-23-1"><span class="linenos" data-linenos="1 "></span></a><span class="gp">$ </span>textwatermark<span class="w"> </span>-v<span class="w"> </span>retrieve<span class="w"> </span>-f<span class="w"> </span>/tmp/out.txt<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;{&quot;tpl_type&quot;: &quot;HTML_EMPTY_TAGS&quot;, &quot;confusables_chars&quot;: [], &quot;confusables_chars_key&quot;: &quot;&quot;, &quot;wm_base&quot;: 20, &quot;method&quot;: 2, &quot;wm_mode&quot;: 5, &quot;wm_len&quot;: 9, &quot;wm_loop&quot;: false, &quot;start_at&quot;: 1, &quot;version&quot;: &quot;0.1.2&quot;}&#39;</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2"></a><a href="#__codelineno-23-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-23-3" name="__codelineno-23-3"></a><a href="#__codelineno-23-3"><span class="linenos" data-linenos="3 "></span></a><span class="go">The retrieved watermark is: 123456</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="invisible_chars">INVISIBLE_CHARS</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">Insert</label><label for="__tabbed_13_2">Retrieve</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Bash Session</span><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a><a href="#__codelineno-24-1"><span class="linenos" data-linenos="1 "></span></a><span class="gp">$ </span>textwatermark<span class="w"> </span>-v<span class="w"> </span>insert<span class="w"> </span>-f<span class="w"> </span><span class="s1">&#39;./tests/text/1.txt&#39;</span><span class="w"> </span>-m<span class="w"> </span>ALPHA_NUMERICAL<span class="w"> </span>-x<span class="w"> </span><span class="m">999999</span><span class="w"> </span>-w<span class="w"> </span><span class="m">123456</span><span class="w"> </span>-i<span class="w"> </span><span class="m">1</span><span class="w"> </span>-t<span class="w"> </span>INVISIBLE_CHARS
+<a id="__codelineno-24-2" name="__codelineno-24-2"></a><a href="#__codelineno-24-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-24-3" name="__codelineno-24-3"></a><a href="#__codelineno-24-3"><span class="linenos" data-linenos="3 "></span></a><span class="go">1؜᠌︇᠎︍︌‏︋月10日,美图公司创始人兼CEO吴欣鸿发送了一封内部全员邮件,涉及经营战略、科技创新、未来发展等多个层面,同时吴欣鸿还在这封邮件中透露了美图全员股票激励和搬迁新总部大厦两个消息。</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4"></a><a href="#__codelineno-24-4"><span class="linenos" data-linenos="4 "></span></a><span class="go">……</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Bash Session</span><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a><a href="#__codelineno-25-1"><span class="linenos" data-linenos="1 "></span></a><span class="gp">$ </span>textwatermark<span class="w"> </span>-v<span class="w"> </span>retrieve<span class="w"> </span>-f<span class="w"> </span>/tmp/out.txt<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;{&quot;tpl_type&quot;: &quot;INVISIBLE_CHARS&quot;, &quot;confusables_chars&quot;: [], &quot;confusables_chars_key&quot;: &quot;&quot;, &quot;wm_base&quot;: 29, &quot;method&quot;: 2, &quot;wm_mode&quot;: 5, &quot;wm_len&quot;: 8, &quot;wm_loop&quot;: false, &quot;start_at&quot;: 1, &quot;version&quot;: &quot;0.1.2&quot;}&#39;</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2"></a><a href="#__codelineno-25-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-25-3" name="__codelineno-25-3"></a><a href="#__codelineno-25-3"><span class="linenos" data-linenos="3 "></span></a><span class="go">The retrieved watermark is: 123456</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="space_chars">SPACE_CHARS</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="14:2"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="__tabbed_14_1">Insert</label><label for="__tabbed_14_2">Retrieve</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Bash Session</span><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1"></a><a href="#__codelineno-26-1"><span class="linenos" data-linenos="1 "></span></a><span class="gp">$ </span>textwatermark<span class="w"> </span>-v<span class="w"> </span>insert<span class="w"> </span>-f<span class="w"> </span><span class="s1">&#39;./tests/text/1.txt&#39;</span><span class="w"> </span>-m<span class="w"> </span>ALPHA_NUMERICAL<span class="w"> </span>-x<span class="w"> </span><span class="m">9</span><span class="w"> </span>-w<span class="w"> </span><span class="m">1</span><span class="w"> </span>-i<span class="w"> </span><span class="m">1</span><span class="w"> </span>-t<span class="w"> </span>SPACE_CHARS
+<a id="__codelineno-26-2" name="__codelineno-26-2"></a><a href="#__codelineno-26-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-26-3" name="__codelineno-26-3"></a><a href="#__codelineno-26-3"><span class="linenos" data-linenos="3 "></span></a><span class="go">1月10日, 美图公司创始人兼CEO吴欣鸿发送了一封内部全员邮件, 涉及经营战略、 科技创新、 未来发展等多个层面, 同时吴欣鸿还在这封邮件中透露了美图全员股票激励和搬迁新总部大厦两个消息。</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4"></a><a href="#__codelineno-26-4"><span class="linenos" data-linenos="4 "></span></a><span class="go">……</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Bash Session</span><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1"></a><a href="#__codelineno-27-1"><span class="linenos" data-linenos="1 "></span></a><span class="gp">$ </span>textwatermark<span class="w"> </span>-v<span class="w"> </span>retrieve<span class="w"> </span>-f<span class="w"> </span>/tmp/out.txt<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;{&quot;tpl_type&quot;: &quot;SPACE_CHARS&quot;, &quot;confusables_chars&quot;: [], &quot;confusables_chars_key&quot;: &quot;&quot;, &quot;wm_base&quot;: 4, &quot;method&quot;: 1, &quot;wm_mode&quot;: 5, &quot;wm_len&quot;: 3, &quot;wm_loop&quot;: false, &quot;start_at&quot;: 1, &quot;version&quot;: &quot;0.1.2&quot;}&#39;</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2"></a><a href="#__codelineno-27-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-27-3" name="__codelineno-27-3"></a><a href="#__codelineno-27-3"><span class="linenos" data-linenos="3 "></span></a><span class="go">The retrieved watermark is: 7</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="whitespace_chars">WHITESPACE_CHARS</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="15:2"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><div class="tabbed-labels"><label for="__tabbed_15_1">Insert</label><label for="__tabbed_15_2">Retrieve</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Bash Session</span><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1"></a><a href="#__codelineno-28-1"><span class="linenos" data-linenos="1 "></span></a><span class="gp">$ </span>textwatermark<span class="w"> </span>-v<span class="w"> </span>insert<span class="w"> </span>-f<span class="w"> </span><span class="s1">&#39;./tests/text/1.txt&#39;</span><span class="w"> </span>-m<span class="w"> </span>ALPHA_NUMERICAL<span class="w"> </span>-x<span class="w"> </span><span class="m">999</span><span class="w"> </span>-w<span class="w"> </span><span class="m">743</span><span class="w"> </span>-i<span class="w"> </span><span class="m">1</span><span class="w"> </span>-t<span class="w"> </span>WHITESPACE_CHARS<span class="w">      </span>
+<a id="__codelineno-28-2" name="__codelineno-28-2"></a><a href="#__codelineno-28-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-28-3" name="__codelineno-28-3"></a><a href="#__codelineno-28-3"><span class="linenos" data-linenos="3 "></span></a><span class="go">1      月10日, 美图公司创始人兼CEO吴欣鸿发送了一封内部全员邮件, 涉及经营战略、 科技创新、 未来发展等多个层面, 同时吴欣鸿还在这封邮件中透露了美图全员股票激励和搬迁新总部大厦两个消息。</span>
+<a id="__codelineno-28-4" name="__codelineno-28-4"></a><a href="#__codelineno-28-4"><span class="linenos" data-linenos="4 "></span></a><span class="go">……</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Bash Session</span><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1"></a><a href="#__codelineno-29-1"><span class="linenos" data-linenos="1 "></span></a><span class="gp">$ </span>textwatermark<span class="w"> </span>-v<span class="w"> </span>retrieve<span class="w"> </span>-f<span class="w"> </span>/tmp/out.txt<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;{&quot;tpl_type&quot;: &quot;WHITESPACE_CHARS&quot;, &quot;confusables_chars&quot;: [], &quot;confusables_chars_key&quot;: &quot;&quot;, &quot;wm_base&quot;: 14, &quot;method&quot;: 2, &quot;wm_mode&quot;: 5, &quot;wm_len&quot;: 6, &quot;wm_loop&quot;: false, &quot;start_at&quot;: 1, &quot;version&quot;: &quot;0.1.2&quot;}&#39;</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2"></a><a href="#__codelineno-29-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-29-3" name="__codelineno-29-3"></a><a href="#__codelineno-29-3"><span class="linenos" data-linenos="3 "></span></a><span class="go">The retrieved watermark is: 743</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "toc.integrate", "toc.follow", "navigation.tabs", "navigation.top", "navigation.tracking", "navigation.prune"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
+      
+        <script src="../../js/extra.js"></script>
+      
+    
+  </body>
+</html>

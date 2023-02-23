@@ -117,9 +117,12 @@ Usage: textwatermark retrieve [OPTIONS]
   command:insert and option:--export-params}'`
 
 Options:
-  -f, --wm-text-file TEXT  Text file already be watermarked  [required]
-  -p, --params-json TEXT   Param json when watermarking text  [required]
-  --help                   Show this message and exit.
+  -f, --wm-text-file TEXT    Text file already be watermarked
+  -b, --wm-binary TEXT       Watermark string in binary
+  -p, --params-json TEXT     Param json when watermarking text  [required]
+  -F, --force-check-version  Force to check versions between params and
+                             library
+  --help                     Show this message and exit.
 ```
 
 ### Retrieve Watermark From Text Example
@@ -128,4 +131,18 @@ Options:
 $ textwatermark -v retrieve -f out.txt -p '{"tpl_type": "HOMOGRAPH_NUMBERS", "confusables_chars": [], "confusables_chars_key": "", "wm_base": 7, "method": 1, "wm_mode": 5, "wm_len": 7, "wm_loop": false, "start_at": 0, "version": "0.1.0"}'
 
 The retrieved watermark is: 123
+```
+
+### Retrieve Watermark From Binary String
+
+Most of the time, such as taking screenshots or photographs, we can not retrieve watermarks automatically.
+We can only manually compare text features to extract watermarks.
+Watermarks will be expressed in binary to any encoded base (0-9, A-Z) of characters.
+
+Then we can use `--wm-binary` parameter to retrieve the watermark.
+
+```console
+$ textwatermark -v retrieve -b 10010000011000100000101000110000111 -p '{"tpl_type": "FONT_SIZE", "confusables_chars": [], "confusables_chars_key": "110", "wm_base": 2, "method": 3, "wm_mode": 5, "wm_len": 35, "wm_loop": false, "start_at": 0, "version": "0.1.1"}' -F
+
+The retrieved watermark is: 123456
 ```

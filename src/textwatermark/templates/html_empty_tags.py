@@ -1,4 +1,13 @@
-'''module docstring'''
+'''
+HTML empty tags template can only be used when the text can be displayed in HTML mode.
+Such as WEB page, Blog, EMail, etc. 
+
+All the tags below are inline tags.
+
+Note: Some of HTML editor will remove empty or outside of list tags.
+    Therefore, this template is not a relatively stable template, 
+    and it is not recommended to use it in most cases.
+'''
 
 from textwatermark.defines import WMMethod
 

@@ -81,12 +81,49 @@ def test_retrieve():
 
     params_json = '{"tpl_type": "HOMOGRAPH_NUMBERS", "confusables_chars": [], \
         "confusables_chars_key": "", "wm_base": 7, "method": 1, "wm_mode": 5, \
-            "wm_len": 7, "wm_loop": false, "start_at": 0, "version": "0.1.0"}'
+            "wm_len": 7, "wm_loop": false, "start_at": 0, "version": "'+__version__+'"}'
+    result = runner.invoke(
+        main, f'retrieve -f {TMP_FILE} -p \'{params_json}\'')
+    assert '123' in result.output
+
+    params_json1 = '{"tpl_type": "HOMOGRAPH_NUMBERS", "confusables_chars": [], \
+        "confusables_chars_key": "", "wm_base": 7, "method": 1, "wm_mode": 5, \
+            "wm_len": 7, "wm_loop": false, "start_at": 0, "version": "0.0.0"}'
+    result = runner.invoke(
+        main, f'retrieve -f {TMP_FILE} -p \'{params_json1}\'')
+    assert 'Result ValueError' in str(result)
+
+    params_json = '{"tpl_type": "HOMOGRAPH_NUMBERS", "confusables_chars": [], \
+        "confusables_chars_key": "", "wm_base": 7, "method": 1, "wm_mode": 5, \
+            "wm_len": 7, "wm_loop": false, "start_at": 0, "version": "0.0.0"}'
+    result = runner.invoke(
+        main, f'retrieve -f {TMP_FILE} -p \'{params_json}\' -F')
+    assert '123' in result.output
+
+    os.unlink(TMP_FILE)
+
+
+def test_retrieve_bin():
+    '''test retrieve bin command'''
+    runner = CliRunner()
+
+    params_json = '{"tpl_type": "FONT_SIZE", "confusables_chars": [], '\
+        '"confusables_chars_key": "110", "wm_base": 2, "method": 3, "wm_mode": 5,'\
+        ' "wm_len": 35, "wm_loop": false, "start_at": 0, "version": "'+__version__+'"}'
+    result = runner.invoke(
+        main, f'retrieve -b "10010000011000100000101000110000111" -p \'{params_json}\'')
+    assert '123456' in result.output
+
+    params_json = '{"tpl_type": "FONT_SIZE", "confusables_chars": [], '\
+        '"confusables_chars_key": "110", "wm_base": 2, "method": 3, "wm_mode": 5, '\
+        '"wm_len": 35, "wm_loop": false, "start_at": 0, "version": "0.0.0"}'
+    result = runner.invoke(
+        main, f'retrieve -b "10010000011000100000101000110000111" -p \'{params_json}\' -F')
+    assert '123456' in result.output
 
     result = runner.invoke(
-        main, f'retrieve -f /tmp/tmp_for_test_textwatermark.txt -p \'{params_json}\'')
-    os.unlink(TMP_FILE)
-    assert '123' in result.output
+        main, f'retrieve -b "10010000011000100000101000110000111" -p \'{params_json}\'')
+    assert 'Result ValueError' in str(result)
 
 
 def test_export_params():

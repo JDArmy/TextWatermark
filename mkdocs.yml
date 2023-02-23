@@ -42,6 +42,8 @@ markdown_extensions:
   - pymdownx.superfences
   - toc:
       baselevel: 2
+  - pymdownx.tabbed:
+      alternate_style: true 
 
 
 plugins:
@@ -50,7 +52,7 @@ plugins:
   - include-markdown:
       opening_tag: "{%"
       closing_tag: "%}"
-      encoding: ascii
+      encoding: utf-8
       preserve_includer_indent: false
       dedent: false
       trailing_newlines: false
@@ -78,6 +80,7 @@ plugins:
         zh:
           Home: 首页
           Usage: 用法
+          Example: 样例
           Changelog: 更新日志
           API Documents: API 文档
           Templates: 水印模板
@@ -90,6 +93,7 @@ nav:
       - Coding: usage.md
       - CMD Line: cmdline.md
     - Changelog: changelog.md
+    - Example: example.md
     - API Documents: 
         - api/main.md
         - WMConversion: api/conversion.md

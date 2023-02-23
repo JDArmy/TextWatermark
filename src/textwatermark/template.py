@@ -75,8 +75,8 @@ class WMTemplate:
         if self.method in [WMMethod.DECORATE_EACH_CHAR, WMMethod.APPEND_AS_BINARY] and \
                 confusables_chars_key not in self.confusables_chars:
             raise ValueError(
-                f'When WMMethod in [DECORATE_EACH_CHAR,APPEND_AS_BINARY], confusables_chars_key: \
-                    {confusables_chars_key} must can be found in confusables_chars\'s keys.')
+                'When WMMethod in [DECORATE_EACH_CHAR,APPEND_AS_BINARY], confusables_chars_key: '
+                f'{confusables_chars_key} must can be found in confusables_chars\'s keys.')
 
         self.confusables_chars_key = confusables_chars_key
         '''Key must be set when WMMethod is DECORATE_EACH_CHAR'''

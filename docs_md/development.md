@@ -5,6 +5,8 @@
 ```bash
 $ git init
 $ git config
+
+$ poetry lock
 # install poetry
 $ poetry install
 
@@ -21,6 +23,8 @@ $ pip install --editable .
 
 - code
 - git commit
+- poetry run pytest
+- poetry run mkdocs serve
 - tox
 
 ## Delivery
@@ -44,6 +48,7 @@ Add tag
 Build this tag distribution package.
 
 - poetry build
+- poetry run mkdocs build
 
 ### Upload index server
 

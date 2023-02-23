@@ -1,4 +1,9 @@
-'''watermark template of homograph chinese'''
+'''Homographs in Chinese
+
+This template uses one character with the same font but different 
+Unicode encoding to replace another character. The naked eye cannot 
+see the difference before and after inserting the watermark
+'''
 # pylint: disable=too-many-lines
 
 from textwatermark.defines import WMMethod

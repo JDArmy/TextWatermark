@@ -248,6 +248,18 @@
   
 
 
+  <li class="md-tabs__item">
+    <a href="../example/" class="md-tabs__link">
+      Example
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
   
   
   
@@ -443,23 +455,38 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../example/" class="md-nav__link">
+        Example
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
       
       
       
-        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
           API Documents
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_4">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           API Documents
         </label>
@@ -1071,8 +1098,22 @@
 
   <div class="doc doc-contents first">
   
-      <p>TextWatermark's Template</p>
+      <p>Insert the selected character after the text to represent a 1 in binary, otherwise 0.</p>
+<p>The characters are from <a class="autorefs autorefs-internal" href="#combining_chars">combining_chars</a>, <a class="autorefs autorefs-internal" href="#invisible_chars">invisible_chars</a> and <a class="autorefs autorefs-internal" href="#whitespace_chars">whitespace_chars</a>.</p>
 
+<details class="warning">
+  <summary>confusables_chars_key is needed</summary>
+  <p>You can choose one of the characters to insert the watermark</p>
+</details>
+<details class="info">
+  <summary>Differents between combining_chars, invisible_chars and whitespace_chars</summary>
+  <p><a class="autorefs autorefs-internal" href="#combining_chars">combining_chars</a>: Small but recognizable difference in characters 
+before and after watermarking</p>
+<p><a class="autorefs autorefs-internal" href="#invisible_chars">invisible_chars</a>: You can't see the difference between before 
+and after inserting the watermark</p>
+<p><a class="autorefs autorefs-internal" href="#whitespace_chars">whitespace_chars</a>: There is a small but recognizable difference in 
+the spacing of characters before and after watermarking</p>
+</details>
   
 
   <div class="doc doc-children">
@@ -1088,7 +1129,7 @@
 
 
 <h4 id="textwatermark.templates.binary_representation.CONFUSABLES_CHARS_LIST" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">CONFUSABLES_CHARS_LIST</span> <span class="o">=</span> <span class="n">combining_chars</span><span class="o">.</span><span class="n">CONFUSABLES_CHARS</span> <span class="o">+</span> <span class="n">invisible_chars</span><span class="o">.</span><span class="n">CONFUSABLES_CHARS</span> <span class="o">+</span> <span class="n">whitespace_chars</span><span class="o">.</span><span class="n">CONFUSABLES_CHARS</span></code>
+<code class="highlight language-python"><span class="n">CONFUSABLES_CHARS_LIST</span> <span class="o">=</span> <span class="n">combining_chars</span><span class="o">.</span><span class="n">CONFUSABLES_CHARS</span> <span class="o">+</span> <span class="n">invisible_chars</span><span class="o">.</span><span class="n">CONFUSABLES_CHARS</span> <span class="o">+</span> <span class="n">whitespace_chars</span><span class="o">.</span><span class="n">CONFUSABLES_CHARS</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;</span><span class="se">\x7f</span><span class="s1">&#39;</span><span class="p">]</span></code>
   
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
@@ -1157,7 +1198,8 @@
 
   <div class="doc doc-contents first">
   
-      <p>module docstring</p>
+      <p>In concept, a combining character is a mark of some kind intended to be positioned relative to 
+some other character, which is referred to as its associated base character.</p>
 
   
 
@@ -1224,8 +1266,19 @@
 
   <div class="doc doc-contents first">
   
-      <p>module docstring</p>
+      <p>Font color template can only be used when the text can be displayed in HTML mode.
+Such as WEB page, Blog, EMail, etc. 
+You can customize your own color pairs following the template format.</p>
 
+<details class="note">
+  <summary>Need to wrap surrounding elements</summary>
+  <p>It should be noted that all text needs to be wrapped with a layer of elements in 
+order to obtain a unified style display</p>
+</details>
+<details class="warning">
+  <summary>confusables_chars_key is needed</summary>
+  <p>You can choose one of the key to insert the watermark</p>
+</details>
   
 
   <div class="doc doc-children">
@@ -1241,7 +1294,7 @@
 
 
 <h4 id="textwatermark.templates.font_color.CONFUSABLES_CHARS" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">CONFUSABLES_CHARS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;black1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;#000&#39;</span><span class="p">,</span> <span class="s1">&#39;#111&#39;</span><span class="p">],</span> <span class="s1">&#39;black2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;#000&#39;</span><span class="p">,</span> <span class="s1">&#39;#222&#39;</span><span class="p">],</span> <span class="s1">&#39;black3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;#000&#39;</span><span class="p">,</span> <span class="s1">&#39;#333&#39;</span><span class="p">],</span> <span class="s1">&#39;black4&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;#000&#39;</span><span class="p">,</span> <span class="s1">&#39;#444&#39;</span><span class="p">],</span> <span class="s1">&#39;white1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;#fff&#39;</span><span class="p">,</span> <span class="s1">&#39;#eee&#39;</span><span class="p">],</span> <span class="s1">&#39;white2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;#fff&#39;</span><span class="p">,</span> <span class="s1">&#39;#ddd&#39;</span><span class="p">],</span> <span class="s1">&#39;white3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;#fff&#39;</span><span class="p">,</span> <span class="s1">&#39;#ccc&#39;</span><span class="p">],</span> <span class="s1">&#39;white4&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;#fff&#39;</span><span class="p">,</span> <span class="s1">&#39;#bbb&#39;</span><span class="p">]}</span></code>
+<code class="highlight language-python"><span class="n">CONFUSABLES_CHARS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;black1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;#000&#39;</span><span class="p">,</span> <span class="s1">&#39;#111&#39;</span><span class="p">],</span> <span class="s1">&#39;black2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;#000&#39;</span><span class="p">,</span> <span class="s1">&#39;#222&#39;</span><span class="p">],</span> <span class="s1">&#39;black3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;#000&#39;</span><span class="p">,</span> <span class="s1">&#39;#333&#39;</span><span class="p">],</span> <span class="s1">&#39;black4&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;#000&#39;</span><span class="p">,</span> <span class="s1">&#39;#444&#39;</span><span class="p">],</span> <span class="s1">&#39;black5&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;#000&#39;</span><span class="p">,</span> <span class="s1">&#39;#555&#39;</span><span class="p">],</span> <span class="s1">&#39;black6&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;#000&#39;</span><span class="p">,</span> <span class="s1">&#39;#666&#39;</span><span class="p">],</span> <span class="s1">&#39;white1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;#fff&#39;</span><span class="p">,</span> <span class="s1">&#39;#eee&#39;</span><span class="p">],</span> <span class="s1">&#39;white2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;#fff&#39;</span><span class="p">,</span> <span class="s1">&#39;#ddd&#39;</span><span class="p">],</span> <span class="s1">&#39;white3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;#fff&#39;</span><span class="p">,</span> <span class="s1">&#39;#ccc&#39;</span><span class="p">],</span> <span class="s1">&#39;white4&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;#fff&#39;</span><span class="p">,</span> <span class="s1">&#39;#bbb&#39;</span><span class="p">],</span> <span class="s1">&#39;white5&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;#fff&#39;</span><span class="p">,</span> <span class="s1">&#39;#aaa&#39;</span><span class="p">],</span> <span class="s1">&#39;white6&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;#fff&#39;</span><span class="p">,</span> <span class="s1">&#39;#999&#39;</span><span class="p">]}</span></code>
   
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
@@ -1291,8 +1344,19 @@
 
   <div class="doc doc-contents first">
   
-      <p>module docstring</p>
+      <p>Font float template can only be used when the text can be displayed in HTML mode.
+Such as WEB page, Blog, EMail, etc. 
+You can customize your own float pairs following the template format.</p>
 
+<details class="note">
+  <summary>Need to wrap surrounding elements</summary>
+  <p>It should be noted that all text needs to be wrapped with a layer of elements in 
+order to obtain a unified style display</p>
+</details>
+<details class="warning">
+  <summary>confusables_chars_key is needed</summary>
+  <p>You can choose one of the key to insert the watermark</p>
+</details>
   
 
   <div class="doc doc-children">
@@ -1308,7 +1372,7 @@
 
 
 <h4 id="textwatermark.templates.font_float.CONFUSABLES_CHARS" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">CONFUSABLES_CHARS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;up1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;top:0&#39;</span><span class="p">,</span> <span class="s1">&#39;top:-1px&#39;</span><span class="p">],</span> <span class="s1">&#39;up2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;top:0&#39;</span><span class="p">,</span> <span class="s1">&#39;top:-2px&#39;</span><span class="p">],</span> <span class="s1">&#39;up3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;top:0&#39;</span><span class="p">,</span> <span class="s1">&#39;top:-3px&#39;</span><span class="p">],</span> <span class="s1">&#39;bottom1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;bottom:0&#39;</span><span class="p">,</span> <span class="s1">&#39;bottom:-1px&#39;</span><span class="p">],</span> <span class="s1">&#39;buttom2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;bottom:0&#39;</span><span class="p">,</span> <span class="s1">&#39;bottom:-2px&#39;</span><span class="p">],</span> <span class="s1">&#39;bottom3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;bottom:0&#39;</span><span class="p">,</span> <span class="s1">&#39;bottom:-3px&#39;</span><span class="p">]}</span></code>
+<code class="highlight language-python"><span class="n">CONFUSABLES_CHARS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;up1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;top:0&#39;</span><span class="p">,</span> <span class="s1">&#39;top:-1px&#39;</span><span class="p">],</span> <span class="s1">&#39;up2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;top:0&#39;</span><span class="p">,</span> <span class="s1">&#39;top:-2px&#39;</span><span class="p">],</span> <span class="s1">&#39;up3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;top:0&#39;</span><span class="p">,</span> <span class="s1">&#39;top:-3px&#39;</span><span class="p">],</span> <span class="s1">&#39;up4&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;top:0&#39;</span><span class="p">,</span> <span class="s1">&#39;top:-4px&#39;</span><span class="p">],</span> <span class="s1">&#39;up5&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;top:0&#39;</span><span class="p">,</span> <span class="s1">&#39;top:-5px&#39;</span><span class="p">],</span> <span class="s1">&#39;down1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;bottom:0&#39;</span><span class="p">,</span> <span class="s1">&#39;bottom:-1px&#39;</span><span class="p">],</span> <span class="s1">&#39;down2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;bottom:0&#39;</span><span class="p">,</span> <span class="s1">&#39;bottom:-2px&#39;</span><span class="p">],</span> <span class="s1">&#39;down3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;bottom:0&#39;</span><span class="p">,</span> <span class="s1">&#39;bottom:-3px&#39;</span><span class="p">],</span> <span class="s1">&#39;down4&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;bottom:0&#39;</span><span class="p">,</span> <span class="s1">&#39;bottom:-4px&#39;</span><span class="p">],</span> <span class="s1">&#39;down5&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;bottom:0&#39;</span><span class="p">,</span> <span class="s1">&#39;bottom:-5px&#39;</span><span class="p">],</span> <span class="s1">&#39;left1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;left:0&#39;</span><span class="p">,</span> <span class="s1">&#39;left:-1px&#39;</span><span class="p">],</span> <span class="s1">&#39;left2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;left:0&#39;</span><span class="p">,</span> <span class="s1">&#39;left:-2px&#39;</span><span class="p">],</span> <span class="s1">&#39;left3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;left:0&#39;</span><span class="p">,</span> <span class="s1">&#39;left:-3px&#39;</span><span class="p">],</span> <span class="s1">&#39;left4&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;left:0&#39;</span><span class="p">,</span> <span class="s1">&#39;left:-4px&#39;</span><span class="p">],</span> <span class="s1">&#39;left5&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;left:0&#39;</span><span class="p">,</span> <span class="s1">&#39;left:-5px&#39;</span><span class="p">],</span> <span class="s1">&#39;right1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;right:0&#39;</span><span class="p">,</span> <span class="s1">&#39;right:-1px&#39;</span><span class="p">],</span> <span class="s1">&#39;right2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;right:0&#39;</span><span class="p">,</span> <span class="s1">&#39;right:-2px&#39;</span><span class="p">],</span> <span class="s1">&#39;right3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;right:0&#39;</span><span class="p">,</span> <span class="s1">&#39;right:-3px&#39;</span><span class="p">],</span> <span class="s1">&#39;right4&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;right:0&#39;</span><span class="p">,</span> <span class="s1">&#39;right:-4px&#39;</span><span class="p">],</span> <span class="s1">&#39;right5&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;right:0&#39;</span><span class="p">,</span> <span class="s1">&#39;right:-5px&#39;</span><span class="p">]}</span></code>
   
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
@@ -1358,8 +1422,18 @@
 
   <div class="doc doc-contents first">
   
-      <p>module docstring</p>
+      <p>Font size template can only be used when the text can be displayed in HTML mode.
+Such as WEB page, Blog, EMail, etc. </p>
 
+<details class="note">
+  <summary>Need to wrap surrounding elements</summary>
+  <p>It should be noted that all text needs to be wrapped with a layer of elements in 
+order to obtain a unified style display</p>
+</details>
+<details class="warning">
+  <summary>confusables_chars_key is needed</summary>
+  <p>You can choose one of the key to insert the watermark</p>
+</details>
   
 
   <div class="doc doc-children">
@@ -1375,7 +1449,7 @@
 
 
 <h4 id="textwatermark.templates.font_size.CONFUSABLES_CHARS" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">CONFUSABLES_CHARS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;101&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;101%&#39;</span><span class="p">],</span> <span class="s1">&#39;102&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;102%&#39;</span><span class="p">],</span> <span class="s1">&#39;103&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;103%&#39;</span><span class="p">],</span> <span class="s1">&#39;104&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;104%&#39;</span><span class="p">],</span> <span class="s1">&#39;105&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;105%&#39;</span><span class="p">],</span> <span class="s1">&#39;106&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;106%&#39;</span><span class="p">],</span> <span class="s1">&#39;107&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;107%&#39;</span><span class="p">],</span> <span class="s1">&#39;108&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;108%&#39;</span><span class="p">],</span> <span class="s1">&#39;109&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;109%&#39;</span><span class="p">],</span> <span class="s1">&#39;110&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;110%&#39;</span><span class="p">],</span> <span class="s1">&#39;111&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;111%&#39;</span><span class="p">],</span> <span class="s1">&#39;112&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;112%&#39;</span><span class="p">],</span> <span class="s1">&#39;113&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;113%&#39;</span><span class="p">],</span> <span class="s1">&#39;114&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;114%&#39;</span><span class="p">],</span> <span class="s1">&#39;115&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;115%&#39;</span><span class="p">],</span> <span class="s1">&#39;116&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;116%&#39;</span><span class="p">],</span> <span class="s1">&#39;117&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;117%&#39;</span><span class="p">],</span> <span class="s1">&#39;118&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;118%&#39;</span><span class="p">],</span> <span class="s1">&#39;119&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;119%&#39;</span><span class="p">],</span> <span class="s1">&#39;120&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;120%&#39;</span><span class="p">]}</span></code>
+<code class="highlight language-python"><span class="n">CONFUSABLES_CHARS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;80&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;80%&#39;</span><span class="p">],</span> <span class="s1">&#39;81&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;81%&#39;</span><span class="p">],</span> <span class="s1">&#39;82&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;82%&#39;</span><span class="p">],</span> <span class="s1">&#39;83&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;83%&#39;</span><span class="p">],</span> <span class="s1">&#39;84&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;84%&#39;</span><span class="p">],</span> <span class="s1">&#39;85&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;85%&#39;</span><span class="p">],</span> <span class="s1">&#39;86&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;86%&#39;</span><span class="p">],</span> <span class="s1">&#39;87&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;87%&#39;</span><span class="p">],</span> <span class="s1">&#39;88&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;88%&#39;</span><span class="p">],</span> <span class="s1">&#39;89&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;89%&#39;</span><span class="p">],</span> <span class="s1">&#39;90&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;90%&#39;</span><span class="p">],</span> <span class="s1">&#39;91&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;91%&#39;</span><span class="p">],</span> <span class="s1">&#39;92&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;92%&#39;</span><span class="p">],</span> <span class="s1">&#39;93&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;93%&#39;</span><span class="p">],</span> <span class="s1">&#39;94&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;94%&#39;</span><span class="p">],</span> <span class="s1">&#39;95&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;95%&#39;</span><span class="p">],</span> <span class="s1">&#39;96&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;96%&#39;</span><span class="p">],</span> <span class="s1">&#39;97&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;97%&#39;</span><span class="p">],</span> <span class="s1">&#39;98&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;98%&#39;</span><span class="p">],</span> <span class="s1">&#39;99&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;99%&#39;</span><span class="p">],</span> <span class="s1">&#39;101&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;101%&#39;</span><span class="p">],</span> <span class="s1">&#39;102&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;102%&#39;</span><span class="p">],</span> <span class="s1">&#39;103&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;103%&#39;</span><span class="p">],</span> <span class="s1">&#39;104&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;104%&#39;</span><span class="p">],</span> <span class="s1">&#39;105&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;105%&#39;</span><span class="p">],</span> <span class="s1">&#39;106&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;106%&#39;</span><span class="p">],</span> <span class="s1">&#39;107&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;107%&#39;</span><span class="p">],</span> <span class="s1">&#39;108&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;108%&#39;</span><span class="p">],</span> <span class="s1">&#39;109&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;109%&#39;</span><span class="p">],</span> <span class="s1">&#39;110&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;110%&#39;</span><span class="p">],</span> <span class="s1">&#39;111&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;111%&#39;</span><span class="p">],</span> <span class="s1">&#39;112&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;112%&#39;</span><span class="p">],</span> <span class="s1">&#39;113&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;113%&#39;</span><span class="p">],</span> <span class="s1">&#39;114&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;114%&#39;</span><span class="p">],</span> <span class="s1">&#39;115&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;115%&#39;</span><span class="p">],</span> <span class="s1">&#39;116&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;116%&#39;</span><span class="p">],</span> <span class="s1">&#39;117&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;117%&#39;</span><span class="p">],</span> <span class="s1">&#39;118&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;118%&#39;</span><span class="p">],</span> <span class="s1">&#39;119&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;119%&#39;</span><span class="p">],</span> <span class="s1">&#39;120&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;120%&#39;</span><span class="p">]}</span></code>
   
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
@@ -1425,8 +1499,19 @@
 
   <div class="doc doc-contents first">
   
-      <p>module docstring</p>
+      <p>Font style template can only be used when the text can be displayed in HTML mode.
+Such as WEB page, Blog, EMail, etc. 
+You can customize your own style pairs following the template format.</p>
 
+<details class="note">
+  <summary>Need to wrap surrounding elements</summary>
+  <p>It should be noted that all text needs to be wrapped with a layer of elements in 
+order to obtain a unified style display</p>
+</details>
+<details class="warning">
+  <summary>confusables_chars_key is needed</summary>
+  <p>You can choose one of the key to insert the watermark</p>
+</details>
   
 
   <div class="doc doc-children">
@@ -1442,7 +1527,7 @@
 
 
 <h4 id="textwatermark.templates.font_style.CONFUSABLES_CHARS" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">CONFUSABLES_CHARS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;text-decoration-underline&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;text-decoration:none&#39;</span><span class="p">,</span> <span class="s1">&#39;text-decoration:underline&#39;</span><span class="p">],</span> <span class="s1">&#39;text-decoration-line-through&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;text-decoration: none&#39;</span><span class="p">,</span> <span class="s1">&#39;text-decoration: line-through&#39;</span><span class="p">],</span> <span class="s1">&#39;text-decoration-overline&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;text-decoration: none&#39;</span><span class="p">,</span> <span class="s1">&#39;text-decoration: overline&#39;</span><span class="p">]}</span></code>
+<code class="highlight language-python"><span class="n">CONFUSABLES_CHARS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;text-decoration-underline&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;text-decoration:none&#39;</span><span class="p">,</span> <span class="s1">&#39;text-decoration:underline&#39;</span><span class="p">],</span> <span class="s1">&#39;text-decoration-line-through&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;text-decoration: none&#39;</span><span class="p">,</span> <span class="s1">&#39;text-decoration: line-through&#39;</span><span class="p">],</span> <span class="s1">&#39;text-decoration-overline&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;text-decoration: none&#39;</span><span class="p">,</span> <span class="s1">&#39;text-decoration: overline&#39;</span><span class="p">],</span> <span class="s1">&#39;background-color-white-gray-1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;background-color:#fff&#39;</span><span class="p">,</span> <span class="s1">&#39;background-color:#eee&#39;</span><span class="p">],</span> <span class="s1">&#39;background-color-white-gray-2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;background-color:#fff&#39;</span><span class="p">,</span> <span class="s1">&#39;background-color:#ddd&#39;</span><span class="p">],</span> <span class="s1">&#39;background-color-white-red-1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;background-color:#fff&#39;</span><span class="p">,</span> <span class="s1">&#39;background-color:#eff&#39;</span><span class="p">],</span> <span class="s1">&#39;background-color-white-red-2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;background-color:#fff&#39;</span><span class="p">,</span> <span class="s1">&#39;background-color:#dff&#39;</span><span class="p">],</span> <span class="s1">&#39;background-color-white-green-1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;background-color:#fff&#39;</span><span class="p">,</span> <span class="s1">&#39;background-color:#fef&#39;</span><span class="p">],</span> <span class="s1">&#39;background-color-white-green-2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;background-color:#fff&#39;</span><span class="p">,</span> <span class="s1">&#39;background-color:#fdf&#39;</span><span class="p">],</span> <span class="s1">&#39;background-color-white-blue-1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;background-color:#fff&#39;</span><span class="p">,</span> <span class="s1">&#39;background-color:#ffe&#39;</span><span class="p">],</span> <span class="s1">&#39;background-color-white-blue-2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;background-color:#fff&#39;</span><span class="p">,</span> <span class="s1">&#39;background-color:#ffd&#39;</span><span class="p">],</span> <span class="s1">&#39;background-color-black-gray-1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;background-color:#000&#39;</span><span class="p">,</span> <span class="s1">&#39;background-color:#111&#39;</span><span class="p">],</span> <span class="s1">&#39;background-color-black-gray-2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;background-color:#000&#39;</span><span class="p">,</span> <span class="s1">&#39;background-color:#222&#39;</span><span class="p">],</span> <span class="s1">&#39;background-color-black-red-1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;background-color:#000&#39;</span><span class="p">,</span> <span class="s1">&#39;background-color:#100&#39;</span><span class="p">],</span> <span class="s1">&#39;background-color-black-red-2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;background-color:#000&#39;</span><span class="p">,</span> <span class="s1">&#39;background-color:#200&#39;</span><span class="p">],</span> <span class="s1">&#39;background-color-black-green-1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;background-color:#000&#39;</span><span class="p">,</span> <span class="s1">&#39;background-color:#010&#39;</span><span class="p">],</span> <span class="s1">&#39;background-color-black-green-2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;background-color:#000&#39;</span><span class="p">,</span> <span class="s1">&#39;background-color:#020&#39;</span><span class="p">],</span> <span class="s1">&#39;background-color-black-blue-1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;background-color:#000&#39;</span><span class="p">,</span> <span class="s1">&#39;background-color:#001&#39;</span><span class="p">],</span> <span class="s1">&#39;background-color-black-blue-2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;background-color:#000&#39;</span><span class="p">,</span> <span class="s1">&#39;background-color:#002&#39;</span><span class="p">],</span> <span class="s1">&#39;border-top-white-dashed-1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;border-top: ;&#39;</span><span class="p">,</span> <span class="s1">&#39;border-top: 1px dashed #eee;&#39;</span><span class="p">],</span> <span class="s1">&#39;border-top-white-dashed-2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;border-top: ;&#39;</span><span class="p">,</span> <span class="s1">&#39;border-top: 1px dashed #ddd;&#39;</span><span class="p">],</span> <span class="s1">&#39;border-top-white-dashed-3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;border-top: ;&#39;</span><span class="p">,</span> <span class="s1">&#39;border-top: 1px dashed #ccc;&#39;</span><span class="p">],</span> <span class="s1">&#39;border-bottom-white-dashed-1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;border-bottom: ;&#39;</span><span class="p">,</span> <span class="s1">&#39;border-bottom: 1px dashed #eee;&#39;</span><span class="p">],</span> <span class="s1">&#39;border-bottom-white-dashed-2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;border-bottom: ;&#39;</span><span class="p">,</span> <span class="s1">&#39;border-bottom: 1px dashed #ddd;&#39;</span><span class="p">],</span> <span class="s1">&#39;border-bottom-white-dashed-3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;border-bottom: ;&#39;</span><span class="p">,</span> <span class="s1">&#39;border-bottom: 1px dashed #ccc;&#39;</span><span class="p">],</span> <span class="s1">&#39;border-left-white-dashed-1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;border-left: ;&#39;</span><span class="p">,</span> <span class="s1">&#39;border-left: 1px dashed #eee;&#39;</span><span class="p">],</span> <span class="s1">&#39;border-left-white-dashed-2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;border-left: ;&#39;</span><span class="p">,</span> <span class="s1">&#39;border-left: 1px dashed #ddd;&#39;</span><span class="p">],</span> <span class="s1">&#39;border-left-white-dashed-3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;border-left: ;&#39;</span><span class="p">,</span> <span class="s1">&#39;border-left: 1px dashed #ccc;&#39;</span><span class="p">],</span> <span class="s1">&#39;border-right-white-dashed-1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;border-right: ;&#39;</span><span class="p">,</span> <span class="s1">&#39;border-right: 1px dashed #eee;&#39;</span><span class="p">],</span> <span class="s1">&#39;border-right-white-dashed-2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;border-right: ;&#39;</span><span class="p">,</span> <span class="s1">&#39;border-right: 1px dashed #ddd;&#39;</span><span class="p">],</span> <span class="s1">&#39;border-right-white-dashed-3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;border-right: ;&#39;</span><span class="p">,</span> <span class="s1">&#39;border-right: 1px dashed #ccc;&#39;</span><span class="p">],</span> <span class="s1">&#39;border-top-white-solid-1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;border-top: ;&#39;</span><span class="p">,</span> <span class="s1">&#39;border-top: 1px solid #eee;&#39;</span><span class="p">],</span> <span class="s1">&#39;border-top-white-solid-2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;border-top: ;&#39;</span><span class="p">,</span> <span class="s1">&#39;border-top: 1px solid #ddd;&#39;</span><span class="p">],</span> <span class="s1">&#39;border-top-white-solid-3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;border-top: ;&#39;</span><span class="p">,</span> <span class="s1">&#39;border-top: 1px solid #ccc;&#39;</span><span class="p">],</span> <span class="s1">&#39;border-bottom-white-solid-1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;border-bottom: ;&#39;</span><span class="p">,</span> <span class="s1">&#39;border-bottom: 1px solid #eee;&#39;</span><span class="p">],</span> <span class="s1">&#39;border-bottom-white-solid-2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;border-bottom: ;&#39;</span><span class="p">,</span> <span class="s1">&#39;border-bottom: 1px solid #ddd;&#39;</span><span class="p">],</span> <span class="s1">&#39;border-bottom-white-solid-3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;border-bottom: ;&#39;</span><span class="p">,</span> <span class="s1">&#39;border-bottom: 1px solid #ccc;&#39;</span><span class="p">],</span> <span class="s1">&#39;border-left-white-solid-1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;border-left: ;&#39;</span><span class="p">,</span> <span class="s1">&#39;border-left: 1px solid #eee;&#39;</span><span class="p">],</span> <span class="s1">&#39;border-left-white-solid-2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;border-left: ;&#39;</span><span class="p">,</span> <span class="s1">&#39;border-left: 1px solid #ddd;&#39;</span><span class="p">],</span> <span class="s1">&#39;border-left-white-solid-3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;border-left: ;&#39;</span><span class="p">,</span> <span class="s1">&#39;border-left: 1px solid #ccc;&#39;</span><span class="p">],</span> <span class="s1">&#39;border-right-white-solid-1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;border-right: ;&#39;</span><span class="p">,</span> <span class="s1">&#39;border-right: 1px solid #eee;&#39;</span><span class="p">],</span> <span class="s1">&#39;border-right-white-solid-2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;border-right: ;&#39;</span><span class="p">,</span> <span class="s1">&#39;border-right: 1px solid #ddd;&#39;</span><span class="p">],</span> <span class="s1">&#39;border-right-white-solid-3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;border-right: ;&#39;</span><span class="p">,</span> <span class="s1">&#39;border-right: 1px solid #ccc;&#39;</span><span class="p">],</span> <span class="s1">&#39;font-style-italic&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;font-style:normal&#39;</span><span class="p">,</span> <span class="s1">&#39;font-style:italic&#39;</span><span class="p">]}</span></code>
   
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
@@ -1492,8 +1577,18 @@
 
   <div class="doc doc-contents first">
   
-      <p>module docstring</p>
+      <p>Font weight template can only be used when the text can be displayed in HTML mode.
+Such as WEB page, Blog, EMail, etc. </p>
 
+<details class="note">
+  <summary>Need to wrap surrounding elements</summary>
+  <p>It should be noted that all text needs to be wrapped with a layer of elements in 
+order to obtain a unified style display</p>
+</details>
+<details class="warning">
+  <summary>confusables_chars_key is needed</summary>
+  <p>You can choose one of the key to insert the watermark</p>
+</details>
   
 
   <div class="doc doc-children">
@@ -1509,7 +1604,7 @@
 
 
 <h4 id="textwatermark.templates.font_weight.CONFUSABLES_CHARS" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">CONFUSABLES_CHARS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;lighter&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;normal&#39;</span><span class="p">,</span> <span class="s1">&#39;lighter&#39;</span><span class="p">],</span> <span class="s1">&#39;bolder&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;normal&#39;</span><span class="p">,</span> <span class="s1">&#39;bolder&#39;</span><span class="p">],</span> <span class="s1">&#39;100-200&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100&#39;</span><span class="p">,</span> <span class="s1">&#39;200&#39;</span><span class="p">],</span> <span class="s1">&#39;200-300&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;200&#39;</span><span class="p">,</span> <span class="s1">&#39;300&#39;</span><span class="p">],</span> <span class="s1">&#39;300-400&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;300&#39;</span><span class="p">,</span> <span class="s1">&#39;400&#39;</span><span class="p">],</span> <span class="s1">&#39;400-500&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;400&#39;</span><span class="p">,</span> <span class="s1">&#39;500&#39;</span><span class="p">],</span> <span class="s1">&#39;500-600&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;500&#39;</span><span class="p">,</span> <span class="s1">&#39;600&#39;</span><span class="p">],</span> <span class="s1">&#39;600-700&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;600&#39;</span><span class="p">,</span> <span class="s1">&#39;700&#39;</span><span class="p">],</span> <span class="s1">&#39;700-800&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;700&#39;</span><span class="p">,</span> <span class="s1">&#39;800&#39;</span><span class="p">],</span> <span class="s1">&#39;800-900&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;800&#39;</span><span class="p">,</span> <span class="s1">&#39;900&#39;</span><span class="p">]}</span></code>
+<code class="highlight language-python"><span class="n">CONFUSABLES_CHARS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;lighter&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;normal&#39;</span><span class="p">,</span> <span class="s1">&#39;lighter&#39;</span><span class="p">],</span> <span class="s1">&#39;bolder&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;normal&#39;</span><span class="p">,</span> <span class="s1">&#39;bolder&#39;</span><span class="p">],</span> <span class="s1">&#39;lighter-bolder&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;lighter&#39;</span><span class="p">,</span> <span class="s1">&#39;bolder&#39;</span><span class="p">],</span> <span class="s1">&#39;100-200&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;100&#39;</span><span class="p">,</span> <span class="s1">&#39;200&#39;</span><span class="p">],</span> <span class="s1">&#39;200-300&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;200&#39;</span><span class="p">,</span> <span class="s1">&#39;300&#39;</span><span class="p">],</span> <span class="s1">&#39;300-400&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;300&#39;</span><span class="p">,</span> <span class="s1">&#39;400&#39;</span><span class="p">],</span> <span class="s1">&#39;400-500&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;400&#39;</span><span class="p">,</span> <span class="s1">&#39;500&#39;</span><span class="p">],</span> <span class="s1">&#39;500-600&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;500&#39;</span><span class="p">,</span> <span class="s1">&#39;600&#39;</span><span class="p">],</span> <span class="s1">&#39;600-700&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;600&#39;</span><span class="p">,</span> <span class="s1">&#39;700&#39;</span><span class="p">],</span> <span class="s1">&#39;700-800&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;700&#39;</span><span class="p">,</span> <span class="s1">&#39;800&#39;</span><span class="p">],</span> <span class="s1">&#39;800-900&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;800&#39;</span><span class="p">,</span> <span class="s1">&#39;900&#39;</span><span class="p">]}</span></code>
   
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
@@ -1559,7 +1654,10 @@
 
   <div class="doc doc-contents first">
   
-      <p>watermark template of homograph chinese</p>
+      <p>Homographs in Chinese</p>
+<p>This template uses one character with the same font but different 
+Unicode encoding to replace another character. The naked eye cannot 
+see the difference before and after inserting the watermark</p>
 
   
 
@@ -1626,7 +1724,7 @@
 
   <div class="doc doc-contents first">
   
-      <p>module docstring</p>
+      <p>Homographs in letters</p>
 
   
 
@@ -1693,7 +1791,7 @@
 
   <div class="doc doc-contents first">
   
-      <p>watermark template of homograph numbers</p>
+      <p>Homographs in numbers</p>
 
   
 
@@ -1710,7 +1808,7 @@
 
 
 <h4 id="textwatermark.templates.homograph_numbers.CONFUSABLES_CHARS" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">CONFUSABLES_CHARS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;0&#39;</span><span class="p">:</span> <span class="s1">&#39;᱐𝟘𝟎𝟢𝟬𝟶&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">:</span> <span class="s1">&#39;Ӏ𝟙𝟏𝟣𝟭𝟷&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">:</span> <span class="s1">&#39;ᒿ𝟚𝟐𝟤𝟮𝟸&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">:</span> <span class="s1">&#39;Ⳍ𝟛𝟑𝟥𝟯𝟹&#39;</span><span class="p">,</span> <span class="s1">&#39;4&#39;</span><span class="p">:</span> <span class="s1">&#39;Ꮞ𝟜𝟒𝟦𝟰𝟺&#39;</span><span class="p">,</span> <span class="s1">&#39;5&#39;</span><span class="p">:</span> <span class="s1">&#39;Ƽ𝟝𝟓𝟧𝟱𝟻&#39;</span><span class="p">,</span> <span class="s1">&#39;6&#39;</span><span class="p">:</span> <span class="s1">&#39;Ⳓ𝟞𝟔𝟨𝟲𝟼&#39;</span><span class="p">,</span> <span class="s1">&#39;7&#39;</span><span class="p">:</span> <span class="s1">&#39;ገ𝟟𝟕𝟩𝟳𝟽&#39;</span><span class="p">,</span> <span class="s1">&#39;8&#39;</span><span class="p">:</span> <span class="s1">&#39;৪𝟠𝟖𝟪𝟴𝟾&#39;</span><span class="p">,</span> <span class="s1">&#39;9&#39;</span><span class="p">:</span> <span class="s1">&#39;Ꝯ𝟡𝟗𝟫𝟵𝟿&#39;</span><span class="p">}</span></code>
+<code class="highlight language-python"><span class="n">CONFUSABLES_CHARS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;0&#39;</span><span class="p">:</span> <span class="s1">&#39;᱐𝟘𝟎𝟢𝟬𝟶&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">:</span> <span class="s1">&#39;Ӏ𝟙𝟏𝟣𝟭𝟷&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">:</span> <span class="s1">&#39;ᒿ𝟚𝟐𝟤𝟮𝟸&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">:</span> <span class="s1">&#39;Ⳍ𝟛𝟑𝟥𝟯𝟹&#39;</span><span class="p">,</span> <span class="s1">&#39;4&#39;</span><span class="p">:</span> <span class="s1">&#39;Ꮞ𝟜𝟒𝟦𝟰𝟺&#39;</span><span class="p">,</span> <span class="s1">&#39;5&#39;</span><span class="p">:</span> <span class="s1">&#39;Ƽ𝟝𝟓𝟧𝟱𝟻&#39;</span><span class="p">,</span> <span class="s1">&#39;6&#39;</span><span class="p">:</span> <span class="s1">&#39;Ⳓ𝟞𝟔𝟨𝟲𝟼&#39;</span><span class="p">,</span> <span class="s1">&#39;7&#39;</span><span class="p">:</span> <span class="s1">&#39;ገ𝟟𝟕𝟩𝟳𝟽&#39;</span><span class="p">,</span> <span class="s1">&#39;8&#39;</span><span class="p">:</span> <span class="s1">&#39;৪𝟠𝟖𝟪𝟴𝟾&#39;</span><span class="p">,</span> <span class="s1">&#39;9&#39;</span><span class="p">:</span> <span class="s1">&#39;Ꝯ𝟡𝟗𝟫𝟵𝟿&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">:</span> <span class="s1">&#39;٠۰ꓸ․ͺ᎐&#39;</span><span class="p">}</span></code>
   
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
@@ -1760,7 +1858,7 @@
 
   <div class="doc doc-contents first">
   
-      <p>module docstring</p>
+      <p>Homographs in Punctuations</p>
 
   
 
@@ -1827,8 +1925,15 @@
 
   <div class="doc doc-contents first">
   
-      <p>module docstring</p>
+      <p>HTML empty tags template can only be used when the text can be displayed in HTML mode.
+Such as WEB page, Blog, EMail, etc. </p>
+<p>All the tags below are inline tags.</p>
 
+<details class="note">
+  <summary>Some of HTML editor will remove empty or outside of list tags.</summary>
+  <p>Therefore, this template is not a relatively stable template, 
+and it is not recommended to use it in most cases.</p>
+</details>
   
 
   <div class="doc doc-children">
@@ -1894,7 +1999,9 @@
 
   <div class="doc doc-contents first">
   
-      <p>watermark template class of invisible chars</p>
+      <p>Watermark template of invisible chars.</p>
+<p>All of the chars below are invisible on most of the text editors and WEB view.</p>
+<p>In most cases, using this template is a pretty good choice.</p>
 
   
 
@@ -1961,7 +2068,8 @@
 
   <div class="doc doc-contents first">
   
-      <p>module docstring</p>
+      <p>This template will replace the regular space char with the other width of space chars.</p>
+<p>Since spaces are rare in Chinese, this template is mainly suitable for English text.</p>
 
   
 
@@ -2028,7 +2136,10 @@
 
   <div class="doc doc-contents first">
   
-      <p>module docstring</p>
+      <p>The template will generate a watermark into many types of space chars 
+and then insert it into the specified location.</p>
+<p>The best usage scenario for this template is to insert the watermark on 
+an empty line of text or after some lines in the code.</p>
 
   
 

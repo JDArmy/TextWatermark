@@ -2,14 +2,15 @@
 
 TextWatermark is a library for inserting watermarks into text
 
-Please take a look at our documentation for how to install and use pip:
+Please take a look at our documentation for how to install and use TextWatermark:
 
-- [Docs](https://textwatermark.jd.army/)
+- [Website](https://textwatermark.jd.army/)
+- [Github](https://github.com/JDArmy/TextWatermark)
 - [Usage](https://textwatermark.jd.army/usage)
 - [Changelog](https://textwatermark.jd.army/changelog)
 - [API Documents](https://textwatermark.jd.army/api/main/)
 - [Templates](https://textwatermark.jd.army/templates/)
-- [Github](https://github.com/JDArmy/TextWatermark)
+- [PyPI](https://pypi.org/project/textwatermark/)
 
 ## Requirements
 
@@ -95,6 +96,6 @@ assert wm_out_str == wm_str
 
 ```
 
-### More
+## More
 
-See: [Usage](https://textwatermark.jd.army/usage/)
+See: [Documents](https://textwatermark.jd.army/)

@@ -1,4 +1,4 @@
-'''watermark template of homograph numbers'''
+'''Homographs in numbers'''
 
 from textwatermark.defines import WMMethod
 
@@ -14,6 +14,7 @@ CONFUSABLES_CHARS = {
     '7': 'ገ𝟟𝟕𝟩𝟳𝟽',
     '8': '৪𝟠𝟖𝟪𝟴𝟾',
     '9': 'Ꝯ𝟡𝟗𝟫𝟵𝟿',
+    '.': '٠۰ꓸ․ͺ᎐',
 }
 
 for ikey, ival in CONFUSABLES_CHARS.items():

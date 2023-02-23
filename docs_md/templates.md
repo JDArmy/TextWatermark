@@ -7,6 +7,7 @@
       heading_level: 4
       show_root_toc_entry: false
       members_order: source
+      show_source: true
 
 ## COMBINING_CHARS
 
@@ -17,6 +18,7 @@
         - method
       heading_level: 4
       show_root_toc_entry: false
+      show_source: true
 
 ## FONT_COLOR
 
@@ -27,6 +29,7 @@
         - method
       heading_level: 4
       show_root_toc_entry: false
+      show_source: true
 
 ## FONT_FLOAT
 
@@ -37,6 +40,7 @@
         - method
       heading_level: 4
       show_root_toc_entry: false
+      show_source: true
 
 ## FONT_SIZE
 
@@ -47,6 +51,7 @@
         - method
       heading_level: 4
       show_root_toc_entry: false
+      show_source: true
 
 ## FONT_STYLE
 
@@ -57,6 +62,7 @@
         - method
       heading_level: 4
       show_root_toc_entry: false
+      show_source: true
 
 ## FONT_WEIGHT
 
@@ -67,6 +73,7 @@
         - method
       heading_level: 4
       show_root_toc_entry: false
+      show_source: true
 
 ## HOMOGRAPH_CHINESE
 
@@ -77,6 +84,7 @@
         - method
       heading_level: 4
       show_root_toc_entry: false
+      show_source: true
 
 ## HOMOGRAPH_LETTERS
 
@@ -87,6 +95,7 @@
         - method
       heading_level: 4
       show_root_toc_entry: false
+      show_source: true
 
 ## HOMOGRAPH_NUMBERS
 
@@ -97,6 +106,7 @@
         - method
       heading_level: 4
       show_root_toc_entry: false
+      show_source: true
 
 ## HOMOGRAPH_PUNCTUATIONS
 
@@ -107,6 +117,7 @@
         - method
       heading_level: 4
       show_root_toc_entry: false
+      show_source: true
 
 ## HTML_EMPTY_TAGS
 
@@ -117,6 +128,7 @@
         - method
       heading_level: 4
       show_root_toc_entry: false
+      show_source: true
 
 ## INVISIBLE_CHARS
 
@@ -127,6 +139,7 @@
         - method
       heading_level: 4
       show_root_toc_entry: false
+      show_source: true
 
 ## SPACE_CHARS
 
@@ -137,6 +150,7 @@
         - method
       heading_level: 4
       show_root_toc_entry: false
+      show_source: true
 
 ## WHITESPACE_CHARS
 
@@ -147,3 +161,4 @@
         - method
       heading_level: 4
       show_root_toc_entry: false
+      show_source: true
