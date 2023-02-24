@@ -623,6 +623,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#textwatermark.main.TextWatermark.wm_flag_bit" class="md-nav__link">
+    wm_flag_bit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#textwatermark.main.TextWatermark.__init__" class="md-nav__link">
     __init__()
   </a>
@@ -1033,7 +1040,9 @@
 
   <div class="doc doc-contents ">
   
-      <p>Watermark fixed(max length) length.</p>
+      <p>The longest (or largest) watermark string. 
+When wm_flag_bit is true,
+The value of wm_max_len is 1 larger the actual value</p>
   </div>
 
 </div>
@@ -1146,6 +1155,27 @@ Defaults to False.</p>
 
 </div>
 
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="textwatermark.main.TextWatermark.wm_flag_bit" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">wm_flag_bit</span> <span class="o">=</span> <span class="n">wm_flag_bit</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>If True, add a flag bit to watermark. Defaults to True.</p>
+  </div>
+
+</div>
+
 
 
 <div class="doc doc-object doc-function">
@@ -1153,7 +1183,7 @@ Defaults to False.</p>
 
 
 <h5 id="textwatermark.main.TextWatermark.__init__" class="doc doc-heading">
-<code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">wm_mode</span><span class="p">,</span> <span class="n">wm_base</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">start_at</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">wm_loop</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">wm_mode</span><span class="p">,</span> <span class="n">wm_base</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">start_at</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">wm_loop</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">wm_flag_bit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
 
 </h5>
 
@@ -1212,6 +1242,16 @@ Defaults to False.</p>
 Defaults to False.</p></td>
           <td>
                 <code>False</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>wm_flag_bit</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td><p>If True, add a flag bit to watermark. Defaults to True.</p></td>
+          <td>
+                <code>True</code>
           </td>
         </tr>
     </tbody>
