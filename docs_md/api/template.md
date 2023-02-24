@@ -2,4 +2,4 @@
 
 ::: textwatermark.template
     options:
-      heading_level: 4
+      heading_level: 3

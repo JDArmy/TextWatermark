@@ -17,36 +17,52 @@ class WMTemplateType(Enum):
 # WMMethod.INSERT_INTO_POSITION
     # 不可见字符
     INVISIBLE_CHARS = invisible_chars
-    '''Invisible characters'''
+    '''Invisible characters
+    Notes: WMMethod.INSERT_INTO_POSITION
+        WMMethod.INSERT_INTO_POSITION'''
 
     # 空白字符
     WHITESPACE_CHARS = whitespace_chars
-    '''White space characters'''
+    '''White space characters
+    Notes: WMMethod.INSERT_INTO_POSITION
+        WMMethod.INSERT_INTO_POSITION'''
 
     # HTML空白标签
     HTML_EMPTY_TAGS = html_empty_tags
-    '''HTML empty tags'''
+    '''HTML empty tags
+    Notes: WMMethod.INSERT_INTO_POSITION
+        WMMethod.INSERT_INTO_POSITION'''
 
 
 # WMMethod.FIND_AND_REPLACE
     SPACE_CHARS = space_chars
-    '''Space characters'''
+    '''Space characters
+    Notes: WMMethod.FIND_AND_REPLACE
+        WMMethod.FIND_AND_REPLACE'''
 
     # 同形异义字-数字
     HOMOGRAPH_NUMBERS = homograph_numbers
-    '''Homograph numbers'''
+    '''Homograph numbers
+    Notes: WMMethod.FIND_AND_REPLACE
+        WMMethod.FIND_AND_REPLACE'''
 
     # 同形异义字-英文
     HOMOGRAPH_LETTERS = homograph_letters
-    '''Homograph letters'''
+    '''Homograph letters
+    Notes: WMMethod.FIND_AND_REPLACE
+        WMMethod.FIND_AND_REPLACE'''
 
     # 同形异义字-符号
     HOMOGRAPH_PUNCTUATIONS = homograph_punctuations
-    '''Homograph punctuations'''
+    '''Homograph punctuations
+    Notes: WMMethod.FIND_AND_REPLACE
+        WMMethod.FIND_AND_REPLACE'''
 
     # 同形异义字-汉字
     HOMOGRAPH_CHINESE = homograph_chinese
-    '''Homograph Chinese'''
+    '''Homograph Chinese
+    Notes: WMMethod.FIND_AND_REPLACE
+        WMMethod.FIND_AND_REPLACE'''
 
     # 繁体字
     # TRADITIONAL_CHINESE = 3007
@@ -65,31 +81,44 @@ class WMTemplateType(Enum):
 # WMMethod.APPEND_TO_CHAR
     # 组合字符
     COMBINING_CHARS = combining_chars
-    '''Combining characters'''
+    '''Combining characters
+    Notes: WMMethod.APPEND_TO_CHAR
+        WMMethod.APPEND_TO_CHAR'''
 
 
 # WMMethod.DECORATE_EACH_CHAR
     # 字体颜色
     FONT_COLOR = font_color
-    '''Font color'''
+    '''Font color
+    Notes: WMMethod.DECORATE_EACH_CHAR
+        WMMethod.DECORATE_EACH_CHAR'''
 
     # 字体大小
     FONT_SIZE = font_size
-    '''Font size'''
-
+    '''Font size
+    Notes: WMMethod.DECORATE_EACH_CHAR
+        WMMethod.DECORATE_EACH_CHAR'''
     # 字体粗细
     FONT_WEIGHT = font_weight
-    '''Font weight'''
+    '''Font weight
+    Notes: WMMethod.DECORATE_EACH_CHAR
+        WMMethod.DECORATE_EACH_CHAR'''
 
     # 字体浮动
     FONT_FLOAT = font_float
-    '''Font float'''
+    '''Font float
+    Notes: WMMethod.DECORATE_EACH_CHAR
+        WMMethod.DECORATE_EACH_CHAR'''
 
     # 字体样式
     FONT_STYLE = font_style
-    '''Font style'''
+    '''Font style
+    Notes: WMMethod.DECORATE_EACH_CHAR
+        WMMethod.DECORATE_EACH_CHAR'''
 
 # WMMethod.APPEND_AS_BINARY
 
     BINARY_REPRESENTATION = binary_representation
-    # '''Delete character'''
+    '''Delete character
+    Notes: WMMethod.APPEND_AS_BINARY
+        WMMethod.APPEND_AS_BINARY'''

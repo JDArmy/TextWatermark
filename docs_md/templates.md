@@ -20,6 +20,12 @@
       show_root_toc_entry: false
       show_source: true
 
+```py
+{%
+  include-markdown "../src/textwatermark/templates/combining_chars.py"
+%}
+```
+
 ## FONT_COLOR
 
 ::: textwatermark.templates.font_color
@@ -135,30 +141,45 @@
 ::: textwatermark.templates.invisible_chars
     options:
       members:
-        - CONFUSABLES_CHARS
         - method
       heading_level: 4
       show_root_toc_entry: false
       show_source: true
+
+```py
+{%
+  include-markdown "../src/textwatermark/templates/invisible_chars.py"
+%}
+```
 
 ## SPACE_CHARS
 
 ::: textwatermark.templates.space_chars
     options:
       members:
-        - CONFUSABLES_CHARS
         - method
       heading_level: 4
       show_root_toc_entry: false
       show_source: true
+
+```py
+{%
+  include-markdown "../src/textwatermark/templates/space_chars.py"
+%}
+```
 
 ## WHITESPACE_CHARS
 
 ::: textwatermark.templates.whitespace_chars
     options:
       members:
-        - CONFUSABLES_CHARS
         - method
       heading_level: 4
       show_root_toc_entry: false
       show_source: true
+
+```py
+{%
+  include-markdown "../src/textwatermark/templates/whitespace_chars.py"
+%}
+```

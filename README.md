@@ -107,8 +107,3 @@ assert wm_out_str == wm_str
 ## More
 
 See: [Documents](https://textwatermark.jd.army/)
-
-## ToDo
-
-- [x] 支持多种模板组合
-- [x] 同形异义-数字等场景，不需要在水印前面加1个标识位

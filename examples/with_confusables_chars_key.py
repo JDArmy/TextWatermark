@@ -8,8 +8,9 @@ from textwatermark.template_type import WMTemplateType
 wm_mode = WMMode.REAL_NUMBER
 wm_max = '9'*9
 # init
-wm = TextWatermark(wm_mode)
-wm.set_tpl_type(WMTemplateType.INVISIBLE_COMBINING_CHARS, '\u0300')
+wm = TextWatermark(wm_mode, wm_loop=False, start_at=30)
+wm.set_tpl_type(WMTemplateType.BINARY_REPRESENTATION, '\u0300')
+
 wm.set_wm_max(wm_max=wm_max)
 wm.set_text_file(os.path.abspath('../tests/text/1.txt'))
 

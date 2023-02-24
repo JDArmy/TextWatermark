@@ -1,5 +1,5 @@
 '''Main Class of TextWatermark'''
-# pylint: disable=too-many-instance-attributes
+# pylint: disable=too-many-instance-attributes,too-many-arguments
 
 import json
 import os
