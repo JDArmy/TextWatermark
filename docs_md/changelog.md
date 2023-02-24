@@ -8,3 +8,5 @@ init of `textwatermark`
 
 - add retrieve watermark from binary static method `retrieve_watermark_from_bin` to TextWatermark class and the cmd line.
 - add examples to docs
+
+## 0.1.3

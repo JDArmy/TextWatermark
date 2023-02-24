@@ -29,16 +29,24 @@ pip install --editable .
 
 #### Insert watermark into text
 
-```session
+```console
 $ textwatermark -v insert -f './tests/text/number.txt' -m ALPHA_NUMERICAL -t HOMOGRAPH_NUMBERS -x 999 -w 123
 
 Ӏ2𝟑𝟒𝟓Ⳓ𝟟890
 ```
 
+### Export watermark parameters
+
+```console
+$ textwatermark -v insert -f './tests/text/number.txt' -m ALPHA_NUMERICAL -t HOMOGRAPH_NUMBERS -x 999 -w 123 -e
+
+{"tpl_type": "HOMOGRAPH_NUMBERS", "confusables_chars": [], "confusables_chars_key": "", "wm_base": 7, "method": 1, "wm_mode": 5, "wm_len": 7, "wm_loop": false, "start_at": 0, "version": "0.1.2"}
+```
+
 #### Retrieve the watermark from the text
 
-```session
-$ textwatermark -v retrieve -f out.txt -p '{"tpl_type": "HOMOGRAPH_NUMBERS", "confusables_chars": [], "confusables_chars_key": "", "wm_base": 7, "method": 1, "wm_mode": 5, "wm_len": 7, "wm_loop": false, "start_at": 0, "version": "0.1.0"}'
+```console
+$ textwatermark -v retrieve -f out.txt -p '{"tpl_type": "HOMOGRAPH_NUMBERS", "confusables_chars": [], "confusables_chars_key": "", "wm_base": 7, "method": 1, "wm_mode": 5, "wm_len": 7, "wm_loop": false, "start_at": 0, "version": "0.1.2"}'
 
 The retrieved watermark is: 123
 ```
