@@ -35,7 +35,7 @@ $ textwatermark -v insert -f './tests/text/number.txt' -m ALPHA_NUMERICAL -t HOM
 Ӏ2𝟑𝟒𝟓Ⳓ𝟟890
 ```
 
-### Export watermark parameters
+#### Export watermark parameters
 
 ```console
 $ textwatermark -v insert -f './tests/text/number.txt' -m ALPHA_NUMERICAL -t HOMOGRAPH_NUMBERS -x 999 -w 123 -e
