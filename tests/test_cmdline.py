@@ -81,21 +81,24 @@ def test_retrieve():
 
     params_json = '{"tpl_type": "HOMOGRAPH_NUMBERS", "confusables_chars": [], \
         "confusables_chars_key": "", "wm_base": 7, "method": 1, "wm_mode": 5, \
-            "wm_len": 7, "wm_loop": false, "start_at": 0, "version": "'+__version__+'"}'
+            "wm_len": 7, "wm_loop": false, "start_at": 0,"wm_flag_bit": true,\
+                  "version": "'+__version__+'"}'
     result = runner.invoke(
         main, f'retrieve -f {TMP_FILE} -p \'{params_json}\'')
     assert '123' in result.output
 
     params_json1 = '{"tpl_type": "HOMOGRAPH_NUMBERS", "confusables_chars": [], \
         "confusables_chars_key": "", "wm_base": 7, "method": 1, "wm_mode": 5, \
-            "wm_len": 7, "wm_loop": false, "start_at": 0, "version": "0.0.0"}'
+            "wm_len": 7, "wm_loop": false, "start_at": 0,"wm_flag_bit": true,\
+                  "version": "0.0.0"}'
     result = runner.invoke(
         main, f'retrieve -f {TMP_FILE} -p \'{params_json1}\'')
     assert 'Result ValueError' in str(result)
 
     params_json = '{"tpl_type": "HOMOGRAPH_NUMBERS", "confusables_chars": [], \
         "confusables_chars_key": "", "wm_base": 7, "method": 1, "wm_mode": 5, \
-            "wm_len": 7, "wm_loop": false, "start_at": 0, "version": "0.0.0"}'
+            "wm_len": 7, "wm_loop": false, "start_at": 0,"wm_flag_bit": true,\
+                  "version": "0.0.0"}'
     result = runner.invoke(
         main, f'retrieve -f {TMP_FILE} -p \'{params_json}\' -F')
     assert '123' in result.output
@@ -107,14 +110,14 @@ def test_retrieve_bin():
     '''test retrieve bin command'''
     runner = CliRunner()
 
-    params_json = '{"tpl_type": "FONT_SIZE", "confusables_chars": [], '\
+    params_json = '{"tpl_type": "FONT_SIZE", "wm_flag_bit": true, "confusables_chars": [], '\
         '"confusables_chars_key": "110", "wm_base": 2, "method": 3, "wm_mode": 5,'\
         ' "wm_len": 35, "wm_loop": false, "start_at": 0, "version": "'+__version__+'"}'
     result = runner.invoke(
         main, f'retrieve -b "10010000011000100000101000110000111" -p \'{params_json}\'')
     assert '123456' in result.output
 
-    params_json = '{"tpl_type": "FONT_SIZE", "confusables_chars": [], '\
+    params_json = '{"tpl_type": "FONT_SIZE", "wm_flag_bit": true, "confusables_chars": [], '\
         '"confusables_chars_key": "110", "wm_base": 2, "method": 3, "wm_mode": 5, '\
         '"wm_len": 35, "wm_loop": false, "start_at": 0, "version": "0.0.0"}'
     result = runner.invoke(
@@ -130,9 +133,10 @@ def test_export_params():
     '''test export params command'''
     runner = CliRunner()
 
-    params_json = '{"tpl_type": "HOMOGRAPH_NUMBERS", "confusables_chars": [], \
+    params_json = '{"tpl_type": "HOMOGRAPH_NUMBERS", "confusables_chars": [],\
         "confusables_chars_key": "", "wm_base": 7, "method": 1, "wm_mode": 5, \
-            "wm_len": 7, "wm_loop": false, "start_at": 0, "version": "'+__version__+'"}'
+            "wm_len": 7, "wm_loop": false, "start_at": 0,"wm_flag_bit": true,\
+                  "version": "'+__version__+'"}'
 
     cmd = 'insert -m ALPHA_NUMERICAL -t HOMOGRAPH_NUMBERS -x 999 -w 123 -e'
     result = runner.invoke(main, cmd)
@@ -145,3 +149,20 @@ def test_export_params():
         os.unlink(TMP_FILE)
 
     assert json.loads(out_param_json) == json.loads(params_json)
+
+
+def test_insert_watermark_no_flag_bit():
+    '''test insert watermark with no_flag_bit command set'''
+    runner = CliRunner()
+    with open(TMP_FILE, 'w', encoding="utf-8") as file:
+        file.write('12345678901')
+    # 输出到终端
+    cmd = f'insert -f "{TMP_FILE}" -m REAL_NUMBER '\
+        f'-t HOMOGRAPH_NUMBERS -x "1977326742" -w "1977326741" -n'
+
+    runner.invoke(main, cmd + f' -o "{TMP_FILE}.out"')
+    param = runner.invoke(main, cmd+' -e')
+
+    retrieve_result = runner.invoke(
+        main, f'retrieve -f {TMP_FILE}.out -p \'{param.output.strip()}\'')
+    assert '1977326741' in retrieve_result.output

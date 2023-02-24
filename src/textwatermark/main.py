@@ -74,12 +74,18 @@ class TextWatermark:
     '''Maximum watermark string.'''
 
     wm_fixed_len: int = 0
-    '''Watermark fixed(max length) length.'''
+    '''The longest (or largest) watermark string. 
+        When wm_flag_bit is true,
+        The value of wm_max_len is 1 larger the actual value '''
 
     tpl_type: str = ''
     '''template type in WMTemplateType'''
 
-    def __init__(self, wm_mode: WMMode, wm_base: int = 0, start_at: int = 0, wm_loop: bool = False):
+    wm_flag_bit: bool = True
+    '''If set a flag bit when insert watermark or not'''
+
+    def __init__(self, wm_mode: WMMode, wm_base: int = 0, start_at: int = 0,
+                 wm_loop: bool = False, wm_flag_bit: bool = True):
         '''Class TextWatermark init
 
         Args:
@@ -88,6 +94,7 @@ class TextWatermark:
             start_at (int, optional): index where the watermark will be inserted. Defaults to 0.
             wm_loop (bool, optional): If watermark will be repeated until it is inserted to end.
                 Defaults to False.
+            wm_flag_bit (bool, optional): If True, add a flag bit to watermark. Defaults to True.
 
         Raises:
             ValueError: if `base` is not in the range [2, 36]
@@ -107,6 +114,8 @@ class TextWatermark:
         self.wm_loop = wm_loop
         '''If watermark will be repeated until it is inserted to end.
                 Defaults to False.'''
+        self.wm_flag_bit = wm_flag_bit
+        '''If True, add a flag bit to watermark. Defaults to True.'''
 
     def set_tpl(self, confusables_chars: Union[dict, list],
                 method: WMMethod, confusables_chars_key: str = ''):
@@ -163,7 +172,12 @@ class TextWatermark:
 
         self.wmc = WMConversion(self.wm_mode, self.wmt.wm_base)
         self.wm_max = wm_max
-        self.wm_fixed_len = self.wmc.calc_max_wm_length(wm_max)
+
+        wm_max_len = self.wmc.calc_max_wm_length(wm_max)
+        if self.wm_flag_bit:
+            self.wm_fixed_len = wm_max_len + 1
+        else:
+            self.wm_fixed_len = wm_max_len
 
     def set_text(self, text: str):
         '''Set text string to watermark
@@ -213,7 +227,11 @@ class TextWatermark:
                 f'ERROR: watermark:{wm_str} if larger than wm_max: {self.wm_max}')
 
         wm_final = self.wmc.wm_convert_to_arbitrary_base(wm_str)
-        wm_final = '1' + wm_final.zfill(self.wm_fixed_len-1)
+        wm_final = wm_final.zfill(self.wm_fixed_len-1)
+
+        if self.wm_flag_bit:
+            wm_final = '1' + wm_final
+
         if len(wm_final) > self.wm_fixed_len:
             raise ValueError(
                 f'ERROR: watermark {wm_str} (convert to: {wm_final}) \
@@ -267,6 +285,7 @@ class TextWatermark:
             'method': self.wmt.method.value,
             'wm_mode': self.wm_mode,
             'wm_len': self.wm_fixed_len,
+            'wm_flag_bit': self.wm_flag_bit,
             'wm_loop': self.wm_loop,
             'start_at': self.start_at,
             'version': __version__,
@@ -303,7 +322,11 @@ class TextWatermark:
         if len(wm_bin) < wm_len:
             raise ValueError(f'Watermark length is short than {wm_len}')
 
-        wm_temp = wm_bin[1:wm_len]
+        if params['wm_flag_bit'] is True:
+            wm_temp = wm_bin[1:wm_len]
+        else:
+            wm_temp = wm_bin[0:wm_len]
+
         wm_temp = wm_temp.lstrip('0')
 
         wm_out_str = wmc.wm_restore_from_arbitrary_base(wm_temp)
@@ -337,7 +360,8 @@ class TextWatermark:
         wm_len = params['wm_len']
         ver = params['version']
         if len(wm_text) < wm_len:
-            raise ValueError("Watermark length is too short")
+            raise ValueError(f'Watermark length is too short: '
+                             f'len of wm_text is {len(wm_text)}, wm_len is {wm_len}')
 
         if ver != __version__ and force_check_version is False:
             raise ValueError(f'Not the same version, params version is {ver},'
@@ -365,7 +389,11 @@ class TextWatermark:
             wm_len=wm_len,
             start_at=params['start_at'])
 
-        wm_temp = wm_out[1:wm_len]
+        if params['wm_flag_bit'] is True:
+            wm_temp = wm_out[1:wm_len]
+        else:
+            wm_temp = wm_out[0:wm_len]
+
         wm_temp = wm_temp.lstrip('0')
         wm_out_str = wmc.wm_restore_from_arbitrary_base(wm_temp)
         return wm_out_str

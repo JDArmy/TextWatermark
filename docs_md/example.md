@@ -246,6 +246,18 @@
     The retrieved watermark is: 123456
     ```
 
+=== "With --no-flag-bit option"
+
+    ```console
+    $ textwatermark -v insert -f /tmp/tmp_for_test_textwatermark.txt -m REAL_NUMBER -t HOMOGRAPH_NUMBERS -x "1977326742" -w "1977326741"  -n
+
+    𝟷𝟸𝟹𝟺𝟻𝟼𝟽𝟾𝟿𝟶𝟭
+
+    $ textwatermark retrieve -f /tmp/out.txt -p '{"tpl_type": "HOMOGRAPH_NUMBERS", "confusables_chars": [], "confusables_chars_key": "", "wm_base": 7, "method": 1, "wm_mode": 1, "wm_len": 11, "wm_flag_bit": false, "wm_loop": false, "start_at": 0, "version": "0.1.3"}'
+
+    1977326741
+    ```
+
 ## HOMOGRAPH_PUNCTUATIONS
 
 === "Insert"

@@ -72,7 +72,7 @@ class WMConversion:
         '''
 
         wm_final = self.wm_convert_to_arbitrary_base(wm_max)
-        return len(wm_final)+1
+        return len(wm_final)
 
     def wm_convert_to_arbitrary_base(self, wm_str: str):
         '''Convert watermark to arbitrary base string

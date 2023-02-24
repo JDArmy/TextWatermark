@@ -59,6 +59,8 @@ Options:
   -i, --start-at INTEGER         Index of where the watermark will be
                                  inserted. Defaults to 0.
   -e, --export-params            If True then export watermark params
+  -n, --no-flag-bit              If True then do not add a flag bit to
+                                 watermark
   --help                         Show this message and exit.
 ```
 

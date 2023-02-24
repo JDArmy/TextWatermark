@@ -60,9 +60,11 @@ def main(ctx: Context, version: str, verbose: bool, debug: bool):
               help='Index of where the watermark will be inserted. Defaults to 0.')
 @click.option('-e', '--export-params', is_flag=True,
               help='If True then export watermark params')
+@click.option('-n', '--no-flag-bit', is_flag=True,
+              help='If True then do not add a flag bit to watermark')
 def insert(text_file: str, out_file: str, wm_mode: str, template_type: str, wm_max: int,
            wm_str: str, wm_base: int, template_chars_key: str, wm_loop: bool, start_at: int,
-           export_params: bool):
+           export_params: bool, no_flag_bit: bool):
     '''Insert watermark to text
 
     Examples:
@@ -88,7 +90,8 @@ def insert(text_file: str, out_file: str, wm_mode: str, template_type: str, wm_m
         template_chars_key = chr(int(template_chars_key[2:], 16))
 
     # # init
-    wm = TextWatermark(WMMode[wm_mode].value, wm_base, start_at, wm_loop)
+    wm = TextWatermark(WMMode[wm_mode].value, wm_base,
+                       start_at, wm_loop, wm_flag_bit=not no_flag_bit)
     wm.set_tpl_type(template_type, template_chars_key)
     wm.set_wm_max(wm_max=wm_max)
 
