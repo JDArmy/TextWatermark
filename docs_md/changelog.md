@@ -12,3 +12,7 @@ init of `textwatermark`
 ## 0.1.3
 
 - add `--no-flag-bit` command to cmdline, and wm_flag_bit parameter to `__init__` method of `TextWatermark` class.
+
+## 0.1.4
+
+- fixes dependencies
