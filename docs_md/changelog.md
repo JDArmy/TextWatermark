@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.7
+
+- Change Python restricted dependencies of `mkdocs-include-markdown-plugin` in `pyproject.toml`, so  `python = "^3.8,<3.12"` in `[tool.poetry.dependencies]` can be change to `python = "^3.8"`
+
 ## 0.1.6
 
 - Bug fix: `TextWatermark.init_from_params` going wrong when `set_tpl` mode

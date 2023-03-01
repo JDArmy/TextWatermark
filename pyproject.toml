@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "textwatermark"
-version = "0.1.6"
+version = "0.1.7"
 description = "A watermark library for text."
 keywords = ["watermark", "text", 'blind']
 readme = "README.md"
@@ -31,7 +31,7 @@ documentation = "https://textwatermark.jd.army/"
 
 
 [tool.poetry.dependencies]
-python = "^3.8,<3.12"
+python = "^3.8"
 dynaconf = "^3.1"
 click = "^8.1"
 bitstring = "^4.0"
@@ -48,7 +48,7 @@ mkdocs = "^1.4"
 mkdocs-material = "^9.0"
 mkdocstrings = "^0.20"
 mkdocstrings-python = "^0.8"
-mkdocs-include-markdown-plugin = "^4.0"
+mkdocs-include-markdown-plugin = { version = "^4.0", python = "^3.8,<3.12" }
 mkdocs-static-i18n = "^0.53"
 build = "^0.10"
 twine = "^4.0"
