@@ -222,12 +222,21 @@ class TextWatermark:
             ValueError: If watermark string is larger than wm_max
             ValueError: If there is not enough space to insert a watermark
         '''
-        if wm_str > self.wm_max:
-            raise ValueError(
-                f'ERROR: watermark:{wm_str} if larger than wm_max: {self.wm_max}')
-
         wm_final = self.wmc.wm_convert_to_arbitrary_base(wm_str)
-        wm_final = wm_final.zfill(self.wm_fixed_len-1)
+        if self.wm_flag_bit:
+            wm_final = wm_final.zfill(self.wm_fixed_len-1)
+        else:
+            wm_final = wm_final.zfill(self.wm_fixed_len)
+
+        wm_final_max = self.wmc.wm_convert_to_arbitrary_base(self.wm_max)
+        if self.wm_flag_bit:
+            wm_final_max = wm_final_max.zfill(self.wm_fixed_len-1)
+        else:
+            wm_final_max = wm_final_max.zfill(self.wm_fixed_len)
+
+        if wm_final > wm_final_max:
+            raise ValueError(
+                f'ERROR: watermark:{wm_str} is larger than wm_max: {self.wm_max}')
 
         if self.wm_flag_bit:
             wm_final = '1' + wm_final
@@ -324,7 +333,7 @@ class TextWatermark:
             wm_loop=params['wm_loop'],
             wm_flag_bit=params['wm_flag_bit'])
         if params['tpl_type']:
-            wm_init.set_tpl_type(tpl_type=params['tpl_type'])
+            wm_init.set_tpl_type(tpl_type=WMTemplateType[params['tpl_type']])
         else:
             wm_init.set_tpl(
                 confusables_chars=params['confusables_chars'],
@@ -432,6 +441,7 @@ class TextWatermark:
             wm_len=wm_len,
             start_at=params['start_at'])
 
+        # print((wm_out))
         if params['wm_flag_bit'] is True:
             wm_temp = wm_out[1:wm_len]
         else:

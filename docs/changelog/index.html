@@ -479,22 +479,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#010" class="md-nav__link">
-    0.1.0
+  <a href="#016" class="md-nav__link">
+    0.1.6
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#012" class="md-nav__link">
-    0.1.2
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#013" class="md-nav__link">
-    0.1.3
+  <a href="#015" class="md-nav__link">
+    0.1.5
   </a>
   
 </li>
@@ -507,8 +500,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#015" class="md-nav__link">
-    0.1.5
+  <a href="#013" class="md-nav__link">
+    0.1.3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#012" class="md-nav__link">
+    0.1.2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#010" class="md-nav__link">
+    0.1.0
   </a>
   
 </li>
@@ -712,25 +719,31 @@
   <h1>更新日志</h1>
 
 <h2 id="changelog">Changelog</h2>
-<h3 id="010">0.1.0</h3>
-<p>init of <code>textwatermark</code></p>
-<h3 id="012">0.1.2</h3>
+<h3 id="016">0.1.6</h3>
 <ul>
-<li>add retrieve watermark from binary static method <code>retrieve_watermark_from_bin</code> to TextWatermark class and the cmd line.</li>
-<li>add examples to docs</li>
-</ul>
-<h3 id="013">0.1.3</h3>
-<ul>
-<li>add <code>--no-flag-bit</code> command to cmdline, and wm_flag_bit parameter to <code>__init__</code> method of <code>TextWatermark</code> class.</li>
-</ul>
-<h3 id="014">0.1.4</h3>
-<ul>
-<li>fixes dependencies</li>
+<li>Bug fix: <code>TextWatermark.init_from_params</code> going wrong when <code>set_tpl</code> mode</li>
+<li>Bug fix: Error when checking if <code>wm_str</code> larger than <code>wm_max</code> in method <code>TextWatermark.insert_watermark</code></li>
+<li>Bug fix: Wrong watermarked when setting <code>wm_flag_bit</code> to <code>False</code> in method <code>TextWatermark.insert_watermark</code></li>
 </ul>
 <h3 id="015">0.1.5</h3>
 <ul>
 <li>add <code>init_from_params</code> static method to <code>TextWatermark</code>, <code>TextWatermark</code> can be init from exported params.</li>
 </ul>
+<h3 id="014">0.1.4</h3>
+<ul>
+<li>fixes dependencies</li>
+</ul>
+<h3 id="013">0.1.3</h3>
+<ul>
+<li>add <code>--no-flag-bit</code> command to cmdline, and wm_flag_bit parameter to <code>__init__</code> method of <code>TextWatermark</code> class.</li>
+</ul>
+<h3 id="012">0.1.2</h3>
+<ul>
+<li>add retrieve watermark from binary static method <code>retrieve_watermark_from_bin</code> to TextWatermark class and the cmd line.</li>
+<li>add examples to docs</li>
+</ul>
+<h3 id="010">0.1.0</h3>
+<p>init of <code>TextWatermark</code></p>
 
 
 

@@ -23,9 +23,9 @@ theme:
   include_sidebar: true
 
 extra_css:
-    - css/extra.css
+  - css/extra.css
 extra_javascript:
-    - js/extra.js
+  - js/extra.js
 
 watch:
   - src/textwatermark
@@ -43,8 +43,7 @@ markdown_extensions:
   - toc:
       baselevel: 2
   - pymdownx.tabbed:
-      alternate_style: true 
-
+      alternate_style: true
 
 plugins:
   - autorefs
@@ -60,22 +59,22 @@ plugins:
   - mkdocstrings:
       default_handler: python
       handlers:
-          python:
-            paths: [src]
-            options:
-              show_source: false
-              show_category_heading: false
-              show_root_heading: false
-              heading_level: 2
-              show_root_members_full_path: false
-              show_submodules: false
-              merge_init_into_class: false
-              show_if_no_docstring: true
+        python:
+          paths: [src]
+          options:
+            show_source: true
+            show_category_heading: false
+            show_root_heading: false
+            heading_level: 2
+            show_root_members_full_path: false
+            show_submodules: false
+            merge_init_into_class: false
+            show_if_no_docstring: true
   - i18n:
       default_language: zh
       languages:
         zh: Chinese
-        en: English    
+        en: English
       nav_translations:
         zh:
           Home: 首页
@@ -86,20 +85,20 @@ plugins:
           Templates: 水印模板
           Development Guide: 开发文档
           About: 关于
-       
+
 nav:
-    - Home: index.md
-    - Usage: 
+  - Home: index.md
+  - Usage:
       - Coding: usage.md
       - CMD Line: cmdline.md
-    - Changelog: changelog.md
-    - Example: example.md
-    - API Documents: 
-        - api/main.md
-        - WMConversion: api/conversion.md
-        - WMTemplate: api/template.md
-        - Defines: api/defines.md
-        - CMD Line: api/cmdline.md
-    - Templates: templates.md
-    - Development Guide: development.md
-    - About: about.md
+  - Changelog: changelog.md
+  - Example: example.md
+  - API Documents:
+      - api/main.md
+      - WMConversion: api/conversion.md
+      - WMTemplate: api/template.md
+      - Defines: api/defines.md
+      - CMD Line: api/cmdline.md
+  - Templates: templates.md
+  - Development Guide: development.md
+  - About: about.md

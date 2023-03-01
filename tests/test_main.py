@@ -1,5 +1,5 @@
 '''test text watermark'''
-# pylint: disable=invalid-name
+# pylint: disable=invalid-name,too-many-arguments
 
 import os
 
@@ -52,8 +52,66 @@ def test_insert_watermark():
     _insert_watermark('09-AZ_az', 'z'*9, WMMode.ALPHA_NUMERICAL_SPECIAL)
     _insert_watermark('我知', '\uFFFF'*5, WMMode.UNICODE)
 
+    _insert_watermark('32', '1977326742', WMMode.REAL_NUMBER)
+
     with pytest.raises(ValueError):
         _insert_watermark('我'*100, '\uFFFF'*5, WMMode.UNICODE)
+
+    _insert_watermark('9'*8, '1'*9, WMMode.REAL_NUMBER)
+    _insert_watermark('1'*9, '1'*9, WMMode.REAL_NUMBER)
+    with pytest.raises(ValueError):
+        _insert_watermark('1'*8+'2', '1'*9, WMMode.REAL_NUMBER)
+
+    _insert_watermark('aba', 'abb', WMMode.LETTERS_LOWER_CASE)
+    with pytest.raises(ValueError):
+        _insert_watermark('abc', 'abb', WMMode.LETTERS_LOWER_CASE)
+
+
+def _insert_watermark2(wm_str, wm_max, wm_mode, wm_flag_bit,
+                       start_at, wm_loop, template, confusables_chars_key):
+
+    wm = TextWatermark(wm_mode, 0, start_at, wm_loop, wm_flag_bit)
+    wm.set_tpl(template.CONFUSABLES_CHARS,
+               template.method, confusables_chars_key)
+    wm.set_wm_max(wm_max)
+    wm.set_text_file(os.path.abspath(
+        os.path.dirname(__file__)+'/text/number.txt'))
+
+    wm_text = wm.insert_watermark(wm_str)
+    # test export_params
+    params = wm.export_params()
+    # test retrieve_watermark
+    wm_out_str = TextWatermark.retrieve_watermark(wm_text, params)
+    assert wm_out_str == wm_str
+
+
+def test_insert_watermark2():
+    '''test insert watermark'''
+    _insert_watermark2(
+        wm_str='32', wm_max='1977326742', wm_mode=WMMode.REAL_NUMBER, wm_flag_bit=False,
+        start_at=0, wm_loop=False, template=homograph_numbers, confusables_chars_key='')
+
+    with pytest.raises(ValueError):
+        _insert_watermark2(
+            wm_str='32', wm_max='1977326742', wm_mode=WMMode.REAL_NUMBER, wm_flag_bit=True,
+            start_at=0, wm_loop=False, template=homograph_numbers, confusables_chars_key='')
+
+    _insert_watermark2(
+        wm_str='32', wm_max='197732', wm_mode=WMMode.REAL_NUMBER, wm_flag_bit=True,
+        start_at=0, wm_loop=False, template=homograph_numbers, confusables_chars_key='')
+
+    with pytest.raises(ValueError):
+        _insert_watermark2(
+            wm_str='32', wm_max='1977326742', wm_mode=WMMode.REAL_NUMBER, wm_flag_bit=False,
+            start_at=1, wm_loop=False, template=homograph_numbers, confusables_chars_key='')
+
+    _insert_watermark2(
+        wm_str='32', wm_max='1977326742', wm_mode=WMMode.REAL_NUMBER, wm_flag_bit=False,
+        start_at=0, wm_loop=True, template=homograph_numbers, confusables_chars_key='')
+
+    _insert_watermark2(
+        wm_str='32', wm_max='1adD', wm_mode=WMMode.ALPHA_NUMERICAL, wm_flag_bit=False,
+        start_at=0, wm_loop=False, template=homograph_numbers, confusables_chars_key='')
 
 
 def test_set_tpl_type():
