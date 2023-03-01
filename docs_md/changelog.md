@@ -16,3 +16,7 @@ init of `textwatermark`
 ## 0.1.4
 
 - fixes dependencies
+
+## 0.1.5
+
+- add `init_from_params` static method to `TextWatermark`, `TextWatermark` can be init from exported params.

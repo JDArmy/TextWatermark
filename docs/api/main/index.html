@@ -693,6 +693,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#textwatermark.main.TextWatermark.init_from_params" class="md-nav__link">
+    init_from_params()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#textwatermark.main.TextWatermark.retrieve_watermark_from_bin" class="md-nav__link">
     retrieve_watermark_from_bin()
   </a>
@@ -1040,7 +1047,7 @@
 
   <div class="doc doc-contents ">
   
-      <p>The longest (or largest) watermark string. 
+      <p>The longest (or largest) watermark string.
 When wm_flag_bit is true,
 The value of wm_max_len is 1 larger the actual value</p>
   </div>
@@ -1732,6 +1739,98 @@ Defaults to False.</p></td>
                 <code>str</code>
           </td>
           <td><p>Exported JSON string</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="textwatermark.main.TextWatermark.init_from_params" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">init_from_params</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-staticmethod"><code>staticmethod</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Import watermark params from json string</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>params</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>Exported JSON string</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>text</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>Text to be watermarked</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>Watermark</code>
+          </td>
+          <td><p>Watermark object</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Raises:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>ValueError</code>
+          </td>
+          <td><p>If version mismatch</p></td>
         </tr>
     </tbody>
   </table>

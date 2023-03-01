@@ -74,7 +74,7 @@ class TextWatermark:
     '''Maximum watermark string.'''
 
     wm_fixed_len: int = 0
-    '''The longest (or largest) watermark string. 
+    '''The longest (or largest) watermark string.
         When wm_flag_bit is true,
         The value of wm_max_len is 1 larger the actual value '''
 
@@ -287,12 +287,55 @@ class TextWatermark:
             'wm_len': self.wm_fixed_len,
             'wm_flag_bit': self.wm_flag_bit,
             'wm_loop': self.wm_loop,
+            'wm_max': self.wm_max,
             'start_at': self.start_at,
             'version': __version__,
         }
         # print(params)
 
         return json.dumps(params, ensure_ascii=False)
+
+    @ staticmethod
+    def init_from_params(params: json, text: str):
+        '''Import watermark params from json string
+
+        Args:
+            params (str): Exported JSON string
+            text (str): Text to be watermarked
+
+        Returns:
+            (Watermark): Watermark object
+
+        Raises:
+            ValueError: If version mismatch
+
+        '''
+        if isinstance(params, str):
+            params = json.loads(params)
+
+        if __version__ != params['version']:
+            raise ValueError(
+                f'Version mismatch: {__version__}!= {params["version"]}')
+
+        wm_init = TextWatermark(
+            wm_mode=params['wm_mode'],
+            wm_base=params['wm_base'],
+            start_at=params['start_at'],
+            wm_loop=params['wm_loop'],
+            wm_flag_bit=params['wm_flag_bit'])
+        if params['tpl_type']:
+            wm_init.set_tpl_type(tpl_type=params['tpl_type'])
+        else:
+            wm_init.set_tpl(
+                confusables_chars=params['confusables_chars'],
+                method=params['method'],
+                confusables_chars_key=params['confusables_chars_key'])
+
+        wm_init.wm_fixed_len = params['wm_len']
+        wm_init.set_wm_max(params['wm_max'])
+        wm_init.set_text(text=text)
+
+        return wm_init
 
     @ staticmethod
     def retrieve_watermark_from_bin(wm_bin: str, params: json,

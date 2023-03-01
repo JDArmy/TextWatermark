@@ -25,9 +25,20 @@ def _insert_watermark(wm_str, wm_max, wm_mode):
     wm.set_text_file(os.path.abspath(os.path.dirname(__file__)+'/text/1.txt'))
 
     wm_text = wm.insert_watermark(wm_str)
+    # test export_params
     params = wm.export_params()
+    # test retrieve_watermark
     wm_out_str = TextWatermark.retrieve_watermark(wm_text, params)
     assert wm_out_str == wm_str
+
+    # test init_from_params
+    with open(os.path.abspath(os.path.dirname(__file__)+'/text/1.txt'), 'r',
+              encoding="utf-8") as file:
+        text = file.read()
+
+    wm2 = TextWatermark.init_from_params(params, text)
+    wm_text2 = wm2.insert_watermark(wm_str)
+    assert wm_text2 == wm_text
 
 
 def test_insert_watermark():
