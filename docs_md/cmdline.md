@@ -122,7 +122,7 @@ Options:
   -f, --wm-text-file TEXT    Text file already be watermarked
   -b, --wm-binary TEXT       Watermark string in binary
   -p, --params-json TEXT     Param json when watermarking text  [required]
-  -F, --force-check-version  Force to check versions between params and
+  -F, --dont-check-version   Don't check versions between params and
                              library
   --help                     Show this message and exit.
 ```

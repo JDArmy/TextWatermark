@@ -1,8 +1,12 @@
 # Changelog
 
+## 0.1.8
+
+- Add `dont_check_version` parameter to `TextWatermark.init_from_params`
+
 ## 0.1.7
 
-- Change Python restricted dependencies of `mkdocs-include-markdown-plugin` in `pyproject.toml`, so  `python = "^3.8,<3.12"` in `[tool.poetry.dependencies]` can be change to `python = "^3.8"`
+- Change Python restricted dependencies of `mkdocs-include-markdown-plugin` in `pyproject.toml`, so  `python = "^3.8,<3.12"` in `[tool.poetry.dependencies]` can be changed to `python = "^3.8"`
 
 ## 0.1.6
 
