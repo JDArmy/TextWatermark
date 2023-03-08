@@ -1,12 +1,22 @@
-'''test templates'''
+"""test templates"""
 
 from textwatermark.defines import WMMethod
-from textwatermark.templates import (combining_chars, font_color, font_float,
-                                     font_size, font_style, font_weight,
-                                     homograph_chinese, homograph_letters,
-                                     homograph_numbers, homograph_punctuations,
-                                     html_empty_tags, invisible_chars,
-                                     space_chars, whitespace_chars)
+from textwatermark.templates import (
+    combining_chars,
+    font_color,
+    font_float,
+    font_size,
+    font_style,
+    font_weight,
+    homograph_chinese,
+    homograph_letters,
+    homograph_numbers,
+    homograph_punctuations,
+    html_empty_tags,
+    invisible_chars,
+    space_chars,
+    whitespace_chars,
+)
 
 
 def _test_templates(template):
@@ -25,13 +35,23 @@ def _test_templates(template):
 
 
 def test_templates():
-    '''test templates'''
+    """test templates"""
 
-    templates = [combining_chars, font_color, font_float,
-                 font_size, font_style, font_weight,
-                 homograph_chinese, homograph_letters,
-                 homograph_numbers, homograph_punctuations,
-                 html_empty_tags, invisible_chars,
-                 space_chars, whitespace_chars]
+    templates = [
+        combining_chars,
+        font_color,
+        font_float,
+        font_size,
+        font_style,
+        font_weight,
+        homograph_chinese,
+        homograph_letters,
+        homograph_numbers,
+        homograph_punctuations,
+        html_empty_tags,
+        invisible_chars,
+        space_chars,
+        whitespace_chars,
+    ]
     for template in templates:
         _test_templates(template)

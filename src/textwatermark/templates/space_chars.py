@@ -1,14 +1,14 @@
-'''
+"""
 This template will replace the regular space char with the other width of space chars.
 
 Since spaces are rare in Chinese, this template is mainly suitable for English text.
-'''
+"""
 
 from textwatermark.defines import WhiteSpaceChars, WMMethod
 
 # 空格字符
 CONFUSABLES_CHARS = {
-    '\u0020': [
+    "\u0020": [
         WhiteSpaceChars.SPACE_1_4.value,
         # WhiteSpaceChars.NO_BREAK_SPACE_1_4.value,
         # WhiteSpaceChars.EN_QUAD_1_2.value,

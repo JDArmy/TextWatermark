@@ -5,13 +5,13 @@ from textwatermark.log import update_log_level
 
 
 @pytest.mark.parametrize(
-    ['debug', 'level', 'expect_value'],
+    ["debug", "level", "expect_value"],
     [
-        (True, '', 'DEBUG'),
-        (True, 'INFO', 'DEBUG'),
-        (False, 'DEBUG', 'DEBUG'),
-        (False, 'INFO', 'INFO'),
-    ]
+        (True, "", "DEBUG"),
+        (True, "INFO", "DEBUG"),
+        (False, "DEBUG", "DEBUG"),
+        (False, "INFO", "INFO"),
+    ],
 )
 def test_log_level(debug: bool, level: str, expect_value):
     """Test log level"""

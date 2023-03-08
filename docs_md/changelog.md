@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.9
+
+- bug fixed.
+- Test through mypy
+
 ## 0.1.8
 
 - Add `dont_check_version` parameter to `TextWatermark.init_from_params`

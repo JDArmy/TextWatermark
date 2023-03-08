@@ -1,10 +1,10 @@
-'''
+"""
 The template will generate a watermark into many types of space chars 
 and then insert it into the specified location.
 
 The best usage scenario for this template is to insert the watermark on 
 an empty line of text or after some lines in the code.
-'''
+"""
 
 from textwatermark.defines import WhiteSpaceChars, WMMethod
 

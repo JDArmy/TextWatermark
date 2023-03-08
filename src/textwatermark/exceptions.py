@@ -1,13 +1,14 @@
-'''Exception'''
+"""Exception"""
 
 
 class WMError(Exception):
-    '''Watermark Error'''
+    """Watermark Error"""
+
     # pass
 
 
 class WMInvalidArgumentError(WMError):
-    '''Invalid Argument Error'''
+    """Invalid Argument Error"""
 
     def __init__(self, namespace: str, name: str):
         super().__init__()

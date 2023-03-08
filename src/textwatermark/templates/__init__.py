@@ -1,1 +1,1 @@
-'''Watermark Templates'''
+"""Watermark Templates"""
