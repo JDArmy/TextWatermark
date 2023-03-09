@@ -4,7 +4,7 @@ This template will replace the regular space char with the other width of space 
 Since spaces are rare in Chinese, this template is mainly suitable for English text.
 """
 
-from textwatermark.defines import WhiteSpaceChars, WMMethod
+from ..defines import WhiteSpaceChars, WMMethod
 
 # 空格字符
 CONFUSABLES_CHARS: dict = {

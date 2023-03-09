@@ -6,7 +6,7 @@ The best usage scenario for this template is to insert the watermark on
 an empty line of text or after some lines in the code.
 """
 
-from textwatermark.defines import WhiteSpaceChars, WMMethod
+from ..defines import WhiteSpaceChars, WMMethod
 
 # 空格字符
 CONFUSABLES_CHARS: list = [

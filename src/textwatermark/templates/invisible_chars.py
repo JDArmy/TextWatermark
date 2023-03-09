@@ -5,7 +5,7 @@ All of the chars below are invisible on most of the text editors and WEB view.
 In most cases, using this template is a pretty good choice.
 """
 
-from textwatermark.defines import WMMethod
+from ..defines import WMMethod
 
 CONFUSABLES_CHARS: list = [
     "\u034f",

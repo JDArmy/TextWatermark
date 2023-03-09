@@ -6,7 +6,7 @@ import re
 import numpy as np
 from bitstring import BitArray  # type: ignore
 
-from textwatermark.defines import WMMode
+from .defines import WMMode
 
 
 class WMConversion:

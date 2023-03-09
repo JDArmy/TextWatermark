@@ -1,7 +1,7 @@
 """Template type define"""
 from enum import Enum, unique
 
-from textwatermark.templates import (
+from .templates import (
     binary_representation,
     combining_chars,
     font_color,

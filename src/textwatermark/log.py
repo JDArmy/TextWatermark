@@ -2,7 +2,7 @@
 import os
 from logging.config import dictConfig
 
-from textwatermark.config import settings
+from .config import settings
 
 os.makedirs(settings.LOGPATH, exist_ok=True)
 

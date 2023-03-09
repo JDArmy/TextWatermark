@@ -18,8 +18,8 @@ Info: Differents between combining_chars, invisible_chars and whitespace_chars
 
 """
 
-from textwatermark.defines import WMMethod
-from textwatermark.templates import combining_chars, invisible_chars, whitespace_chars
+from ..defines import WMMethod
+from ..templates import combining_chars, invisible_chars, whitespace_chars
 
 CONFUSABLES_CHARS_LIST: list = (
     combining_chars.CONFUSABLES_CHARS

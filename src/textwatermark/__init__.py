@@ -1,10 +1,10 @@
 """TextWatermark"""
-__version__ = "0.2.0"
+__version__ = "0.2.1"
 
 import logging
 
-from textwatermark import log
-from textwatermark.config import settings
+from . import log
+from .config import settings
 
 if settings.LOGENABLED:
     log.init_log()

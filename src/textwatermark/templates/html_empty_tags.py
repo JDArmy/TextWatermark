@@ -9,7 +9,7 @@ Note: Some of HTML editor will remove empty or outside of list tags.
     and it is not recommended to use it in most cases.
 """
 
-from textwatermark.defines import WMMethod
+from ..defines import WMMethod
 
 # 空格字符
 CONFUSABLES_CHARS: list = [

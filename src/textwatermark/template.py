@@ -10,7 +10,7 @@ from typing import Union
 
 import numpy as np
 
-from textwatermark.defines import WMMethod
+from .defines import WMMethod
 
 
 class WMTemplate:

@@ -1,5 +1,5 @@
 """Homographs in Punctuations"""
-from textwatermark.defines import WMMethod
+from ..defines import WMMethod
 
 # 同形异义-标点
 CONFUSABLES_CHARS: dict = {

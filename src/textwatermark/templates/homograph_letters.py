@@ -1,7 +1,7 @@
 """Homographs in letters"""
 
 
-from textwatermark.defines import WMMethod
+from ..defines import WMMethod
 
 # 同形异义-字母
 CONFUSABLES_CHARS: dict = {

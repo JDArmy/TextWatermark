@@ -1,6 +1,6 @@
 """Homographs in numbers"""
 
-from textwatermark.defines import WMMethod
+from ..defines import WMMethod
 
 # 同形异义-数字
 CONFUSABLES_CHARS: dict = {

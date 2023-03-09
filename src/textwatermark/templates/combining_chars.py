@@ -3,7 +3,7 @@ In concept, a combining character is a mark of some kind intended to be position
 some other character, which is referred to as its associated base character.
 """
 
-from textwatermark.defines import WMMethod
+from ..defines import WMMethod
 
 # 组合字符，如音标等
 CONFUSABLES_CHARS: list = [

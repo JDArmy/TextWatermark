@@ -11,8 +11,8 @@ Warning: confusables_chars_key is needed
     You can choose one of the key to insert the watermark
 """
 
-from textwatermark.common import add_head_n_tial_to_dict
-from textwatermark.defines import WMMethod
+from ..common import add_head_n_tial_to_dict
+from ..defines import WMMethod
 
 # 组合字符，如音标等
 CONFUSABLES_CHARS_START_WITH: str = (

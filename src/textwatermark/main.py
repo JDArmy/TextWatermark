@@ -5,11 +5,11 @@ import json
 import os
 from typing import Any, Union
 
-from textwatermark import __version__
-from textwatermark.conversion import WMConversion
-from textwatermark.defines import WMMethod, WMMode
-from textwatermark.template import WMTemplate
-from textwatermark.template_type import WMTemplateType
+from . import __version__
+from .conversion import WMConversion
+from .defines import WMMethod, WMMode
+from .template import WMTemplate
+from .template_type import WMTemplateType
 
 
 class TextWatermark:

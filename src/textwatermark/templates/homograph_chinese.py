@@ -6,7 +6,7 @@ see the difference before and after inserting the watermark
 """
 # pylint: disable=too-many-lines
 
-from textwatermark.defines import WMMethod
+from ..defines import WMMethod
 
 # 同形异义-中文
 # http://www.unicode.org/Public/security/revision-03/confusablesSummary.txt
