@@ -2,7 +2,8 @@
 
 ## 0.2.1
 
--
+- change namespacing
+- bug fixed
 
 ## 0.2.0
 
