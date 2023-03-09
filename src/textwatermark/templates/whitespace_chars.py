@@ -9,7 +9,7 @@ an empty line of text or after some lines in the code.
 from textwatermark.defines import WhiteSpaceChars, WMMethod
 
 # 空格字符
-CONFUSABLES_CHARS = [
+CONFUSABLES_CHARS: list = [
     # WhiteSpaceChars.SPACE_1_4.value,
     WhiteSpaceChars.NO_BREAK_SPACE_1_4.value,
     WhiteSpaceChars.EN_QUAD_1_2.value,
@@ -28,4 +28,4 @@ CONFUSABLES_CHARS = [
 ]
 
 
-method = WMMethod.INSERT_INTO_POSITION
+method: WMMethod = WMMethod.INSERT_INTO_POSITION

@@ -144,11 +144,6 @@ class WMConversion:
             case _:
                 raise ValueError(f"ERROR: invalid watermark wm_mode: {self.wm_mode}")
 
-        # convert wm_bin to arbitrary base string
-        if self.wm_base < 2 or self.wm_base > 36:
-            raise ValueError(
-                f"Error: Unsupported base value. Must be between 2 and 16: {self.wm_base}"
-            )
         num = np.base_repr(int(wm_bin, 2), self.wm_base)
         return str(num)
 

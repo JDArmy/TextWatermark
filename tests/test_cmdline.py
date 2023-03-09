@@ -42,9 +42,7 @@ def test_insert():
     with open(TMP_FILE, "w", encoding="utf-8") as file:
         file.write("1234567890")
     # 输出到终端
-    cmd = (
-        f'insert -f "{TMP_FILE}" -m ALPHA_NUMERICAL -t HOMOGRAPH_NUMBERS -x 999 -w 123'
-    )
+    cmd = f' --debug insert -f "{TMP_FILE}" -m ALPHA_NUMERICAL -t HOMOGRAPH_NUMBERS -x 999 -w 123'
     result = runner.invoke(main, cmd)
     assert "Ӏ2𝟑𝟒𝟓Ⳓ𝟟890" in result.output
 
@@ -54,8 +52,31 @@ def test_insert():
     with open(TMP_FILE + ".out", "r", encoding="utf-8") as file:
         wm_str = file.read()
     assert "Ӏ2𝟑𝟒𝟓Ⳓ𝟟890" in wm_str
+
+    # no template_chars_key
+    cmd = f' insert -f "{TMP_FILE}" -m ALPHA_NUMERICAL -t FONT_COLOR  -x 9 -w 7'
+    result = runner.invoke(main, cmd)
+    assert "ValueError" in str(result)
+    assert "template_chars_key" in str(result)
+
+    # clean
     os.unlink(TMP_FILE)
     os.unlink(TMP_FILE + ".out")
+
+
+def test_insert_when_key_in_unicode():
+    """test insert command when key in unicode mode"""
+    runner = CliRunner()
+    with open(TMP_FILE, "w", encoding="utf-8") as file:
+        file.write("1234567890")
+    # template_chars_key in \uxxxx unicode mode
+    cmd = (
+        f' insert -f "{TMP_FILE}" -m ALPHA_NUMERICAL -t BINARY_REPRESENTATION -k "'
+        + r"\u007F"
+        + '" -x 9 -w 7'
+    )
+    result = runner.invoke(main, cmd)
+    assert "1\x7f2\x7f34567890" in str(result.output)
 
 
 def test_insert_n_retrieve():
@@ -74,6 +95,31 @@ def test_insert_n_retrieve():
 
     retrieve_result = runner.invoke(
         main, f"retrieve -f {TMP_FILE}.out -p '{param_result.output}'"
+    )
+    assert "123" in retrieve_result.output
+
+
+def test_insert_n_retrieve_v():
+    """test insert command"""
+    runner = CliRunner()
+    with open(TMP_FILE, "w", encoding="utf-8") as file:
+        file.write("a" * 30)
+    # 输出到终端
+    cmd = (
+        f'insert -f "{TMP_FILE}" -m ALPHA_NUMERICAL '
+        f"-t FONT_COLOR -k black4 -x 999 -w 123 -i 2 -l "
+    )
+
+    runner.invoke(main, cmd + f' -o "{TMP_FILE}.out"')
+    param_result = runner.invoke(main, cmd + " -e")
+
+    runner.invoke(main, cmd + f" -o '{TMP_FILE}.param' -e")
+    with open(TMP_FILE + ".param", "r", encoding="utf-8") as file:
+        param2 = file.read()
+    assert param2 in param_result.output
+
+    retrieve_result = runner.invoke(
+        main, f"-v retrieve -f {TMP_FILE}.out -p '{param_result.output}'"
     )
     assert "123" in retrieve_result.output
 
@@ -110,6 +156,29 @@ def test_retrieve():
     assert "123" in result.output
 
     os.unlink(TMP_FILE)
+
+
+def test_retrieve_exception():
+    """test retrieve exception"""
+    # with pytest.raises(ValueError):
+    runner = CliRunner()
+    params_json = (
+        '{"tpl_type": "HOMOGRAPH_NUMBERS", "confusables_chars": [], \
+        "confusables_chars_key": "", "wm_base": 7, "method": 1, "wm_mode": 5, \
+            "wm_len": 7, "wm_loop": false, "start_at": 0,"wm_flag_bit": true,\
+                "wm_max": "999","version": "'
+        + __version__
+        + '"}'
+    )
+
+    result = runner.invoke(main, f"retrieve  -p '{params_json}'")
+    assert "ValueError" in str(result)
+
+    result = runner.invoke(main, f"retrieve -f aaaaaaa.aaa  -p '{params_json}'")
+    assert "ValueError" in str(result)
+
+    result = runner.invoke(main, f"retrieve -f /tmp  -p '{params_json}'")
+    assert "Error" in str(result)
 
 
 def test_retrieve_bin():

@@ -1,5 +1,5 @@
 """
-WMTemplate is mainly used to load template, set related parameters, 
+WMTemplate is mainly used to load template, set related parameters,
 and insert watermark into text
 """
 # pylint: disable=consider-using-enumerate
@@ -65,7 +65,7 @@ class WMTemplate:
         """
 
         self.confusables_chars = confusables_chars
-        """The default template is in templates, 
+        """The default template is in templates,
                 you can your the modified custom template """
         if wm_base == 0:
             self.wm_base = WMTemplate.get_wm_base_from_tpl(self.confusables_chars)
@@ -163,7 +163,7 @@ class WMTemplate:
                 if not isinstance(self.confusables_chars, dict):
                     raise TypeError(
                         "Template defined error: Confusables_chars must be dict"
-                        " when WMMethod equal to FIND_AND_REPLACE"
+                        " when WMMethod equal to APPEND_AS_BINARY"
                     )
 
                 text = text.replace(
@@ -249,8 +249,6 @@ class WMTemplate:
                 out_text += self._append_as_binary(
                     text=text, wm_final=wm_final, loop=loop
                 )
-            case _:
-                raise ValueError(f"Unknown watermark method: {self.method}")
 
         return out_text
 
@@ -267,12 +265,13 @@ class WMTemplate:
             Because WMMethod.FIND_AND_REPLACE mode must need enough space
             to find special char and replace to watermarked char
         """
-        actual_len = 0
         if not isinstance(self.confusables_chars, dict):
             raise TypeError(
                 "Template defined error: Confusables_chars must be dict"
                 " when WMMethod equal to FIND_AND_REPLACE"
             )
+
+        actual_len = 0
 
         confusables_chars_keys = "".join(self.confusables_chars.keys())
         # 计算可插入的水印空间大小
@@ -309,7 +308,7 @@ class WMTemplate:
         if not isinstance(self.confusables_chars, dict):
             raise TypeError(
                 "Template defined error: Confusables_chars must be dict"
-                " when WMMethod equal to FIND_AND_REPLACE"
+                " when WMMethod equal to DECORATE_EACH_CHAR"
             )
 
         wm_idx = 0
@@ -352,8 +351,9 @@ class WMTemplate:
         if not isinstance(self.confusables_chars, dict):
             raise TypeError(
                 "Template defined error: Confusables_chars must be dict"
-                " when WMMethod equal to FIND_AND_REPLACE"
+                " when WMMethod equal to APPEND_AS_BINARY"
             )
+
         wm_idx = 0
         wm_text = ""
         for idx in range(len(text)):
@@ -451,7 +451,7 @@ class WMTemplate:
         if not isinstance(self.confusables_chars, dict):
             raise TypeError(
                 "Template defined error: Confusables_chars must be dict"
-                " when WMMethod equal to FIND_AND_REPLACE"
+                " when WMMethod equal to DECORATE_EACH_CHAR"
             )
 
         confusables_chars = self.confusables_chars[self.confusables_chars_key]
@@ -482,7 +482,7 @@ class WMTemplate:
         if not isinstance(self.confusables_chars, dict):
             raise TypeError(
                 "Template defined error: Confusables_chars must be dict"
-                " when WMMethod equal to FIND_AND_REPLACE"
+                " when WMMethod equal to APPEND_AS_BINARY"
             )
 
         confusables_char = self.confusables_chars[self.confusables_chars_key]

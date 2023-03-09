@@ -2,7 +2,6 @@
 Configuration center.
 Use https://www.dynaconf.com/
 """ ""
-import os
 import sys
 from pathlib import Path
 

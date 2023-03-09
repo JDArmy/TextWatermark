@@ -2,6 +2,7 @@
 # pylint: disable=invalid-name,too-many-arguments
 
 import os
+from copy import deepcopy
 
 import pytest
 
@@ -171,11 +172,29 @@ def test_set_tpl_type():
     assert wm.tpl_type == WMTemplateType.HOMOGRAPH_NUMBERS.name
 
 
+def test_set_wm_max_exception():
+    """test set_tpl_type method"""
+    wm = TextWatermark(WMMode.REAL_NUMBER, 2)
+    with pytest.raises(ValueError):
+        wm.set_wm_max(100)
+
+
 def test_text_file_not_exists():
     """test is text file do not exists"""
     wm = TextWatermark(WMMode.REAL_NUMBER, 2)
     with pytest.raises(ValueError):
         wm.set_text_file("not_exists.txt")
+
+    with pytest.raises(OSError):
+        wm.set_text_file("/tmp")
+
+
+def test_save_to_file_exception():
+    """test is text file do not exists"""
+    wm = TextWatermark(WMMode.REAL_NUMBER, 2)
+
+    with pytest.raises(OSError):
+        wm.save_to_file("AAA", "/tmp")
 
 
 def test_retrieve_watermark():
@@ -207,6 +226,15 @@ def test_retrieve_watermark():
             "wm_mode": 5, "wm_len": 7, "start_at": 0,"wm_flag_bit": true, "version": "0.0.0"}',
         )
 
+    with pytest.raises(ValueError):
+        wm_out = TextWatermark.retrieve_watermark(
+            "Ӏ2𝟑𝟒𝟓Ⳓ𝟟890",
+            '{"tpl_type": "WRONG_TYPE", "confusables_chars": [], \
+        "confusables_chars_key": "", "wm_base": 7, "wm_loop": false, "method": 1, \
+        "wm_mode": 5, "wm_len": 7, "start_at": 0,"wm_flag_bit": true,'
+            ' "version": "' + __version__ + '"}',
+        )
+
 
 def test_retrieve_watermark_with_confusables():
     """test retrieve watermark with confusables"""
@@ -221,6 +249,17 @@ def test_retrieve_watermark_with_confusables():
     )
     assert wm_out == "123"
 
+    with pytest.raises(ValueError):
+        wm_out = TextWatermark.retrieve_watermark(
+            "Ӏ2𝟑𝟒𝟓",
+            '{"tpl_type": "", "confusables_chars": '
+            '{"0": "0᱐𝟘𝟎𝟢𝟬𝟶", "1": "1Ӏ𝟙𝟏𝟣𝟭𝟷", "2": "2ᒿ𝟚𝟐𝟤𝟮𝟸", "3": "3Ⳍ𝟛𝟑𝟥𝟯𝟹", "4": "4Ꮞ𝟜𝟒𝟦𝟰𝟺", '
+            '"5": "5Ƽ𝟝𝟓𝟧𝟱𝟻", "6": "6Ⳓ𝟞𝟔𝟨𝟲𝟼", "7": "7ገ𝟟𝟕𝟩𝟳𝟽", "8": "8৪𝟠𝟖𝟪𝟴𝟾", "9": "9Ꝯ𝟡𝟗𝟫𝟵𝟿"}, '
+            '"confusables_chars_key": "", "wm_base": 7, "wm_loop": false, "method": 1, '
+            '"wm_mode": 5, "wm_len": 7, "start_at": 0,"wm_flag_bit": true, '
+            '"version": "' + __version__ + '"}',
+        )
+
 
 def test_retrieve_watermark_from_bin():
     """test retrieve watermark from bin"""
@@ -229,6 +268,14 @@ def test_retrieve_watermark_from_bin():
         '{"tpl_type": "FONT_SIZE", "confusables_chars": [], "confusables_chars_key": "110", '
         '"wm_base": 2, "method": 3, "wm_mode": 5, "wm_len": 35, "wm_loop": false, '
         '"start_at": 0, "wm_flag_bit": true, "version": "' + __version__ + '"}',
+    )
+    assert wm_out == "123456"
+
+    wm_out = TextWatermark.retrieve_watermark_from_bin(
+        "0010000011000100000101000110000111",
+        '{"tpl_type": "FONT_SIZE", "confusables_chars": [], "confusables_chars_key": "110", '
+        '"wm_base": 2, "method": 3, "wm_mode": 5, "wm_len": 34, "wm_loop": false, '
+        '"start_at": 0, "wm_flag_bit": false, "version": "' + __version__ + '"}',
     )
     assert wm_out == "123456"
 
@@ -248,3 +295,52 @@ def test_retrieve_watermark_from_bin():
             '"wm_base": 2, "method": 3, "wm_mode": 5, "wm_len": 35, "wm_loop": false, '
             '"start_at": 0, "wm_flag_bit": true, "version": "' + __version__ + '"}',
         )
+
+
+def test_init_from_params():
+    """test init_from_params method"""
+    with open(
+        os.path.abspath(os.path.dirname(__file__) + "/text/1.txt"),
+        "r",
+        encoding="utf-8",
+    ) as file:
+        text = file.read()
+    # samples
+    wm = TextWatermark(WMMode.REAL_NUMBER, 0, 0, True)
+    wm.set_tpl_type(WMTemplateType.HOMOGRAPH_NUMBERS)
+    wm.set_wm_max(999999999)
+    wm.set_text_file(os.path.abspath(os.path.dirname(__file__) + "/text/1.txt"))
+    wm_text = wm.insert_watermark("123456")
+    # samples end
+
+    params = (
+        '{"tpl_type": "", "confusables_chars": {"0": "0᱐𝟘𝟎𝟢𝟬𝟶", "1": "1Ӏ𝟙𝟏𝟣𝟭𝟷",'
+        + ' "2": "2ᒿ𝟚𝟐𝟤𝟮𝟸", "3": "3Ⳍ𝟛𝟑𝟥𝟯𝟹", "4": "4Ꮞ𝟜𝟒𝟦𝟰𝟺", "5": "5Ƽ𝟝𝟓𝟧𝟱𝟻", "6": "6Ⳓ𝟞𝟔𝟨𝟲𝟼", '
+        + '"7": "7ገ𝟟𝟕𝟩𝟳𝟽", "8": "8৪𝟠𝟖𝟪𝟴𝟾", "9": "9Ꝯ𝟡𝟗𝟫𝟵𝟿", ".": ".٠۰ꓸ․ͺ᎐"}, '
+        + '"confusables_chars_key": "", "wm_base": 7, "method": 1, "wm_mode": 1, "wm_len": 12, '
+        + '"wm_flag_bit": true, "wm_loop": true, "wm_max": "999999999", "start_at": 0, '
+        + f'"version": "{__version__}"'
+        + "}"
+    )
+
+    wm2 = TextWatermark.init_from_params(params, text)
+    wm_text2 = wm2.insert_watermark("123456")
+    assert wm_text == wm_text2
+
+    # raise version error
+    params1 = deepcopy(params)
+    params1 = params1.replace(__version__, "0.0.0")
+    with pytest.raises(ValueError):
+        TextWatermark.init_from_params(params1, text)
+
+    # init from type
+    params3 = (
+        '{"tpl_type": "HOMOGRAPH_NUMBERS", '
+        + '"confusable__chars_key": "", "wm_base": 7, "method": 1, "wm_mode": 1, "wm_len": 12, '
+        + '"wm_flag_bit": true, "wm_loop": true, "wm_max": "999999999", "start_at": 0, '
+        + f'"version": "{__version__}"'
+        + "}"
+    )
+    wm3 = TextWatermark.init_from_params(params3, text)
+    wm_text3 = wm3.insert_watermark("123456")
+    assert wm_text == wm_text3

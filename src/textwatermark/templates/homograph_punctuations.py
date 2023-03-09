@@ -2,7 +2,7 @@
 from textwatermark.defines import WMMethod
 
 # 同形异义-标点
-CONFUSABLES_CHARS = {
+CONFUSABLES_CHARS: dict = {
     "!": "ǃ！",
     '"': "ʺ＂",
     "%": "٪⁒",
@@ -31,4 +31,4 @@ CONFUSABLES_CHARS = {
 
 for ikey, ival in CONFUSABLES_CHARS.items():
     CONFUSABLES_CHARS[ikey] = ikey + ival
-method = WMMethod.FIND_AND_REPLACE
+method: WMMethod = WMMethod.FIND_AND_REPLACE

@@ -3,7 +3,6 @@
 
 import json
 import os
-import sys
 from typing import Any, Union
 
 from textwatermark import __version__
@@ -223,7 +222,7 @@ class TextWatermark:
                 self.set_text(file.read())
         except OSError as err:
             print(f"ERROR: cannot read file {path}, err is {err.strerror}")
-            sys.exit()
+            raise
 
     def insert_watermark(self, wm_str: str):
         """Insert watermark to text
@@ -236,7 +235,6 @@ class TextWatermark:
 
         Raises:
             ValueError: If watermark string is larger than wm_max
-            ValueError: If there is not enough space to insert a watermark
         """
         wm_final = self.wmc.wm_convert_to_arbitrary_base(wm_str)
         if self.wm_flag_bit:
@@ -258,11 +256,6 @@ class TextWatermark:
         if self.wm_flag_bit:
             wm_final = "1" + wm_final
 
-        if len(wm_final) > self.wm_fixed_len:
-            raise ValueError(
-                f"ERROR: watermark {wm_str} (convert to: {wm_final}) \
-                    is too long: {len(wm_final)}, max length is {self.wm_fixed_len}"
-            )
         #
         wm_text = self.wmt.insert_watermark(
             text=self.text, wm_final=wm_final, start_at=self.start_at, loop=self.wm_loop
@@ -287,7 +280,7 @@ class TextWatermark:
                 file.write(wm_text)
         except OSError as err:
             print(f"ERROR: cannot write to file {path}, err is {err.strerror}")
-            sys.exit()
+            raise
 
     def export_params(self):
         """Export watermark params to json string

@@ -7,7 +7,7 @@ In most cases, using this template is a pretty good choice.
 
 from textwatermark.defines import WMMethod
 
-CONFUSABLES_CHARS = [
+CONFUSABLES_CHARS: list = [
     "\u034f",
     "\u061c",
     "\u180b",
@@ -39,4 +39,4 @@ CONFUSABLES_CHARS = [
     "\ufe0f",
 ]
 
-method = WMMethod.INSERT_INTO_POSITION
+method: WMMethod = WMMethod.INSERT_INTO_POSITION

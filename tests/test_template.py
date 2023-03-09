@@ -1,9 +1,9 @@
 """test WMTemplate"""
-# pylint: disable=invalid-name
+# pylint: disable=invalid-name,too-few-public-methods,protected-access
 
 import pytest
 
-from textwatermark.defines import WhiteSpaceChars
+from textwatermark.defines import WhiteSpaceChars, WMMethod
 from textwatermark.template import WMTemplate
 from textwatermark.templates import (
     binary_representation,
@@ -44,7 +44,7 @@ def _test_template(template, text, wm_final, start_at, confusables_chars_key="")
             wm_len=len(wm_final),
             start_at=start_at,
         )
-        print(wm_text, wm_final, wm_out, wmt.wm_base)
+        # print(wm_text, wm_final, wm_out, wmt.wm_base)
         assert wm_final == wm_out
 
 
@@ -181,6 +181,22 @@ def test_template():
             confusables_chars_key="\u0300",
         )
 
+    # raise CONFUSABLES_CHARS type error
+    class template1:
+        """template with CONFUSABLES_CHARS type error"""
+
+        CONFUSABLES_CHARS = 123
+        method = 456
+
+    with pytest.raises(TypeError):
+        _test_template(
+            template=template1, text="从前有座庙，庙里有个老和尚", wm_final="101101", start_at=1
+        )
+
+    # _test_template(
+    #     template=whitespace_chars, text="从前有座庙，庙里有个老和尚", wm_final="101101", start_at=1
+    # )
+
 
 def test_clean_html_tags():
     """test clean_html_tags"""
@@ -277,3 +293,90 @@ def test_clean_text():
         new_text=new_text,
         confusables_chars_key="\u0300",
     )
+
+
+def test_clean_text_exception():
+    """test clean_text method with exception"""
+
+    text = "a1a2a3a4"
+    with pytest.raises(TypeError):
+        wmt = WMTemplate(
+            whitespace_chars.CONFUSABLES_CHARS, 2, WMMethod.FIND_AND_REPLACE, ""
+        )
+        wmt.clean_text(text)
+
+    with pytest.raises(ValueError):
+        wmt = WMTemplate(whitespace_chars.CONFUSABLES_CHARS, 2, 999, "")
+        wmt.clean_text(text)
+
+    with pytest.raises(TypeError):
+        wmt = WMTemplate(
+            whitespace_chars.CONFUSABLES_CHARS, 2, whitespace_chars.method, ""
+        )
+        wmt.method = WMMethod.APPEND_AS_BINARY
+        wmt.clean_text(text)
+
+
+def test_insert_watermark_exception():
+    """test insert_watermark method with exception"""
+    text = "a1a2a3a4"
+    wmt = WMTemplate(whitespace_chars.CONFUSABLES_CHARS, 2, whitespace_chars.method, "")
+    with pytest.raises(ValueError):
+        wmt.method = WMMethod.DECORATE_EACH_CHAR
+        wmt.insert_watermark(text, "1" * 100)
+
+    with pytest.raises(ValueError):
+        wmt.method = WMMethod.APPEND_TO_CHAR
+        wmt.insert_watermark(text, "1" * 100)
+
+    with pytest.raises(ValueError):
+        wmt = WMTemplate(
+            binary_representation.CONFUSABLES_CHARS,
+            2,
+            binary_representation.method,
+            "\u007f",
+        )
+        wmt.insert_watermark(text, "1" * 100)
+
+
+def test_for_other_exceptions():
+    """test  method with exception"""
+    text = "a1a2a3a4"
+    wmt = WMTemplate(whitespace_chars.CONFUSABLES_CHARS, 2, whitespace_chars.method, "")
+    with pytest.raises(TypeError):
+        wmt.check_find_and_replace_space(text, 1)
+
+    with pytest.raises(TypeError):
+        wmt._find_and_replace(text, 1, False)
+
+    with pytest.raises(TypeError):
+        wmt._decorate_each_char(text, 1, False)
+
+    with pytest.raises(TypeError):
+        wmt._append_as_binary(text, 1, False)
+
+    with pytest.raises(ValueError):
+        wmt.retrieve_watermark(text, 2, 2, 999999)
+
+    with pytest.raises(ValueError):
+        wmt.method = 999
+        wmt.retrieve_watermark(text, 2, 2, 0)
+
+    with pytest.raises(ValueError):
+        wmt.method = whitespace_chars.method
+        wmt.retrieve_watermark(text, 2, 2, 0)
+
+    with pytest.raises(TypeError):
+        wmt._retrieve_find_and_replace(text, 2)
+
+    with pytest.raises(TypeError):
+        wmt._retrieve_decorate_each_char(text, 2, 2)
+
+    with pytest.raises(TypeError):
+        wmt._retrieve_append_as_binary(text, 2)
+
+    with pytest.raises(ValueError):
+        wmt.confusables_chars = binary_representation.CONFUSABLES_CHARS
+        wmt.method = binary_representation.method
+        wmt.confusables_chars_key = "\u007f"
+        wmt._retrieve_append_as_binary(text, 2)

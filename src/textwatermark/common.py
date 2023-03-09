@@ -1,7 +1,7 @@
 """Some common functions here"""
 
 
-def add_head_n_tial_to_dict(the_dict: dict, head: str, tail: str):
+def add_head_n_tial_to_dict(the_dict: dict, head: str, tail: str) -> None:
     """Add head and tail to a dict, will directly effect to origin dict.
 
     Args:

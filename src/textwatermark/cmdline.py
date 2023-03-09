@@ -3,7 +3,6 @@
 
 import os
 import re
-import sys
 
 import click
 from click import Context
@@ -133,16 +132,17 @@ def insert(
     `textwatermark -v insert -m ALPHA_NUMERICAL -t HOMOGRAPH_NUMBERS
     -x 999999999 -w 123456789 -e -o 'out.txt'`
     """
-    verbose = settings.get("VERBOSE")
+    verbose = settings.VERBOSE
 
     new_template_type = WMTemplateType[template_type]
     if (
-        new_template_type.value.method == WMMethod.DECORATE_EACH_CHAR
+        new_template_type.value.method
+        in [WMMethod.DECORATE_EACH_CHAR, WMMethod.APPEND_AS_BINARY]
         and template_chars_key == ""
     ):
         raise ValueError("template_chars_key is required")
 
-    if re.fullmatch("^\\\\u[0-9]{4}$", template_chars_key) is not None:
+    if re.fullmatch(r"^\\u[0-9a-fA-F]{4}$", template_chars_key) is not None:
         template_chars_key = chr(int(template_chars_key[2:], 16))
 
     # # init
@@ -216,7 +216,7 @@ def retrieve(
     `textwatermark retrieve -f ./out.txt -p '{the param json string export by
     command:insert and option:--export-params}'`
     """
-    verbose = settings.get("VERBOSE")
+    verbose = settings.VERBOSE
 
     if not wm_text_file and not wm_binary:
         raise ValueError("No watermarked text file or watermark binary string set")
@@ -235,7 +235,7 @@ def retrieve(
                 wm_text = f.read()
         except OSError as err:
             print(f"ERROR: cannot read file {wm_text_file}, err is {err.strerror}")
-            sys.exit()
+            raise
         wm_out_str = TextWatermark.retrieve_watermark(
             wm_text, params_json, dont_check_version
         )

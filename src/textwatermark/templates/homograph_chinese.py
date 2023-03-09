@@ -10,7 +10,7 @@ from textwatermark.defines import WMMethod
 
 # 同形异义-中文
 # http://www.unicode.org/Public/security/revision-03/confusablesSummary.txt
-CONFUSABLES_CHARS = {
+CONFUSABLES_CHARS: dict = {
     "°": "゜",
     "″": "゛",
     "，": "٫",
@@ -1116,4 +1116,4 @@ CONFUSABLES_CHARS = {
 
 for ikey, ival in CONFUSABLES_CHARS.items():
     CONFUSABLES_CHARS[ikey] = ikey + ival
-method = WMMethod.FIND_AND_REPLACE
+method: WMMethod = WMMethod.FIND_AND_REPLACE

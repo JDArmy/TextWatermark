@@ -6,7 +6,7 @@ some other character, which is referred to as its associated base character.
 from textwatermark.defines import WMMethod
 
 # 组合字符，如音标等
-CONFUSABLES_CHARS = [
+CONFUSABLES_CHARS: list = [
     "\u0300",
     "\u0301",
     "\u0302",
@@ -59,4 +59,4 @@ CONFUSABLES_CHARS = [
     "\ua67d",
     "\ua69f",
 ]
-method = WMMethod.APPEND_TO_CHAR
+method: WMMethod = WMMethod.APPEND_TO_CHAR

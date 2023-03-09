@@ -12,7 +12,7 @@ Note: Some of HTML editor will remove empty or outside of list tags.
 from textwatermark.defines import WMMethod
 
 # 空格字符
-CONFUSABLES_CHARS = [
+CONFUSABLES_CHARS: list = [
     "<a></a>",
     "<abbr></abbr>",
     "<b></b>",
@@ -35,4 +35,4 @@ CONFUSABLES_CHARS = [
     "<u></u>",
 ]
 
-method = WMMethod.INSERT_INTO_POSITION
+method: WMMethod = WMMethod.INSERT_INTO_POSITION

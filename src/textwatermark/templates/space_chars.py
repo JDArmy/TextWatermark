@@ -7,7 +7,7 @@ Since spaces are rare in Chinese, this template is mainly suitable for English t
 from textwatermark.defines import WhiteSpaceChars, WMMethod
 
 # 空格字符
-CONFUSABLES_CHARS = {
+CONFUSABLES_CHARS: dict = {
     "\u0020": [
         WhiteSpaceChars.SPACE_1_4.value,
         # WhiteSpaceChars.NO_BREAK_SPACE_1_4.value,
@@ -27,4 +27,4 @@ CONFUSABLES_CHARS = {
     ]
 }
 
-method = WMMethod.FIND_AND_REPLACE
+method: WMMethod = WMMethod.FIND_AND_REPLACE

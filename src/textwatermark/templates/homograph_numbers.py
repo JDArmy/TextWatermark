@@ -3,7 +3,7 @@
 from textwatermark.defines import WMMethod
 
 # 同形异义-数字
-CONFUSABLES_CHARS = {
+CONFUSABLES_CHARS: dict = {
     "0": "᱐𝟘𝟎𝟢𝟬𝟶",
     "1": "Ӏ𝟙𝟏𝟣𝟭𝟷",
     "2": "ᒿ𝟚𝟐𝟤𝟮𝟸",
@@ -19,4 +19,4 @@ CONFUSABLES_CHARS = {
 
 for ikey, ival in CONFUSABLES_CHARS.items():
     CONFUSABLES_CHARS[ikey] = ikey + ival
-method = WMMethod.FIND_AND_REPLACE
+method: WMMethod = WMMethod.FIND_AND_REPLACE

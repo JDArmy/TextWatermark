@@ -15,9 +15,9 @@ from textwatermark.common import add_head_n_tial_to_dict
 from textwatermark.defines import WMMethod
 
 # 组合字符，如音标等
-CONFUSABLES_CHARS_START_WITH = '<span style="font-weight: '
-CONFUSABLES_CHARS_END_WITH = ';">{char}</span>'
-CONFUSABLES_CHARS = {
+CONFUSABLES_CHARS_START_WITH: str = '<span style="font-weight: '
+CONFUSABLES_CHARS_END_WITH: str = ';">{char}</span>'
+CONFUSABLES_CHARS: dict = {
     "lighter": ["normal", "lighter"],
     "bolder": ["normal", "bolder"],
     "lighter-bolder": ["lighter", "bolder"],
@@ -35,4 +35,4 @@ add_head_n_tial_to_dict(
     CONFUSABLES_CHARS, CONFUSABLES_CHARS_START_WITH, CONFUSABLES_CHARS_END_WITH
 )
 
-method = WMMethod.DECORATE_EACH_CHAR
+method: WMMethod = WMMethod.DECORATE_EACH_CHAR
