@@ -1,8 +1,11 @@
 # Changelog
 
-## 0.3.0
+## 0.3.1
 
 - add `check_if_enough_space` method
+
+## 0.3.0
+
 - change export params JSON to more readable
 
 ## 0.2.1

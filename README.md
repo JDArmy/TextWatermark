@@ -7,6 +7,7 @@ Please take a look at our documentation for how to install and use TextWatermark
 - [Website](https://textwatermark.jd.army/)
 - [Github](https://github.com/JDArmy/TextWatermark)
 - [Usage](https://textwatermark.jd.army/usage)
+- [Example](https://textwatermark.jd.army/example)
 - [Changelog](https://textwatermark.jd.army/changelog)
 - [API Documents](https://textwatermark.jd.army/api/main/)
 - [Templates](https://textwatermark.jd.army/templates/)

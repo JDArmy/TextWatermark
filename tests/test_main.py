@@ -352,3 +352,59 @@ def test_init_from_params():
     wm3 = TextWatermark.init_from_params(params3, text)
     wm_text3 = wm3.insert_watermark("123456")
     assert wm_text == wm_text3
+
+
+def test_check_if_enough_space():
+    """test check_if_enough_space method"""
+    text = "12345678901"
+    params = {
+        "tpl_type": "HOMOGRAPH_NUMBERS",
+        "confusables_chars": [],
+        "confusables_chars_key": "",
+        "wm_base": 7,
+        "method": "FIND_AND_REPLACE",
+        "wm_mode": "REAL_NUMBER",
+        "wm_len": 8,
+        "wm_flag_bit": False,
+        "wm_loop": False,
+        "wm_max": "999999",
+        "start_at": 0,
+        "version": __version__,
+    }
+    ret1 = TextWatermark.check_if_enough_space(params, text)
+    assert ret1 is True
+
+    params["start_at"] = 10
+    ret2 = TextWatermark.check_if_enough_space(params, text)
+    assert ret2 is False
+
+    params["method"] = "INSERT_INTO_POSITION"
+    params["tpl_type"] = "INVISIBLE_CHARS"
+    params["start_at"] = 15
+    ret3 = TextWatermark.check_if_enough_space(params, text)
+    assert ret3 is False
+
+    params["start_at"] = 0
+    ret4 = TextWatermark.check_if_enough_space(params, text)
+    assert ret4 is True
+
+    params = {
+        "tpl_type": "COMBINING_CHARS",
+        "confusables_chars": [],
+        "confusables_chars_key": "",
+        "wm_base": 36,
+        "method": "APPEND_TO_CHAR",
+        "wm_mode": "REAL_NUMBER",
+        "wm_len": 4,
+        "wm_flag_bit": False,
+        "wm_loop": False,
+        "wm_max": "999999",
+        "start_at": 0,
+        "version": __version__,
+    }
+    ret5 = TextWatermark.check_if_enough_space(params, text)
+    assert ret5 is True
+
+    params["start_at"] = 10
+    ret6 = TextWatermark.check_if_enough_space(params, text)
+    assert ret6 is False

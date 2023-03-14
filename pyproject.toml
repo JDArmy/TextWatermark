@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "textwatermark"
-version = "0.3.0"
+version = "0.3.1"
 description = "A watermark library for text."
 keywords = ["watermark", "text", 'blind']
 readme = "README.md"
