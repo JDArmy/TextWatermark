@@ -16,7 +16,7 @@
 === "Retrieve"
 
     ```console
-    $ textwatermark -v retrieve -f /tmp/out.txt -p '{"tpl_type": "BINARY_REPRESENTATION", "confusables_chars": [], "confusables_chars_key": "̀", "wm_base": 2, "method": 5, "wm_mode": 5, "wm_len": 35, "wm_loop": false, "start_at": 0, "version": "0.1.2"}'
+    $ textwatermark -v retrieve -f /tmp/out.txt -p '{"tpl_type": "BINARY_REPRESENTATION", "confusables_chars": [], "confusables_chars_key": "̀", "wm_base": 2, "method": "APPEND_AS_BINARY", "wm_mode": "ALPHA_NUMERICAL", "wm_len": 35, "wm_flag_bit": true, "wm_loop": false, "wm_max": "999999", "start_at": 0, "version": "0.3.0"}'
     
     The retrieved watermark is: 123456
     ```
@@ -35,7 +35,7 @@
 === "Retrieve"
 
     ```console
-    $ textwatermark -v retrieve -f /tmp/out.txt -p '{"tpl_type": "COMBINING_CHARS", "confusables_chars": [], "confusables_chars_key": "", "wm_base": 36, "method": 4, "wm_mode": 5, "wm_len": 8, "wm_loop": false, "start_at": 0, "version": "0.1.2"}'
+    $ textwatermark -v retrieve -f /tmp/out.txt -p '{"tpl_type": "COMBINING_CHARS", "confusables_chars": [], "confusables_chars_key": "", "wm_base": 36, "method": "APPEND_TO_CHAR", "wm_mode": "ALPHA_NUMERICAL", "wm_len": 8, "wm_flag_bit": true, "wm_loop": false, "wm_max": "999999", "start_at": 0, "version": "0.3.0"}'
 
     The retrieved watermark is: 123456
     ```
@@ -60,7 +60,7 @@
 === "Retrieve"
 
     ```console
-    $ textwatermark -v retrieve -f /tmp/out.txt -p '{"tpl_type": "FONT_COLOR", "confusables_chars": [], "confusables_chars_key": "black4", "wm_base": 2, "method": 3, "wm_mode": 5, "wm_len": 35, "wm_loop": false, "start_at": 0, "version": "0.1.2"}'
+    $ textwatermark -v retrieve -f /tmp/out.txt -p '{"tpl_type": "FONT_COLOR", "confusables_chars": [], "confusables_chars_key": "black4", "wm_base": 2, "method": "DECORATE_EACH_CHAR", "wm_mode": "ALPHA_NUMERICAL", "wm_len": 35, "wm_flag_bit": true, "wm_loop": false, "wm_max": "999999", "start_at": 0, "version": "0.3.0"}'
 
     The retrieved watermark is: 123456
     ```
@@ -85,7 +85,7 @@
 === "Retrieve"
 
     ```console
-    $ textwatermark -v retrieve -f /tmp/out.txt -p '{"tpl_type": "FONT_FLOAT", "confusables_chars": [], "confusables_chars_key": "up3", "wm_base": 2, "method": 3, "wm_mode": 5, "wm_len": 35, "wm_loop": false, "start_at": 0, "version": "0.1.2"}'
+    $ textwatermark -v retrieve -f /tmp/out.txt -p '{"tpl_type": "FONT_FLOAT", "confusables_chars": [], "confusables_chars_key": "up3", "wm_base": 2, "method": "DECORATE_EACH_CHAR", "wm_mode": "ALPHA_NUMERICAL", "wm_len": 35, "wm_flag_bit": true, "wm_loop": false, "wm_max": "999999", "start_at": 0, "version": "0.3.0"}'
 
     The retrieved watermark is: 123456
     ```
@@ -111,7 +111,7 @@
 === "Retrieve"
 
     ```console
-    $ textwatermark -v retrieve -f /tmp/out.txt -p '{"tpl_type": "FONT_SIZE", "confusables_chars": [], "confusables_chars_key": "110", "wm_base": 2, "method": 3, "wm_mode": 5, "wm_len": 35, "wm_loop": false, "start_at": 0, "version": "0.1.2"}'
+    $ textwatermark -v retrieve -f /tmp/out.txt -p '{"tpl_type": "FONT_SIZE", "confusables_chars": [], "confusables_chars_key": "110", "wm_base": 2, "method": "DECORATE_EACH_CHAR", "wm_mode": "ALPHA_NUMERICAL", "wm_len": 35, "wm_flag_bit": true, "wm_loop": false, "wm_max": "999999", "start_at": 0, "version": "0.3.0"}'
 
     The retrieved watermark is: 123456
     ```
@@ -137,7 +137,7 @@
 === "Retrieve"
 
     ```console
-    $ textwatermark -v retrieve -f /tmp/out.txt -p '{"tpl_type": "FONT_STYLE", "confusables_chars": [], "confusables_chars_key": "text-decoration-underline", "wm_base": 2, "method": 3, "wm_mode": 5, "wm_len": 35, "wm_loop": false, "start_at": 0, "version": "0.1.2"}'
+    $ textwatermark -v retrieve -f /tmp/out.txt -p '{"tpl_type": "FONT_STYLE", "confusables_chars": [], "confusables_chars_key": "text-decoration-underline", "wm_base": 2, "method": "DECORATE_EACH_CHAR", "wm_mode": "ALPHA_NUMERICAL", "wm_len": 35, "wm_flag_bit": true, "wm_loop": false, "wm_max": "999999", "start_at": 0, "version": "0.3.0"}'
 
     The retrieved watermark is: 123456
     ```
@@ -163,7 +163,7 @@
 === "Retrieve"
 
     ```console
-    $ textwatermark -v retrieve -f /tmp/out.txt -p '{"tpl_type": "FONT_WEIGHT", "confusables_chars": [], "confusables_chars_key": "bolder", "wm_base": 2, "method": 3, "wm_mode": 5, "wm_len": 35, "wm_loop": false, "start_at": 0, "version": "0.1.2"}'
+    $ textwatermark -v retrieve -f /tmp/out.txt -p '{"tpl_type": "FONT_WEIGHT", "confusables_chars": [], "confusables_chars_key": "bolder", "wm_base": 2, "method": "DECORATE_EACH_CHAR", "wm_mode": "ALPHA_NUMERICAL", "wm_len": 35, "wm_flag_bit": true, "wm_loop": false, "wm_max": "999999", "start_at": 0, "version": "0.3.0"}'
 
     The retrieved watermark is: 123456
     ```
@@ -189,7 +189,7 @@
 === "Retrieve"
 
     ```console
-    $ textwatermark -v retrieve -f /tmp/out.txt -p '{"tpl_type": "HOMOGRAPH_CHINESE", "confusables_chars": [], "confusables_chars_key": "", "wm_base": 2, "method": 1, "wm_mode": 5, "wm_len": 35, "wm_loop": false, "start_at": 0, "version": "0.1.2"}'
+    $ textwatermark -v retrieve -f /tmp/out.txt -p '{"tpl_type": "HOMOGRAPH_CHINESE", "confusables_chars": [], "confusables_chars_key": "", "wm_base": 2, "method": "FIND_AND_REPLACE", "wm_mode": "ALPHA_NUMERICAL", "wm_len": 35, "wm_flag_bit": true, "wm_loop": false, "wm_max": "999999", "start_at": 0, "version": "0.3.0"}'
 
     The retrieved watermark is: 123456
     ```
@@ -215,7 +215,7 @@
 === "Retrieve"
 
     ```console
-    $ textwatermark -v retrieve -f /tmp/out.txt -p '{"tpl_type": "HOMOGRAPH_LETTERS", "confusables_chars": [], "confusables_chars_key": "", "wm_base": 8, "method": 1, "wm_mode": 5, "wm_len": 13, "wm_loop": false, "start_at": 0, "version": "0.1.2"}'
+    $ textwatermark -v retrieve -f /tmp/out.txt -p '{"tpl_type": "HOMOGRAPH_LETTERS", "confusables_chars": [], "confusables_chars_key": "", "wm_base": 8, "method": "FIND_AND_REPLACE", "wm_mode": "ALPHA_NUMERICAL", "wm_len": 13, "wm_flag_bit": true, "wm_loop": false, "wm_max": "999999", "start_at": 0, "version": "0.3.0"}'
 
     The retrieved watermark is: 123456
     ```
@@ -241,7 +241,7 @@
 === "Retrieve"
 
     ```console
-    $ textwatermark -v retrieve -f /tmp/out.txt -p '{"tpl_type": "HOMOGRAPH_NUMBERS", "confusables_chars": [], "confusables_chars_key": "", "wm_base": 7, "method": 1, "wm_mode": 5, "wm_len": 13, "wm_loop": false, "start_at": 0, "version": "0.1.2"}'
+    $ textwatermark -v retrieve -f /tmp/out.txt -p '{"tpl_type": "HOMOGRAPH_NUMBERS", "confusables_chars": [], "confusables_chars_key": "", "wm_base": 7, "method": "FIND_AND_REPLACE", "wm_mode": "ALPHA_NUMERICAL", "wm_len": 13, "wm_flag_bit": true, "wm_loop": false, "wm_max": "999999", "start_at": 0, "version": "0.3.0"}'
 
     The retrieved watermark is: 123456
     ```
@@ -253,7 +253,7 @@
 
     𝟷𝟸𝟹𝟺𝟻𝟼𝟽𝟾𝟿𝟶𝟭
 
-    $ textwatermark retrieve -f /tmp/out.txt -p '{"tpl_type": "HOMOGRAPH_NUMBERS", "confusables_chars": [], "confusables_chars_key": "", "wm_base": 7, "method": 1, "wm_mode": 1, "wm_len": 11, "wm_flag_bit": false, "wm_loop": false, "start_at": 0, "version": "0.1.3"}'
+    $ textwatermark retrieve -f /tmp/out.txt -p '{"tpl_type": "HOMOGRAPH_NUMBERS", "confusables_chars": [], "confusables_chars_key": "", "wm_base": 7, "method": "FIND_AND_REPLACE", "wm_mode": "REAL_NUMBER", "wm_len": 11, "wm_flag_bit": false, "wm_loop": false, "wm_max": "1977326742", "start_at": 0, "version": "0.3.0"}'
 
     1977326741
     ```
@@ -279,7 +279,7 @@
 === "Retrieve"
 
     ```console
-    $ textwatermark -v retrieve -f /tmp/out.txt -p '{"tpl_type": "HOMOGRAPH_PUNCTUATIONS", "confusables_chars": [], "confusables_chars_key": "", "wm_base": 3, "method": 1, "wm_mode": 5, "wm_len": 23, "wm_loop": false, "start_at": 0, "version": "0.1.2"}'
+    $ textwatermark -v retrieve -f /tmp/out.txt -p '{"tpl_type": "HOMOGRAPH_PUNCTUATIONS", "confusables_chars": [], "confusables_chars_key": "", "wm_base": 3, "method": "FIND_AND_REPLACE", "wm_mode": "ALPHA_NUMERICAL", "wm_len": 23, "wm_flag_bit": true, "wm_loop": false, "wm_max": "999999", "start_at": 0, "version": "0.3.0"}'
 
     The retrieved watermark is: 123456
     ```
@@ -302,7 +302,7 @@
 === "Retrieve"
 
     ```console
-    $ textwatermark -v retrieve -f /tmp/out.txt -p '{"tpl_type": "HTML_EMPTY_TAGS", "confusables_chars": [], "confusables_chars_key": "", "wm_base": 20, "method": 2, "wm_mode": 5, "wm_len": 9, "wm_loop": false, "start_at": 1, "version": "0.1.2"}'
+    $ textwatermark -v retrieve -f /tmp/out.txt -p '{"tpl_type": "HTML_EMPTY_TAGS", "confusables_chars": [], "confusables_chars_key": "", "wm_base": 20, "method": "INSERT_INTO_POSITION", "wm_mode": "ALPHA_NUMERICAL", "wm_len": 9, "wm_flag_bit": true, "wm_loop": false, "wm_max": "999999", "start_at": 1, "version": "0.3.0"}'
 
     The retrieved watermark is: 123456
     ```
@@ -321,7 +321,7 @@
 === "Retrieve"
 
     ```console
-    $ textwatermark -v retrieve -f /tmp/out.txt -p '{"tpl_type": "INVISIBLE_CHARS", "confusables_chars": [], "confusables_chars_key": "", "wm_base": 29, "method": 2, "wm_mode": 5, "wm_len": 8, "wm_loop": false, "start_at": 1, "version": "0.1.2"}'
+    $ textwatermark -v retrieve -f /tmp/out.txt -p '{"tpl_type": "INVISIBLE_CHARS", "confusables_chars": [], "confusables_chars_key": "", "wm_base": 29, "method": "INSERT_INTO_POSITION", "wm_mode": "ALPHA_NUMERICAL", "wm_len": 8, "wm_flag_bit": true, "wm_loop": false, "wm_max": "999999", "start_at": 1, "version": "0.3.0"}'
 
     The retrieved watermark is: 123456
 
@@ -340,7 +340,7 @@
 === "Retrieve"
 
     ```console
-    $ textwatermark -v retrieve -f /tmp/out.txt -p '{"tpl_type": "SPACE_CHARS", "confusables_chars": [], "confusables_chars_key": "", "wm_base": 4, "method": 1, "wm_mode": 5, "wm_len": 3, "wm_loop": false, "start_at": 1, "version": "0.1.2"}'
+    $ textwatermark -v retrieve -f /tmp/out.txt -p '{"tpl_type": "SPACE_CHARS", "confusables_chars": [], "confusables_chars_key": "", "wm_base": 6, "method": "FIND_AND_REPLACE", "wm_mode": "ALPHA_NUMERICAL", "wm_len": 3, "wm_flag_bit": true, "wm_loop": false, "wm_max": "9", "start_at": 1, "version": "0.3.0"}'
 
     The retrieved watermark is: 7
     ```
@@ -359,7 +359,7 @@
 === "Retrieve"
 
     ```console
-    $ textwatermark -v retrieve -f /tmp/out.txt -p '{"tpl_type": "WHITESPACE_CHARS", "confusables_chars": [], "confusables_chars_key": "", "wm_base": 14, "method": 2, "wm_mode": 5, "wm_len": 6, "wm_loop": false, "start_at": 1, "version": "0.1.2"}'
+    $ textwatermark -v retrieve -f /tmp/out.txt -p '{"tpl_type": "WHITESPACE_CHARS", "confusables_chars": [], "confusables_chars_key": "", "wm_base": 14, "method": "INSERT_INTO_POSITION", "wm_mode": "ALPHA_NUMERICAL", "wm_len": 6, "wm_flag_bit": true, "wm_loop": false, "wm_max": "999", "start_at": 1, "version": "0.3.0"}'
 
     The retrieved watermark is: 743
     ```

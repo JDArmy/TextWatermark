@@ -6,10 +6,10 @@ from copy import deepcopy
 
 import pytest
 
-from textwatermark import __version__
 from textwatermark.main import TextWatermark, WMMode
 from textwatermark.template_type import WMTemplateType
 from textwatermark.templates import homograph_numbers
+from textwatermark.version import __version__
 
 
 def _insert_watermark(wm_str, wm_max, wm_mode):
@@ -169,7 +169,7 @@ def test_set_tpl_type():
     wm = TextWatermark(WMMode.REAL_NUMBER, 2)
     wm.set_tpl_type(WMTemplateType.HOMOGRAPH_NUMBERS)
     assert homograph_numbers.CONFUSABLES_CHARS == wm.wmt.confusables_chars
-    assert wm.tpl_type == WMTemplateType.HOMOGRAPH_NUMBERS.name
+    assert wm.tpl_type == WMTemplateType.HOMOGRAPH_NUMBERS
 
 
 def test_set_wm_max_exception():
@@ -202,8 +202,9 @@ def test_retrieve_watermark():
     wm_out = TextWatermark.retrieve_watermark(
         "Ӏ2𝟑𝟒𝟓Ⳓ𝟟890",
         '{"tpl_type": "HOMOGRAPH_NUMBERS", "confusables_chars": [], \
-        "confusables_chars_key": "", "wm_base": 7, "wm_loop": false, "method": 1, \
-        "wm_mode": 5, "wm_len": 7, "start_at": 0,"wm_flag_bit": true,'
+        "confusables_chars_key": "", "wm_base": 7, "wm_loop": false, \
+        "method": "FIND_AND_REPLACE", "wm_mode": "ALPHA_NUMERICAL", \
+        "wm_len": 7, "start_at": 0,"wm_flag_bit": true,'
         ' "version": "' + __version__ + '"}',
     )
     assert wm_out == "123"
@@ -211,9 +212,9 @@ def test_retrieve_watermark():
     wm_out = TextWatermark.retrieve_watermark(
         "Ӏ2𝟑𝟒𝟓Ⳓ𝟟890",
         '{"tpl_type": "HOMOGRAPH_NUMBERS", "confusables_chars": [], \
-        "confusables_chars_key": "", "wm_base": 7, "wm_loop": false, "method": 1, \
-        "wm_mode": 5, "wm_len": 7, "start_at": 0,"wm_flag_bit": true,'
-        ' "version": "0.0.0"}',
+        "confusables_chars_key": "", "wm_base": 7, "wm_loop": false, \
+        "method": "FIND_AND_REPLACE", "wm_mode": "ALPHA_NUMERICAL", \
+        "wm_len": 7, "start_at": 0,"wm_flag_bit": true, "version": "0.0.0"}',
         True,
     )
     assert wm_out == "123"
@@ -222,16 +223,18 @@ def test_retrieve_watermark():
         TextWatermark.retrieve_watermark(
             "Ӏ2𝟑𝟒𝟓Ⳓ𝟟890",
             '{"tpl_type": "HOMOGRAPH_NUMBERS", "confusables_chars": [], \
-            "confusables_chars_key": "", "wm_base": 7, "wm_loop": false, "method": 1, \
-            "wm_mode": 5, "wm_len": 7, "start_at": 0,"wm_flag_bit": true, "version": "0.0.0"}',
+            "confusables_chars_key": "", "wm_base": 7, "wm_loop": false, \
+            "method": "FIND_AND_REPLACE", "wm_mode": "ALPHA_NUMERICAL", \
+            "wm_len": 7, "start_at": 0,"wm_flag_bit": true, "version": "0.0.0"}',
         )
 
     with pytest.raises(ValueError):
         wm_out = TextWatermark.retrieve_watermark(
             "Ӏ2𝟑𝟒𝟓Ⳓ𝟟890",
             '{"tpl_type": "WRONG_TYPE", "confusables_chars": [], \
-        "confusables_chars_key": "", "wm_base": 7, "wm_loop": false, "method": 1, \
-        "wm_mode": 5, "wm_len": 7, "start_at": 0,"wm_flag_bit": true,'
+            "confusables_chars_key": "", "wm_base": 7, "wm_loop": false, \
+            "method": "FIND_AND_REPLACE", "wm_mode": "ALPHA_NUMERICAL", \
+            "wm_len": 7, "start_at": 0,"wm_flag_bit": true,'
             ' "version": "' + __version__ + '"}',
         )
 
@@ -243,9 +246,9 @@ def test_retrieve_watermark_with_confusables():
         '{"tpl_type": "", "confusables_chars": '
         '{"0": "0᱐𝟘𝟎𝟢𝟬𝟶", "1": "1Ӏ𝟙𝟏𝟣𝟭𝟷", "2": "2ᒿ𝟚𝟐𝟤𝟮𝟸", "3": "3Ⳍ𝟛𝟑𝟥𝟯𝟹", "4": "4Ꮞ𝟜𝟒𝟦𝟰𝟺", '
         '"5": "5Ƽ𝟝𝟓𝟧𝟱𝟻", "6": "6Ⳓ𝟞𝟔𝟨𝟲𝟼", "7": "7ገ𝟟𝟕𝟩𝟳𝟽", "8": "8৪𝟠𝟖𝟪𝟴𝟾", "9": "9Ꝯ𝟡𝟗𝟫𝟵𝟿"}, '
-        '"confusables_chars_key": "", "wm_base": 7, "wm_loop": false, "method": 1, '
-        '"wm_mode": 5, "wm_len": 7, "start_at": 0,"wm_flag_bit": true, '
-        '"version": "' + __version__ + '"}',
+        '"confusables_chars_key": "", "wm_base": 7, "wm_loop": false, '
+        '"method": "FIND_AND_REPLACE", "wm_mode": "ALPHA_NUMERICAL", "wm_len": 7, '
+        '"start_at": 0,"wm_flag_bit": true, "version": "' + __version__ + '"}',
     )
     assert wm_out == "123"
 
@@ -255,9 +258,9 @@ def test_retrieve_watermark_with_confusables():
             '{"tpl_type": "", "confusables_chars": '
             '{"0": "0᱐𝟘𝟎𝟢𝟬𝟶", "1": "1Ӏ𝟙𝟏𝟣𝟭𝟷", "2": "2ᒿ𝟚𝟐𝟤𝟮𝟸", "3": "3Ⳍ𝟛𝟑𝟥𝟯𝟹", "4": "4Ꮞ𝟜𝟒𝟦𝟰𝟺", '
             '"5": "5Ƽ𝟝𝟓𝟧𝟱𝟻", "6": "6Ⳓ𝟞𝟔𝟨𝟲𝟼", "7": "7ገ𝟟𝟕𝟩𝟳𝟽", "8": "8৪𝟠𝟖𝟪𝟴𝟾", "9": "9Ꝯ𝟡𝟗𝟫𝟵𝟿"}, '
-            '"confusables_chars_key": "", "wm_base": 7, "wm_loop": false, "method": 1, '
-            '"wm_mode": 5, "wm_len": 7, "start_at": 0,"wm_flag_bit": true, '
-            '"version": "' + __version__ + '"}',
+            '"confusables_chars_key": "", "wm_base": 7, "wm_loop": false, '
+            '"method": "FIND_AND_REPLACE", "wm_mode": "ALPHA_NUMERICAL", "wm_len": 7, '
+            '"start_at": 0,"wm_flag_bit": true, "version": "' + __version__ + '"}',
         )
 
 
@@ -266,24 +269,26 @@ def test_retrieve_watermark_from_bin():
     wm_out = TextWatermark.retrieve_watermark_from_bin(
         "10010000011000100000101000110000111",
         '{"tpl_type": "FONT_SIZE", "confusables_chars": [], "confusables_chars_key": "110", '
-        '"wm_base": 2, "method": 3, "wm_mode": 5, "wm_len": 35, "wm_loop": false, '
-        '"start_at": 0, "wm_flag_bit": true, "version": "' + __version__ + '"}',
+        '"wm_base": 2, "method": "DECORATE_EACH_CHAR", "wm_mode": "ALPHA_NUMERICAL", '
+        '"wm_len": 35, "wm_loop": false, "start_at": 0, "wm_flag_bit": true, '
+        '"version": "' + __version__ + '"}',
     )
     assert wm_out == "123456"
 
     wm_out = TextWatermark.retrieve_watermark_from_bin(
         "0010000011000100000101000110000111",
         '{"tpl_type": "FONT_SIZE", "confusables_chars": [], "confusables_chars_key": "110", '
-        '"wm_base": 2, "method": 3, "wm_mode": 5, "wm_len": 34, "wm_loop": false, '
-        '"start_at": 0, "wm_flag_bit": false, "version": "' + __version__ + '"}',
+        '"wm_base": 2, "method": "DECORATE_EACH_CHAR", "wm_mode": "ALPHA_NUMERICAL", '
+        '"wm_len": 34, "wm_loop": false, "start_at": 0, "wm_flag_bit": false, '
+        '"version": "' + __version__ + '"}',
     )
     assert wm_out == "123456"
 
     wm_out = TextWatermark.retrieve_watermark_from_bin(
         "10010000011000100000101000110000111",
         '{"tpl_type": "FONT_SIZE", "confusables_chars": [], "confusables_chars_key": "110", '
-        '"wm_base": 2, "method": 3, "wm_mode": 5, "wm_len": 35, "wm_loop": false, '
-        '"start_at": 0, "wm_flag_bit": true, "version": "0.0.0"}',
+        '"wm_base": 2, "method": "DECORATE_EACH_CHAR", "wm_mode": "ALPHA_NUMERICAL", '
+        '"wm_len": 35, "wm_loop": false, "start_at": 0, "wm_flag_bit": true, "version": "0.0.0"}',
         True,
     )
     assert wm_out == "123456"
@@ -292,8 +297,9 @@ def test_retrieve_watermark_from_bin():
         wm_out = TextWatermark.retrieve_watermark_from_bin(
             "10010000011000100000101000110000",
             '{"tpl_type": "FONT_SIZE", "confusables_chars": [], "confusables_chars_key": "110", '
-            '"wm_base": 2, "method": 3, "wm_mode": 5, "wm_len": 35, "wm_loop": false, '
-            '"start_at": 0, "wm_flag_bit": true, "version": "' + __version__ + '"}',
+            '"wm_base": 2, "method": "DECORATE_EACH_CHAR", "wm_mode": "ALPHA_NUMERICAL", '
+            '"wm_len": 35, "wm_loop": false, "start_at": 0, "wm_flag_bit": true, '
+            '"version": "' + __version__ + '"}',
         )
 
 
@@ -317,7 +323,8 @@ def test_init_from_params():
         '{"tpl_type": "", "confusables_chars": {"0": "0᱐𝟘𝟎𝟢𝟬𝟶", "1": "1Ӏ𝟙𝟏𝟣𝟭𝟷",'
         + ' "2": "2ᒿ𝟚𝟐𝟤𝟮𝟸", "3": "3Ⳍ𝟛𝟑𝟥𝟯𝟹", "4": "4Ꮞ𝟜𝟒𝟦𝟰𝟺", "5": "5Ƽ𝟝𝟓𝟧𝟱𝟻", "6": "6Ⳓ𝟞𝟔𝟨𝟲𝟼", '
         + '"7": "7ገ𝟟𝟕𝟩𝟳𝟽", "8": "8৪𝟠𝟖𝟪𝟴𝟾", "9": "9Ꝯ𝟡𝟗𝟫𝟵𝟿", ".": ".٠۰ꓸ․ͺ᎐"}, '
-        + '"confusables_chars_key": "", "wm_base": 7, "method": 1, "wm_mode": 1, "wm_len": 12, '
+        + '"confusables_chars_key": "", "wm_base": 7, "method": "FIND_AND_REPLACE", '
+        + '"wm_mode": "REAL_NUMBER", "wm_len": 12, '
         + '"wm_flag_bit": true, "wm_loop": true, "wm_max": "999999999", "start_at": 0, '
         + f'"version": "{__version__}"'
         + "}"
@@ -336,7 +343,8 @@ def test_init_from_params():
     # init from type
     params3 = (
         '{"tpl_type": "HOMOGRAPH_NUMBERS", '
-        + '"confusable__chars_key": "", "wm_base": 7, "method": 1, "wm_mode": 1, "wm_len": 12, '
+        + '"confusable__chars_key": "", "wm_base": 7, "method": "FIND_AND_REPLACE", '
+        + '"wm_mode": "REAL_NUMBER", "wm_len": 12, '
         + '"wm_flag_bit": true, "wm_loop": true, "wm_max": "999999999", "start_at": 0, '
         + f'"version": "{__version__}"'
         + "}"

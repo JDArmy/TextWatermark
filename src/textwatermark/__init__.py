@@ -1,5 +1,7 @@
 """TextWatermark"""
-__version__ = "0.2.1"
+
+# to be deleted
+__version__ = "0.3.0"
 
 # import logging
 

@@ -7,8 +7,8 @@ import os  # PEP 585
 import pytest
 from click.testing import CliRunner
 
-from textwatermark import __version__
 from textwatermark.cmdline import main
+from textwatermark.version import __version__
 
 TMP_FILE = "/tmp/tmp_for_test_textwatermark.txt"
 
@@ -132,9 +132,10 @@ def test_retrieve():
 
     params_json = (
         '{"tpl_type": "HOMOGRAPH_NUMBERS", "confusables_chars": [], \
-        "confusables_chars_key": "", "wm_base": 7, "method": 1, "wm_mode": 5, \
-            "wm_len": 7, "wm_loop": false, "start_at": 0,"wm_flag_bit": true,\
-                "wm_max": "999","version": "'
+        "confusables_chars_key": "", "wm_base": 7, "method": \
+        "FIND_AND_REPLACE", "wm_mode": "ALPHA_NUMERICAL", \
+        "wm_len": 7, "wm_loop": false, "start_at": 0,"wm_flag_bit": true,\
+        "wm_max": "999","version": "'
         + __version__
         + '"}'
     )
@@ -142,16 +143,16 @@ def test_retrieve():
     assert "123" in result.output
 
     params_json1 = '{"tpl_type": "HOMOGRAPH_NUMBERS", "confusables_chars": [], \
-        "confusables_chars_key": "", "wm_base": 7, "method": 1, "wm_mode": 5, \
-            "wm_len": 7, "wm_loop": false, "start_at": 0,"wm_flag_bit": true,\
-                "wm_max": "999", "version": "0.0.0"}'
+        "confusables_chars_key": "", "wm_base": 7, "method": "FIND_AND_REPLACE", \
+        "wm_mode": "ALPHA_NUMERICAL", "wm_len": 7, "wm_loop": false, "start_at": 0,\
+        "wm_flag_bit": true,"wm_max": "999", "version": "0.0.0"}'
     result = runner.invoke(main, f"retrieve -f {TMP_FILE} -p '{params_json1}'")
     assert "Result ValueError" in str(result)
 
     params_json = '{"tpl_type": "HOMOGRAPH_NUMBERS", "confusables_chars": [], \
-        "confusables_chars_key": "", "wm_base": 7, "method": 1, "wm_mode": 5, \
-            "wm_len": 7, "wm_loop": false, "start_at": 0,"wm_flag_bit": true,\
-                "wm_max": "999", "version": "0.0.0"}'
+        "confusables_chars_key": "", "wm_base": 7, "method": "FIND_AND_REPLACE",\
+        "wm_mode": "ALPHA_NUMERICAL", "wm_len": 7, "wm_loop": false, "start_at": 0,\
+        "wm_flag_bit": true, "wm_max": "999", "version": "0.0.0"}'
     result = runner.invoke(main, f"retrieve -f {TMP_FILE} -p '{params_json}' -F")
     assert "123" in result.output
 
@@ -164,9 +165,9 @@ def test_retrieve_exception():
     runner = CliRunner()
     params_json = (
         '{"tpl_type": "HOMOGRAPH_NUMBERS", "confusables_chars": [], \
-        "confusables_chars_key": "", "wm_base": 7, "method": 1, "wm_mode": 5, \
-            "wm_len": 7, "wm_loop": false, "start_at": 0,"wm_flag_bit": true,\
-                "wm_max": "999","version": "'
+        "confusables_chars_key": "", "wm_base": 7, "method": "FIND_AND_REPLACE", \
+        "wm_mode": "ALPHA_NUMERICAL", "wm_len": 7, "wm_loop": false, "start_at": 0,\
+        "wm_flag_bit": true, "wm_max": "999","version": "'
         + __version__
         + '"}'
     )
@@ -187,7 +188,8 @@ def test_retrieve_bin():
 
     params_json = (
         '{"tpl_type": "FONT_SIZE", "wm_flag_bit": true, "confusables_chars": [], '
-        '"confusables_chars_key": "110","wm_max": "999", "wm_base": 2, "method": 3, "wm_mode": 5,'
+        '"confusables_chars_key": "110","wm_max": "999", "wm_base": 2, '
+        '"method": "DECORATE_EACH_CHAR", "wm_mode": "ALPHA_NUMERICAL",'
         ' "wm_len": 35, "wm_loop": false, "start_at": 0, "version": "'
         + __version__
         + '"}'
@@ -199,7 +201,8 @@ def test_retrieve_bin():
 
     params_json = (
         '{"tpl_type": "FONT_SIZE", "wm_flag_bit": true, "confusables_chars": [], '
-        '"confusables_chars_key": "110", "wm_base": 2, "method": 3, "wm_mode": 5, '
+        '"confusables_chars_key": "110", "wm_base": 2, "method": "DECORATE_EACH_CHAR",'
+        ' "wm_mode": "ALPHA_NUMERICAL", '
         '"wm_len": 35,"wm_max": "999", "wm_loop": false, "start_at": 0, "version": "0.0.0"}'
     )
     result = runner.invoke(
@@ -220,9 +223,9 @@ def test_export_params():
 
     params_json = (
         '{"tpl_type": "HOMOGRAPH_NUMBERS", "confusables_chars": [],\
-        "confusables_chars_key": "", "wm_base": 7, "method": 1, "wm_mode": 5, \
-            "wm_len": 7, "wm_loop": false, "start_at": 0,"wm_flag_bit": true,\
-                "wm_max": "999","version": "'
+        "confusables_chars_key": "", "wm_base": 7, "method": "FIND_AND_REPLACE",\
+        "wm_mode": "ALPHA_NUMERICAL", "wm_len": 7, "wm_loop": false, "start_at": 0,\
+        "wm_flag_bit": true,"wm_max": "999","version": "'
         + __version__
         + '"}'
     )

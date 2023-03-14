@@ -91,7 +91,7 @@ Watermarked text length is: 10
 ```console
 $ textwatermark -v insert -f './tests/text/number.txt' -m ALPHA_NUMERICAL -t HOMOGRAPH_NUMBERS -x 999 -w 123 -e
 
-{"tpl_type": "HOMOGRAPH_NUMBERS", "confusables_chars": [], "confusables_chars_key": "", "wm_base": 7, "method": 1, "wm_mode": 5, "wm_len": 7, "wm_loop": false, "start_at": 0, "version": "0.1.0"}
+{"tpl_type": "HOMOGRAPH_NUMBERS", "confusables_chars": [], "confusables_chars_key": "", "wm_base": 7, "method": "FIND_AND_REPLACE", "wm_mode": "ALPHA_NUMERICAL", "wm_len": 7, "wm_flag_bit": true, "wm_loop": false, "wm_max": "999", "start_at": 0, "version": "0.3.0"}
 ```
 
 #### Export Parameters To File
@@ -130,7 +130,7 @@ Options:
 ### Retrieve Watermark From Text Example
 
 ```console
-$ textwatermark -v retrieve -f out.txt -p '{"tpl_type": "HOMOGRAPH_NUMBERS", "confusables_chars": [], "confusables_chars_key": "", "wm_base": 7, "method": 1, "wm_mode": 5, "wm_len": 7, "wm_loop": false, "start_at": 0, "version": "0.1.0"}'
+$ textwatermark -v retrieve -f out.txt -p '{"tpl_type": "HOMOGRAPH_NUMBERS", "confusables_chars": [], "confusables_chars_key": "", "wm_base": 7, "method": "FIND_AND_REPLACE", "wm_mode": "ALPHA_NUMERICAL", "wm_len": 7, "wm_flag_bit": true, "wm_loop": false, "wm_max": "999", "start_at": 0, "version": "0.3.0"}'
 
 The retrieved watermark is: 123
 ```
@@ -144,7 +144,7 @@ Watermarks will be expressed in binary to any encoded base (0-9, A-Z) of charact
 Then we can use `--wm-binary` parameter to retrieve the watermark.
 
 ```console
-$ textwatermark -v retrieve -b 10010000011000100000101000110000111 -p '{"tpl_type": "FONT_SIZE", "confusables_chars": [], "confusables_chars_key": "110", "wm_base": 2, "method": 3, "wm_mode": 5, "wm_len": 35, "wm_loop": false, "start_at": 0, "version": "0.1.1"}' -F
+$ textwatermark -v retrieve -b 10010000011000100000101000110000111 -p '{"tpl_type": "FONT_SIZE", "confusables_chars": [], "confusables_chars_key": "110", "wm_base": 2, "method": "DECORATE_EACH_CHAR", "wm_mode": "ALPHA_NUMERICAL", "wm_len": 35, "wm_loop": false,"wm_flag_bit": true, "start_at": 0, "version": "0.3.0"}' -F
 
 The retrieved watermark is: 123456
 ```

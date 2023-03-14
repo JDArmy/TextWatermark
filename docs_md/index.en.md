@@ -40,13 +40,13 @@ $ textwatermark -v insert -f './tests/text/number.txt' -m ALPHA_NUMERICAL -t HOM
 ```console
 $ textwatermark -v insert -f './tests/text/number.txt' -m ALPHA_NUMERICAL -t HOMOGRAPH_NUMBERS -x 999 -w 123 -e
 
-{"tpl_type": "HOMOGRAPH_NUMBERS", "confusables_chars": [], "confusables_chars_key": "", "wm_base": 7, "method": 1, "wm_mode": 5, "wm_len": 7, "wm_loop": false, "start_at": 0, "version": "0.1.2"}
+{"tpl_type": "HOMOGRAPH_NUMBERS", "confusables_chars": [], "confusables_chars_key": "", "wm_base": 7, "method": "FIND_AND_REPLACE", "wm_mode": "ALPHA_NUMERICAL", "wm_len": 7, "wm_flag_bit": true, "wm_loop": false, "wm_max": "999", "start_at": 0, "version": "0.3.0"}
 ```
 
 #### Retrieve the watermark from the text
 
 ```console
-$ textwatermark -v retrieve -f out.txt -p '{"tpl_type": "HOMOGRAPH_NUMBERS", "confusables_chars": [], "confusables_chars_key": "", "wm_base": 7, "method": 1, "wm_mode": 5, "wm_len": 7, "wm_loop": false, "start_at": 0, "version": "0.1.2"}'
+$ textwatermark -v retrieve -f out.txt -p '{"tpl_type": "HOMOGRAPH_NUMBERS", "confusables_chars": [], "confusables_chars_key": "", "wm_base": 7, "method": "FIND_AND_REPLACE", "wm_mode": "ALPHA_NUMERICAL", "wm_len": 7, "wm_flag_bit": true, "wm_loop": false, "wm_max": "999", "start_at": 0, "version": "0.3.0"}'
 
 The retrieved watermark is: 123
 ```

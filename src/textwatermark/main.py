@@ -3,13 +3,13 @@
 
 import json
 import os
-from typing import Any, Union
+from typing import Any, Optional, Union
 
-from . import __version__
 from .conversion import WMConversion
 from .defines import WMMethod, WMMode
 from .template import WMTemplate
 from .template_type import WMTemplateType
+from .version import __version__
 
 
 class TextWatermark:
@@ -77,7 +77,7 @@ class TextWatermark:
         When wm_flag_bit is true,
         The value of wm_max_len is 1 larger the actual value """
 
-    tpl_type: str = ""
+    tpl_type: Optional[WMTemplateType] = None
     """template type in WMTemplateType"""
 
     wm_flag_bit: bool = True
@@ -164,7 +164,7 @@ class TextWatermark:
         if self.wm_base == 0:
             self.wm_base = self.wmt.wm_base
 
-        self.tpl_type = tpl_type.name
+        self.tpl_type = tpl_type
 
     def set_wm_max(self, wm_max: str):
         """Set the length of the longest (or largest) watermark string.
@@ -290,21 +290,20 @@ class TextWatermark:
 
         """
         if (
-            self.tpl_type != ""
-            and self.wmt.confusables_chars
-            == WMTemplateType[self.tpl_type].value.CONFUSABLES_CHARS
+            self.tpl_type is not None
+            and self.wmt.confusables_chars == self.tpl_type.value.CONFUSABLES_CHARS
         ):
             confusables_chars = []
         else:
             confusables_chars = self.wmt.confusables_chars
 
         params = {
-            "tpl_type": self.tpl_type,
+            "tpl_type": self.tpl_type.name if self.tpl_type is not None else "",
             "confusables_chars": confusables_chars,
             "confusables_chars_key": self.wmt.confusables_chars_key,
             "wm_base": self.wmt.wm_base,
-            "method": self.wmt.method.value,
-            "wm_mode": self.wm_mode,
+            "method": self.wmt.method.name,
+            "wm_mode": self.wm_mode.name,
             "wm_len": self.wm_fixed_len,
             "wm_flag_bit": self.wm_flag_bit,
             "wm_loop": self.wm_loop,
@@ -338,7 +337,7 @@ class TextWatermark:
             raise ValueError(f'Version mismatch: {__version__}!= {params["version"]}')
 
         wm_init = TextWatermark(
-            wm_mode=params["wm_mode"],
+            wm_mode=WMMode[params["wm_mode"]],
             wm_base=params["wm_base"],
             start_at=params["start_at"],
             wm_loop=params["wm_loop"],
@@ -349,7 +348,7 @@ class TextWatermark:
         else:
             wm_init.set_tpl(
                 confusables_chars=params["confusables_chars"],
-                method=params["method"],
+                method=WMMethod[params["method"]],
                 confusables_chars_key=params["confusables_chars_key"],
             )
 
@@ -378,7 +377,7 @@ class TextWatermark:
             params = json.loads(params)
 
         wm_len = params["wm_len"]
-        wmc = WMConversion(params["wm_mode"], params["wm_base"])
+        wmc = WMConversion(WMMode[params["wm_mode"]], params["wm_base"])
 
         ver = params["version"]
         if not dont_check_version and ver != __version__:
@@ -442,7 +441,7 @@ class TextWatermark:
                 " retrieve the watermark, please set dont_check_version to True"
             )
 
-        wmc = WMConversion(params["wm_mode"], params["wm_base"])
+        wmc = WMConversion(WMMode[params["wm_mode"]], params["wm_base"])
 
         if not params["confusables_chars"]:
             tpl_type = params["tpl_type"]
@@ -455,7 +454,7 @@ class TextWatermark:
         wmt = WMTemplate(
             params["confusables_chars"],
             params["wm_base"],
-            params["method"],
+            WMMethod[params["method"]],
             params["confusables_chars_key"],
         )
 

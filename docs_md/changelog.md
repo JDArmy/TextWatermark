@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.0
+
+- add `check_if_enough_space` method
+- change export params JSON to more readable
+
 ## 0.2.1
 
 - change namespacing
@@ -18,6 +23,7 @@
 ## 0.1.8
 
 - Add `dont_check_version` parameter to `TextWatermark.init_from_params`
+- change export param method and mode to readable
 
 ## 0.1.7
 

@@ -7,11 +7,11 @@ import re
 import click
 from click import Context
 
-from . import __version__
 from .config import settings
 from .defines import WMMethod, WMMode
 from .main import TextWatermark
 from .template_type import WMTemplateType
+from .version import __version__
 
 
 @click.group(invoke_without_command=True)
