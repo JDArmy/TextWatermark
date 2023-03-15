@@ -408,3 +408,37 @@ def test_check_if_enough_space():
     params["start_at"] = 10
     ret6 = TextWatermark.check_if_enough_space(params, text)
     assert ret6 is False
+
+
+def test_check_if_enough_space_exception():
+    """test check_if_enough_space method"""
+    text = "12345678901"
+    params = {
+        "tpl_type": "HOMOGRAPH_NUMBERS",
+        "confusables_chars": [],
+        "confusables_chars_key": "",
+        "wm_base": 7,
+        "method": "FIND_AND_REPLACE",
+        "wm_mode": "REAL_NUMBER",
+        "wm_len": 8,
+        "wm_flag_bit": False,
+        "wm_loop": False,
+        "wm_max": "999999",
+        "start_at": 0,
+        "version": __version__,
+    }
+
+    param1 = deepcopy(params)
+    param1["tpl_type"] = "NOT_EXIST"
+    with pytest.raises(ValueError):
+        TextWatermark.check_if_enough_space(param1, text)
+
+    param2 = deepcopy(params)
+    param2["method"] = "NOT_EXIST"
+    with pytest.raises(ValueError):
+        TextWatermark.check_if_enough_space(param2, text)
+
+    param3 = deepcopy(params)
+    param3["wm_mode"] = "NOT_EXIST"
+    with pytest.raises(ValueError):
+        TextWatermark.check_if_enough_space(param3, text)

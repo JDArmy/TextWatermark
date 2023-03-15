@@ -320,8 +320,8 @@ class TextWatermark:
         """check if there if enough space to insert watermark to text
 
         Args:
-            params (Any): praram string export by export_params         
-            text (str): text to be watermarked     
+            params (Any): praram string export by export_params
+            text (str): text to be watermarked
             dont_check_version (bool, optional): if True then skip check version
 
         Returns:
@@ -333,7 +333,7 @@ class TextWatermark:
 
         match wm_init.wmt.method.value:
             case WMMethod.FIND_AND_REPLACE:
-                new_text = text[wm_init.start_at:]
+                new_text = text[wm_init.start_at :]
                 times = wm_init.wmt.check_find_and_replace_space(
                     new_text, wm_init.wm_fixed_len
                 )
@@ -367,8 +367,16 @@ class TextWatermark:
             params = json.loads(params)
 
         if not dont_check_version and __version__ != params["version"]:
-            raise ValueError(
-                f'Version mismatch: {__version__}!= {params["version"]}')
+            raise ValueError(f'Version mismatch: {__version__}!= {params["version"]}')
+
+        if params["wm_mode"] not in WMMode.__members__:
+            raise ValueError(f'wm_mode {params["wm_mode"]} is not valid')
+
+        if params["tpl_type"] and params["tpl_type"] not in WMTemplateType.__members__:
+            raise ValueError(f'tpl_type {params["tpl_type"]} is not valid')
+
+        if params["method"] not in WMMethod.__members__:
+            raise ValueError(f'method {params["method"]} is not valid')
 
         wm_init = TextWatermark(
             wm_mode=WMMode[params["wm_mode"]],
