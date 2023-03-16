@@ -9,14 +9,12 @@ from ..defines import WMMethod
 
 CONFUSABLES_CHARS: list = [
     "\u034f",
-    "\u061c",
     "\u180b",
     "\u180c",
     "\u180d",
     "\u180e",
     "\u200b",
     "\u200e",
-    "\u200f",
     "\u202a",
     "\u202b",
     "\u202c",
@@ -36,7 +34,6 @@ CONFUSABLES_CHARS: list = [
     "\ufe0c",
     "\ufe0d",
     "\ufe0e",
-    "\ufe0f",
 ]
 
 method: WMMethod = WMMethod.INSERT_INTO_POSITION

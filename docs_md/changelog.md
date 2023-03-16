@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.3
+
+- Delete 3 invisible chars from invisible_chars template
+
 ## 0.3.2
 
 - catch some exceptions
