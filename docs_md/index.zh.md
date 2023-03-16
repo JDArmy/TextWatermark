@@ -1,5 +1,11 @@
 # 首页
 
+## 水印模板支持情况
+
+{%
+  include-markdown "./support.html"
+%}
+
 ## 要求
 
 Tested on Python `>= 3.10`
@@ -62,9 +68,3 @@ The retrieved watermark is: 123
 ### 更多
 
 参见：[用法](https://textwatermark.jd.army/usage/)
-
-## 水印模板支持情况
-
-{%
-  include-markdown "./support.html"
-%}

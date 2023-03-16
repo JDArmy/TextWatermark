@@ -411,6 +411,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#textwatermark-templates-support-and-compatibility" class="md-nav__link">
+    TextWatermark Templates Support and Compatibility
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#requirements" class="md-nav__link">
     Requirements
   </a>
@@ -502,13 +509,6 @@
         
       </ul>
     </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#textwatermark-templates-support-and-compatibility" class="md-nav__link">
-    TextWatermark Templates Support and Compatibility
-  </a>
   
 </li>
         
@@ -804,77 +804,6 @@
   <h1>Home</h1>
 
 <h2 id="home">Home</h2>
-<h3 id="requirements">Requirements</h3>
-<p>Tested on Python <code>&gt;= 3.10</code></p>
-<h3 id="installation">Installation</h3>
-<h4 id="using-pip">Using Pip</h4>
-<p><code>$ pip install textwatermark</code></p>
-<h4 id="from-code">From Code</h4>
-<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/JDArmy/TextWatermark.git
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos="2 "></span></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos="3 "></span></a><span class="nb">cd</span><span class="w"> </span>TextWatermark
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos="4 "></span></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><a href="#__codelineno-0-5"><span class="linenos" data-linenos="5 "></span></a>pip<span class="w"> </span>install<span class="w"> </span>.
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><a href="#__codelineno-0-6"><span class="linenos" data-linenos="6 "></span></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><a href="#__codelineno-0-7"><span class="linenos" data-linenos="7 "></span></a><span class="c1"># or in editable mode</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a><a href="#__codelineno-0-8"><span class="linenos" data-linenos="8 "></span></a>pip<span class="w"> </span>install<span class="w"> </span>--editable<span class="w"> </span>.
-</code></pre></div>
-<h3 id="usage">Usage</h3>
-<h4 id="cmd-line">CMD Line</h4>
-<h5 id="insert-watermark-into-text">Insert watermark into text</h5>
-<div class="highlight"><span class="filename">Bash Session</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a><span class="gp">$ </span>textwatermark<span class="w"> </span>-v<span class="w"> </span>insert<span class="w"> </span>-f<span class="w"> </span><span class="s1">&#39;./tests/text/number.txt&#39;</span><span class="w"> </span>-m<span class="w"> </span>ALPHA_NUMERICAL<span class="w"> </span>-t<span class="w"> </span>HOMOGRAPH_NUMBERS<span class="w"> </span>-x<span class="w"> </span><span class="m">999</span><span class="w"> </span>-w<span class="w"> </span><span class="m">123</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos="2 "></span></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos="3 "></span></a><span class="go">Ӏ2𝟑𝟒𝟓Ⳓ𝟟890</span>
-</code></pre></div>
-<h5 id="export-watermark-parameters">Export watermark parameters</h5>
-<div class="highlight"><span class="filename">Bash Session</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a><span class="gp">$ </span>textwatermark<span class="w"> </span>-v<span class="w"> </span>insert<span class="w"> </span>-f<span class="w"> </span><span class="s1">&#39;./tests/text/number.txt&#39;</span><span class="w"> </span>-m<span class="w"> </span>ALPHA_NUMERICAL<span class="w"> </span>-t<span class="w"> </span>HOMOGRAPH_NUMBERS<span class="w"> </span>-x<span class="w"> </span><span class="m">999</span><span class="w"> </span>-w<span class="w"> </span><span class="m">123</span><span class="w"> </span>-e
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos="2 "></span></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos="3 "></span></a><span class="go">{&quot;tpl_type&quot;: &quot;HOMOGRAPH_NUMBERS&quot;, &quot;confusables_chars&quot;: [], &quot;confusables_chars_key&quot;: &quot;&quot;, &quot;wm_base&quot;: 7, &quot;method&quot;: &quot;FIND_AND_REPLACE&quot;, &quot;wm_mode&quot;: &quot;ALPHA_NUMERICAL&quot;, &quot;wm_len&quot;: 7, &quot;wm_flag_bit&quot;: true, &quot;wm_loop&quot;: false, &quot;wm_max&quot;: &quot;999&quot;, &quot;start_at&quot;: 0, &quot;version&quot;: &quot;0.3.0&quot;}</span>
-</code></pre></div>
-<h5 id="retrieve-the-watermark-from-the-text">Retrieve the watermark from the text</h5>
-<div class="highlight"><span class="filename">Bash Session</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a><span class="gp">$ </span>textwatermark<span class="w"> </span>-v<span class="w"> </span>retrieve<span class="w"> </span>-f<span class="w"> </span>out.txt<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;{&quot;tpl_type&quot;: &quot;HOMOGRAPH_NUMBERS&quot;, &quot;confusables_chars&quot;: [], &quot;confusables_chars_key&quot;: &quot;&quot;, &quot;wm_base&quot;: 7, &quot;method&quot;: &quot;FIND_AND_REPLACE&quot;, &quot;wm_mode&quot;: &quot;ALPHA_NUMERICAL&quot;, &quot;wm_len&quot;: 7, &quot;wm_flag_bit&quot;: true, &quot;wm_loop&quot;: false, &quot;wm_max&quot;: &quot;999&quot;, &quot;start_at&quot;: 0, &quot;version&quot;: &quot;0.3.0&quot;}&#39;</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a><a href="#__codelineno-3-2"><span class="linenos" data-linenos="2 "></span></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a><a href="#__codelineno-3-3"><span class="linenos" data-linenos="3 "></span></a><span class="go">The retrieved watermark is: 123</span>
-</code></pre></div>
-<h4 id="coding">Coding</h4>
-<div class="highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="sd">&#39;&#39;&#39;Sample Example&#39;&#39;&#39;</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a><a href="#__codelineno-4-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="kn">import</span> <span class="nn">os</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a><a href="#__codelineno-4-3"><span class="linenos" data-linenos=" 3 "></span></a>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a><a href="#__codelineno-4-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="kn">from</span> <span class="nn">textwatermark.defines</span> <span class="kn">import</span> <span class="n">WMMode</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a><a href="#__codelineno-4-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="kn">from</span> <span class="nn">textwatermark.main</span> <span class="kn">import</span> <span class="n">TextWatermark</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6"></a><a href="#__codelineno-4-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="kn">from</span> <span class="nn">textwatermark.template_type</span> <span class="kn">import</span> <span class="n">WMTemplateType</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7"></a><a href="#__codelineno-4-7"><span class="linenos" data-linenos=" 7 "></span></a>
-<a id="__codelineno-4-8" name="__codelineno-4-8"></a><a href="#__codelineno-4-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="c1"># 1.Init TextWatermark instance</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9"></a><a href="#__codelineno-4-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="n">wm_mode</span> <span class="o">=</span> <span class="n">WMMode</span><span class="o">.</span><span class="n">REAL_NUMBER</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10"></a><a href="#__codelineno-4-10"><span class="linenos" data-linenos="10 "></span></a><span class="n">wm</span> <span class="o">=</span> <span class="n">TextWatermark</span><span class="p">(</span><span class="n">wm_mode</span><span class="o">=</span><span class="n">wm_mode</span><span class="p">)</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11"></a><a href="#__codelineno-4-11"><span class="linenos" data-linenos="11 "></span></a>
-<a id="__codelineno-4-12" name="__codelineno-4-12"></a><a href="#__codelineno-4-12"><span class="linenos" data-linenos="12 "></span></a><span class="c1"># 2.Choose a watermark template</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13"></a><a href="#__codelineno-4-13"><span class="linenos" data-linenos="13 "></span></a><span class="n">wm</span><span class="o">.</span><span class="n">set_tpl_type</span><span class="p">(</span><span class="n">tpl_type</span><span class="o">=</span><span class="n">WMTemplateType</span><span class="o">.</span><span class="n">HOMOGRAPH_NUMBERS</span><span class="p">)</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14"></a><a href="#__codelineno-4-14"><span class="linenos" data-linenos="14 "></span></a>
-<a id="__codelineno-4-15" name="__codelineno-4-15"></a><a href="#__codelineno-4-15"><span class="linenos" data-linenos="15 "></span></a><span class="c1"># 3.Set the maximum value of the watermark string</span>
-<a id="__codelineno-4-16" name="__codelineno-4-16"></a><a href="#__codelineno-4-16"><span class="linenos" data-linenos="16 "></span></a><span class="n">wm_max</span> <span class="o">=</span> <span class="s1">&#39;9&#39;</span><span class="o">*</span><span class="mi">9</span>
-<a id="__codelineno-4-17" name="__codelineno-4-17"></a><a href="#__codelineno-4-17"><span class="linenos" data-linenos="17 "></span></a><span class="n">wm</span><span class="o">.</span><span class="n">set_wm_max</span><span class="p">(</span><span class="n">wm_max</span><span class="o">=</span><span class="n">wm_max</span><span class="p">)</span>
-<a id="__codelineno-4-18" name="__codelineno-4-18"></a><a href="#__codelineno-4-18"><span class="linenos" data-linenos="18 "></span></a>
-<a id="__codelineno-4-19" name="__codelineno-4-19"></a><a href="#__codelineno-4-19"><span class="linenos" data-linenos="19 "></span></a><span class="c1"># 4.Set the text to be watermarked</span>
-<a id="__codelineno-4-20" name="__codelineno-4-20"></a><a href="#__codelineno-4-20"><span class="linenos" data-linenos="20 "></span></a><span class="n">wm</span><span class="o">.</span><span class="n">set_text_file</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../tests/text/1.txt&#39;</span><span class="p">))</span>
-<a id="__codelineno-4-21" name="__codelineno-4-21"></a><a href="#__codelineno-4-21"><span class="linenos" data-linenos="21 "></span></a>
-<a id="__codelineno-4-22" name="__codelineno-4-22"></a><a href="#__codelineno-4-22"><span class="linenos" data-linenos="22 "></span></a><span class="c1"># 5.Insert watermark string to text</span>
-<a id="__codelineno-4-23" name="__codelineno-4-23"></a><a href="#__codelineno-4-23"><span class="linenos" data-linenos="23 "></span></a><span class="n">wm_str</span> <span class="o">=</span> <span class="s1">&#39;123456789&#39;</span>
-<a id="__codelineno-4-24" name="__codelineno-4-24"></a><a href="#__codelineno-4-24"><span class="linenos" data-linenos="24 "></span></a><span class="n">wm_text</span> <span class="o">=</span> <span class="n">wm</span><span class="o">.</span><span class="n">insert_watermark</span><span class="p">(</span><span class="n">wm_str</span><span class="o">=</span><span class="n">wm_str</span><span class="p">)</span>
-<a id="__codelineno-4-25" name="__codelineno-4-25"></a><a href="#__codelineno-4-25"><span class="linenos" data-linenos="25 "></span></a><span class="nb">print</span><span class="p">(</span><span class="n">wm_text</span><span class="p">)</span>
-<a id="__codelineno-4-26" name="__codelineno-4-26"></a><a href="#__codelineno-4-26"><span class="linenos" data-linenos="26 "></span></a>
-<a id="__codelineno-4-27" name="__codelineno-4-27"></a><a href="#__codelineno-4-27"><span class="linenos" data-linenos="27 "></span></a><span class="c1">##############################################################</span>
-<a id="__codelineno-4-28" name="__codelineno-4-28"></a><a href="#__codelineno-4-28"><span class="linenos" data-linenos="28 "></span></a>
-<a id="__codelineno-4-29" name="__codelineno-4-29"></a><a href="#__codelineno-4-29"><span class="linenos" data-linenos="29 "></span></a><span class="c1"># Save the parameters to retrieve the watermark</span>
-<a id="__codelineno-4-30" name="__codelineno-4-30"></a><a href="#__codelineno-4-30"><span class="linenos" data-linenos="30 "></span></a><span class="n">params</span> <span class="o">=</span> <span class="n">wm</span><span class="o">.</span><span class="n">export_params</span><span class="p">()</span>
-<a id="__codelineno-4-31" name="__codelineno-4-31"></a><a href="#__codelineno-4-31"><span class="linenos" data-linenos="31 "></span></a>
-<a id="__codelineno-4-32" name="__codelineno-4-32"></a><a href="#__codelineno-4-32"><span class="linenos" data-linenos="32 "></span></a><span class="c1"># retrieve the watermark</span>
-<a id="__codelineno-4-33" name="__codelineno-4-33"></a><a href="#__codelineno-4-33"><span class="linenos" data-linenos="33 "></span></a><span class="n">wm_out_str</span> <span class="o">=</span> <span class="n">TextWatermark</span><span class="o">.</span><span class="n">retrieve_watermark</span><span class="p">(</span><span class="n">wm_text</span><span class="o">=</span><span class="n">wm_text</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
-<a id="__codelineno-4-34" name="__codelineno-4-34"></a><a href="#__codelineno-4-34"><span class="linenos" data-linenos="34 "></span></a>
-<a id="__codelineno-4-35" name="__codelineno-4-35"></a><a href="#__codelineno-4-35"><span class="linenos" data-linenos="35 "></span></a><span class="k">assert</span> <span class="n">wm_out_str</span> <span class="o">==</span> <span class="n">wm_str</span>
-</code></pre></div>
-<h4 id="more">More</h4>
-<p>See: <a href="https://textwatermark.jd.army/usage/">Usage</a></p>
 <h3 id="textwatermark-templates-support-and-compatibility">TextWatermark Templates Support and Compatibility</h3>
 <table border="1" style="font-size: 50%">
   <tr>
@@ -898,7 +827,10 @@
       Plain Text<br />
       纯文本
     </th>
-    <th rowspan="2" style="text-align: center">Concealment<br /></th>
+    <th rowspan="2" style="text-align: center">
+      Concealment<br />
+      隐蔽性
+    </th>
   </tr>
   <tr>
     <td style="text-align: center">
@@ -1318,6 +1250,78 @@
     <td style="text-align: center"></td>
   </tr>-->
 </table>
+
+<h3 id="requirements">Requirements</h3>
+<p>Tested on Python <code>&gt;= 3.10</code></p>
+<h3 id="installation">Installation</h3>
+<h4 id="using-pip">Using Pip</h4>
+<p><code>$ pip install textwatermark</code></p>
+<h4 id="from-code">From Code</h4>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/JDArmy/TextWatermark.git
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos="3 "></span></a><span class="nb">cd</span><span class="w"> </span>TextWatermark
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos="4 "></span></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><a href="#__codelineno-0-5"><span class="linenos" data-linenos="5 "></span></a>pip<span class="w"> </span>install<span class="w"> </span>.
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><a href="#__codelineno-0-6"><span class="linenos" data-linenos="6 "></span></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><a href="#__codelineno-0-7"><span class="linenos" data-linenos="7 "></span></a><span class="c1"># or in editable mode</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><a href="#__codelineno-0-8"><span class="linenos" data-linenos="8 "></span></a>pip<span class="w"> </span>install<span class="w"> </span>--editable<span class="w"> </span>.
+</code></pre></div>
+<h3 id="usage">Usage</h3>
+<h4 id="cmd-line">CMD Line</h4>
+<h5 id="insert-watermark-into-text">Insert watermark into text</h5>
+<div class="highlight"><span class="filename">Bash Session</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a><span class="gp">$ </span>textwatermark<span class="w"> </span>-v<span class="w"> </span>insert<span class="w"> </span>-f<span class="w"> </span><span class="s1">&#39;./tests/text/number.txt&#39;</span><span class="w"> </span>-m<span class="w"> </span>ALPHA_NUMERICAL<span class="w"> </span>-t<span class="w"> </span>HOMOGRAPH_NUMBERS<span class="w"> </span>-x<span class="w"> </span><span class="m">999</span><span class="w"> </span>-w<span class="w"> </span><span class="m">123</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos="3 "></span></a><span class="go">Ӏ2𝟑𝟒𝟓Ⳓ𝟟890</span>
+</code></pre></div>
+<h5 id="export-watermark-parameters">Export watermark parameters</h5>
+<div class="highlight"><span class="filename">Bash Session</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a><span class="gp">$ </span>textwatermark<span class="w"> </span>-v<span class="w"> </span>insert<span class="w"> </span>-f<span class="w"> </span><span class="s1">&#39;./tests/text/number.txt&#39;</span><span class="w"> </span>-m<span class="w"> </span>ALPHA_NUMERICAL<span class="w"> </span>-t<span class="w"> </span>HOMOGRAPH_NUMBERS<span class="w"> </span>-x<span class="w"> </span><span class="m">999</span><span class="w"> </span>-w<span class="w"> </span><span class="m">123</span><span class="w"> </span>-e
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos="3 "></span></a><span class="go">{&quot;tpl_type&quot;: &quot;HOMOGRAPH_NUMBERS&quot;, &quot;confusables_chars&quot;: [], &quot;confusables_chars_key&quot;: &quot;&quot;, &quot;wm_base&quot;: 7, &quot;method&quot;: &quot;FIND_AND_REPLACE&quot;, &quot;wm_mode&quot;: &quot;ALPHA_NUMERICAL&quot;, &quot;wm_len&quot;: 7, &quot;wm_flag_bit&quot;: true, &quot;wm_loop&quot;: false, &quot;wm_max&quot;: &quot;999&quot;, &quot;start_at&quot;: 0, &quot;version&quot;: &quot;0.3.0&quot;}</span>
+</code></pre></div>
+<h5 id="retrieve-the-watermark-from-the-text">Retrieve the watermark from the text</h5>
+<div class="highlight"><span class="filename">Bash Session</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a><span class="gp">$ </span>textwatermark<span class="w"> </span>-v<span class="w"> </span>retrieve<span class="w"> </span>-f<span class="w"> </span>out.txt<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;{&quot;tpl_type&quot;: &quot;HOMOGRAPH_NUMBERS&quot;, &quot;confusables_chars&quot;: [], &quot;confusables_chars_key&quot;: &quot;&quot;, &quot;wm_base&quot;: 7, &quot;method&quot;: &quot;FIND_AND_REPLACE&quot;, &quot;wm_mode&quot;: &quot;ALPHA_NUMERICAL&quot;, &quot;wm_len&quot;: 7, &quot;wm_flag_bit&quot;: true, &quot;wm_loop&quot;: false, &quot;wm_max&quot;: &quot;999&quot;, &quot;start_at&quot;: 0, &quot;version&quot;: &quot;0.3.0&quot;}&#39;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><a href="#__codelineno-3-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><a href="#__codelineno-3-3"><span class="linenos" data-linenos="3 "></span></a><span class="go">The retrieved watermark is: 123</span>
+</code></pre></div>
+<h4 id="coding">Coding</h4>
+<div class="highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="sd">&#39;&#39;&#39;Sample Example&#39;&#39;&#39;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><a href="#__codelineno-4-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="kn">import</span> <span class="nn">os</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><a href="#__codelineno-4-3"><span class="linenos" data-linenos=" 3 "></span></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><a href="#__codelineno-4-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="kn">from</span> <span class="nn">textwatermark.defines</span> <span class="kn">import</span> <span class="n">WMMode</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><a href="#__codelineno-4-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="kn">from</span> <span class="nn">textwatermark.main</span> <span class="kn">import</span> <span class="n">TextWatermark</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><a href="#__codelineno-4-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="kn">from</span> <span class="nn">textwatermark.template_type</span> <span class="kn">import</span> <span class="n">WMTemplateType</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><a href="#__codelineno-4-7"><span class="linenos" data-linenos=" 7 "></span></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a><a href="#__codelineno-4-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="c1"># 1.Init TextWatermark instance</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a><a href="#__codelineno-4-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="n">wm_mode</span> <span class="o">=</span> <span class="n">WMMode</span><span class="o">.</span><span class="n">REAL_NUMBER</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a><a href="#__codelineno-4-10"><span class="linenos" data-linenos="10 "></span></a><span class="n">wm</span> <span class="o">=</span> <span class="n">TextWatermark</span><span class="p">(</span><span class="n">wm_mode</span><span class="o">=</span><span class="n">wm_mode</span><span class="p">)</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a><a href="#__codelineno-4-11"><span class="linenos" data-linenos="11 "></span></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a><a href="#__codelineno-4-12"><span class="linenos" data-linenos="12 "></span></a><span class="c1"># 2.Choose a watermark template</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13"></a><a href="#__codelineno-4-13"><span class="linenos" data-linenos="13 "></span></a><span class="n">wm</span><span class="o">.</span><span class="n">set_tpl_type</span><span class="p">(</span><span class="n">tpl_type</span><span class="o">=</span><span class="n">WMTemplateType</span><span class="o">.</span><span class="n">HOMOGRAPH_NUMBERS</span><span class="p">)</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14"></a><a href="#__codelineno-4-14"><span class="linenos" data-linenos="14 "></span></a>
+<a id="__codelineno-4-15" name="__codelineno-4-15"></a><a href="#__codelineno-4-15"><span class="linenos" data-linenos="15 "></span></a><span class="c1"># 3.Set the maximum value of the watermark string</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16"></a><a href="#__codelineno-4-16"><span class="linenos" data-linenos="16 "></span></a><span class="n">wm_max</span> <span class="o">=</span> <span class="s1">&#39;9&#39;</span><span class="o">*</span><span class="mi">9</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17"></a><a href="#__codelineno-4-17"><span class="linenos" data-linenos="17 "></span></a><span class="n">wm</span><span class="o">.</span><span class="n">set_wm_max</span><span class="p">(</span><span class="n">wm_max</span><span class="o">=</span><span class="n">wm_max</span><span class="p">)</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18"></a><a href="#__codelineno-4-18"><span class="linenos" data-linenos="18 "></span></a>
+<a id="__codelineno-4-19" name="__codelineno-4-19"></a><a href="#__codelineno-4-19"><span class="linenos" data-linenos="19 "></span></a><span class="c1"># 4.Set the text to be watermarked</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20"></a><a href="#__codelineno-4-20"><span class="linenos" data-linenos="20 "></span></a><span class="n">wm</span><span class="o">.</span><span class="n">set_text_file</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../tests/text/1.txt&#39;</span><span class="p">))</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21"></a><a href="#__codelineno-4-21"><span class="linenos" data-linenos="21 "></span></a>
+<a id="__codelineno-4-22" name="__codelineno-4-22"></a><a href="#__codelineno-4-22"><span class="linenos" data-linenos="22 "></span></a><span class="c1"># 5.Insert watermark string to text</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23"></a><a href="#__codelineno-4-23"><span class="linenos" data-linenos="23 "></span></a><span class="n">wm_str</span> <span class="o">=</span> <span class="s1">&#39;123456789&#39;</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24"></a><a href="#__codelineno-4-24"><span class="linenos" data-linenos="24 "></span></a><span class="n">wm_text</span> <span class="o">=</span> <span class="n">wm</span><span class="o">.</span><span class="n">insert_watermark</span><span class="p">(</span><span class="n">wm_str</span><span class="o">=</span><span class="n">wm_str</span><span class="p">)</span>
+<a id="__codelineno-4-25" name="__codelineno-4-25"></a><a href="#__codelineno-4-25"><span class="linenos" data-linenos="25 "></span></a><span class="nb">print</span><span class="p">(</span><span class="n">wm_text</span><span class="p">)</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26"></a><a href="#__codelineno-4-26"><span class="linenos" data-linenos="26 "></span></a>
+<a id="__codelineno-4-27" name="__codelineno-4-27"></a><a href="#__codelineno-4-27"><span class="linenos" data-linenos="27 "></span></a><span class="c1">##############################################################</span>
+<a id="__codelineno-4-28" name="__codelineno-4-28"></a><a href="#__codelineno-4-28"><span class="linenos" data-linenos="28 "></span></a>
+<a id="__codelineno-4-29" name="__codelineno-4-29"></a><a href="#__codelineno-4-29"><span class="linenos" data-linenos="29 "></span></a><span class="c1"># Save the parameters to retrieve the watermark</span>
+<a id="__codelineno-4-30" name="__codelineno-4-30"></a><a href="#__codelineno-4-30"><span class="linenos" data-linenos="30 "></span></a><span class="n">params</span> <span class="o">=</span> <span class="n">wm</span><span class="o">.</span><span class="n">export_params</span><span class="p">()</span>
+<a id="__codelineno-4-31" name="__codelineno-4-31"></a><a href="#__codelineno-4-31"><span class="linenos" data-linenos="31 "></span></a>
+<a id="__codelineno-4-32" name="__codelineno-4-32"></a><a href="#__codelineno-4-32"><span class="linenos" data-linenos="32 "></span></a><span class="c1"># retrieve the watermark</span>
+<a id="__codelineno-4-33" name="__codelineno-4-33"></a><a href="#__codelineno-4-33"><span class="linenos" data-linenos="33 "></span></a><span class="n">wm_out_str</span> <span class="o">=</span> <span class="n">TextWatermark</span><span class="o">.</span><span class="n">retrieve_watermark</span><span class="p">(</span><span class="n">wm_text</span><span class="o">=</span><span class="n">wm_text</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+<a id="__codelineno-4-34" name="__codelineno-4-34"></a><a href="#__codelineno-4-34"><span class="linenos" data-linenos="34 "></span></a>
+<a id="__codelineno-4-35" name="__codelineno-4-35"></a><a href="#__codelineno-4-35"><span class="linenos" data-linenos="35 "></span></a><span class="k">assert</span> <span class="n">wm_out_str</span> <span class="o">==</span> <span class="n">wm_str</span>
+</code></pre></div>
+<h4 id="more">More</h4>
+<p>See: <a href="https://textwatermark.jd.army/usage/">Usage</a></p>
 
 
 

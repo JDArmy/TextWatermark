@@ -1,5 +1,11 @@
 # Home
 
+## TextWatermark Templates Support and Compatibility
+
+{%
+  include-markdown "./support.html"
+%}
+
 ## Requirements
 
 Tested on Python `>= 3.10`
@@ -62,9 +68,3 @@ The retrieved watermark is: 123
 ### More
 
 See: [Usage](https://textwatermark.jd.army/usage/)
-
-## TextWatermark Templates Support and Compatibility
-
-{%
-  include-markdown "./support.html"
-%}
