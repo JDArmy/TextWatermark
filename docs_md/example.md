@@ -21,6 +21,8 @@
     The retrieved watermark is: 123456
     ```
 
+See template detail: [BINARY_REPRESENTATION](/templates/#binary_representation)
+
 ## COMBINING_CHARS
 
 === "Insert"
@@ -39,6 +41,8 @@
 
     The retrieved watermark is: 123456
     ```
+
+See template detail: [COMBINING_CHARS](/templates/#combining_chars)
 
 ## FONT_COLOR
 
@@ -65,6 +69,8 @@
     The retrieved watermark is: 123456
     ```
 
+See template detail: [FONT_COLOR](/templates/#font_color)
+
 ## FONT_FLOAT
 
 --template-chars-key can be set to any key in [font_float](/templates/#font_float)
@@ -89,6 +95,8 @@
 
     The retrieved watermark is: 123456
     ```
+
+See template detail: [FONT_FLOAT](/templates/#font_float)
 
 ## FONT_SIZE
 
@@ -116,6 +124,8 @@
     The retrieved watermark is: 123456
     ```
 
+See template detail: [FONT_SIZE](/templates/#font_size)
+
 ## FONT_STYLE
 
 --template-chars-key can be set to any key in [font_style](/templates/#font_style)
@@ -141,6 +151,8 @@
 
     The retrieved watermark is: 123456
     ```
+
+See template detail: [FONT_STYLE](/templates/#font_style)
 
 ## FONT_WEIGHT
 
@@ -168,6 +180,8 @@
     The retrieved watermark is: 123456
     ```
 
+See template detail: [FONT_WEIGHT](/templates/#font_weight)
+
 ## HOMOGRAPH_CHINESE
 
 === "Insert"
@@ -194,6 +208,8 @@
     The retrieved watermark is: 123456
     ```
 
+See template detail: [HOMOGRAPH_CHINESE](/templates/#homograph_chinese)
+
 ## HOMOGRAPH_LETTERS
 
 === "Insert"
@@ -219,6 +235,8 @@
 
     The retrieved watermark is: 123456
     ```
+
+See template detail: [HOMOGRAPH_LETTERS](/templates/#homograph_letters)
 
 ## HOMOGRAPH_NUMBERS
 
@@ -258,6 +276,8 @@
     1977326741
     ```
 
+See template detail: [HOMOGRAPH_NUMBERS](/templates/#homograph_numbers)
+
 ## HOMOGRAPH_PUNCTUATIONS
 
 === "Insert"
@@ -284,6 +304,8 @@
     The retrieved watermark is: 123456
     ```
 
+See template detail: [HOMOGRAPH_PUNCTUATIONS](/templates/#homograph_punctuations)
+
 ## HTML_EMPTY_TAGS
 
 === "Insert"
@@ -307,6 +329,8 @@
     The retrieved watermark is: 123456
     ```
 
+See template detail: [HTML_EMPTY_TAGS](/templates/#html_empty_tags)
+
 ## INVISIBLE_CHARS
 
 === "Insert"
@@ -327,6 +351,8 @@
 
     ```
 
+See template detail: [INVISIBLE_CHARS](/templates/#invisible_chars)
+
 ## SPACE_CHARS
 
 === "Insert"
@@ -344,6 +370,8 @@
 
     The retrieved watermark is: 7
     ```
+
+See template detail: [SPACE_CHARS](/templates/#space_chars)
 
 ## WHITESPACE_CHARS
 
@@ -363,3 +391,5 @@
 
     The retrieved watermark is: 743
     ```
+
+See template detail: [WHITESPACE_CHARS](/templates/#whitespace_chars)

@@ -9,6 +9,8 @@
       members_order: source
       show_source: true
 
+See examples in [Binary representation](/example/#binary_representation).
+
 ## COMBINING_CHARS
 
 ::: textwatermark.templates.combining_chars
@@ -26,6 +28,8 @@
 %}
 ```
 
+See examples in [Combining characters](/example/#combining_chars).
+
 ## FONT_COLOR
 
 ::: textwatermark.templates.font_color
@@ -36,6 +40,8 @@
       heading_level: 4
       show_root_toc_entry: false
       show_source: true
+
+See examples in [Font color](/example/#font_color).
 
 ## FONT_FLOAT
 
@@ -48,6 +54,8 @@
       show_root_toc_entry: false
       show_source: true
 
+See examples in [Font float](/example/#font_float).
+
 ## FONT_SIZE
 
 ::: textwatermark.templates.font_size
@@ -58,6 +66,8 @@
       heading_level: 4
       show_root_toc_entry: false
       show_source: true
+
+See examples in [Font size](/example/#font_size).
 
 ## FONT_STYLE
 
@@ -70,6 +80,8 @@
       show_root_toc_entry: false
       show_source: true
 
+See examples in [Font style](/example/#font_style).
+
 ## FONT_WEIGHT
 
 ::: textwatermark.templates.font_weight
@@ -80,6 +92,8 @@
       heading_level: 4
       show_root_toc_entry: false
       show_source: true
+
+See examples in [Font weight](/example/#font_weight).
 
 ## HOMOGRAPH_CHINESE
 
@@ -92,6 +106,8 @@
       show_root_toc_entry: false
       show_source: true
 
+See examples in [Homograph Chinese](/example/#homograph_chinese).
+
 ## HOMOGRAPH_LETTERS
 
 ::: textwatermark.templates.homograph_letters
@@ -102,6 +118,8 @@
       heading_level: 4
       show_root_toc_entry: false
       show_source: true
+
+See examples in [Homograph letters](/example/#homograph_letters).
 
 ## HOMOGRAPH_NUMBERS
 
@@ -114,6 +132,8 @@
       show_root_toc_entry: false
       show_source: true
 
+See examples in [Homograph numbers](/example/#homograph_numbers).
+
 ## HOMOGRAPH_PUNCTUATIONS
 
 ::: textwatermark.templates.homograph_punctuations
@@ -125,6 +145,8 @@
       show_root_toc_entry: false
       show_source: true
 
+See examples in [Homograph punctuations](/example/#homograph_punctuations).
+
 ## HTML_EMPTY_TAGS
 
 ::: textwatermark.templates.html_empty_tags
@@ -135,6 +157,8 @@
       heading_level: 4
       show_root_toc_entry: false
       show_source: true
+
+See examples in [HTML empty tags](/example/#html_empty_tags).
 
 ## INVISIBLE_CHARS
 
@@ -152,6 +176,8 @@
 %}
 ```
 
+See examples in [Invisible characters](/example/#invisible_chars).
+
 ## SPACE_CHARS
 
 ::: textwatermark.templates.space_chars
@@ -168,6 +194,8 @@
 %}
 ```
 
+See examples in [Space characters](/example/#space_chars).
+
 ## WHITESPACE_CHARS
 
 ::: textwatermark.templates.whitespace_chars
@@ -183,3 +211,5 @@
   include-markdown "../src/textwatermark/templates/whitespace_chars.py"
 %}
 ```
+
+See examples in [Whitespace characters](/example/#whitespace_chars).

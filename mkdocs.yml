@@ -92,8 +92,8 @@ nav:
   - Usage:
       - Coding: usage.md
       - CMD Line: cmdline.md
-  - Changelog: changelog.md
   - Example: example.md
+  - Templates: templates.md
   - Servitization: servitization.md
   - API Documents:
       - api/main.md
@@ -101,6 +101,6 @@ nav:
       - WMTemplate: api/template.md
       - Defines: api/defines.md
       - CMD Line: api/cmdline.md
-  - Templates: templates.md
   - Development Guide: development.md
+  - Changelog: changelog.md
   - About: about.md
