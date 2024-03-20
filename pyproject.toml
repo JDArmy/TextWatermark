@@ -53,7 +53,7 @@ mkdocs-static-i18n = "^0.52"
 build = "^0.10"
 twine = "^4.0"
 mypy = "^1.1.1"
-black = "^23.1.0"
+black = ">=23.1,<25.0"
 coverage = "^7.2.1"
 pytest-cov = "^4.0.0"
 
