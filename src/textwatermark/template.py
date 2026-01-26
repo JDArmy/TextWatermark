@@ -290,19 +290,19 @@ class WMTemplate:
 
         confusables_chars_keys = "".join(self.confusables_chars.keys())
         wm_idx = 0
-        wm_text = ""
+        wm_parts = []
         for idx in range(len(text)):
             if not loop and wm_idx >= len(wm_final):
-                wm_text += text[idx:]
+                wm_parts.append(text[idx:])
                 break
             # 查找并替换成水印字符
             if confusables_chars_keys.find(text[idx]) != -1:
                 offset = wm_final[wm_idx % len(wm_final)]
-                wm_text += self.confusables_chars[text[idx]][int(offset)]
+                wm_parts.append(self.confusables_chars[text[idx]][int(offset)])
                 wm_idx += 1
             else:
-                wm_text += text[idx]
-        return wm_text
+                wm_parts.append(text[idx])
+        return "".join(wm_parts)
 
     def _decorate_each_char(self, text: str, wm_final: str, loop: bool):
         if not isinstance(self.confusables_chars, dict):
